@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KAOP</name>
+    </assembly>
+    <members>
+        <member name="T:KAOP.KAopClassAttribute">
+            <summary>
+            KAOP类特性
+            切面
+            </summary>
+        </member>
+        <member name="M:KAOP.KAopClassAttribute.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:KAOP.KAopClassAttribute.PreExcute(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            方法执行前的动作
+            </summary>
+            <param name="MethodName">方法名</param>
+            <param name="InParams">方法参数</param>
+        </member>
+        <member name="M:KAOP.KAopClassAttribute.EndExcute(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Object[],System.Object,System.Exception)">
+            <summary>
+            方法执行后的动作
+            </summary>
+            <param name="MethodName">方法名</param>
+            <param name="OutParams">方法参数</param>
+            <param name="ReturnValue">返回值</param>
+            <param name="ex">异常信息</param>
+        </member>
+        <member name="M:KAOP.KAopClassAttribute.GetPropertiesForNewContext(System.Runtime.Remoting.Activation.IConstructionCallMessage)">
+            <summary>
+            IConstructionCallMessage
+            当用户创建新的客户端激活对象的实例通过调用new或Activator.CreateInstance和线程返回到用户代码之前IConstructionCallMessage发送到远程应用程序。
+            构造消息到达远程应用程序，通过远程处理激活器处理 (一个，或一个中指定的默认Activator属性)，并创建一个新的对象。
+            然后，远程处理应用程序返回IConstructionReturnMessage到本地应用程序。
+            IConstructionReturnMessage包含的一个实例ObjRef，哪些程序包的远程对象有关的信息。 
+            远程处理基础结构将转换ObjRef到返回到用户代码的远程对象的代理的实例。
+            </summary> 
+        </member>
+        <member name="T:KAOP.KAopContextBoundObject">
+            <summary>
+            KAOP上下文绑定类
+            </summary>
+        </member>
+        <member name="M:KAOP.KAopContextBoundObject.#ctor">
+            <summary>
+             构造函数
+            </summary>
+        </member>
+        <member name="T:KAOP.KAopMethodAttribute">
+            <summary>
+            KAOP方法特性
+            </summary>
+        </member>
+        <member name="M:KAOP.KibaContextProperty.GetObjectSink(System.MarshalByRefObject,System.Runtime.Remoting.Messaging.IMessageSink)">
+            <summary>
+            将所提供的服务器对象的消息接收器连接到给定的接收器链前面。
+            </summary>
+            <param name="obj">提供要连接到给定的接收器链前面的消息接收器的服务器对象。 </param>
+            <param name="next">到目前为止组成的接收链。</param>
+            <returns>复合接收器链。</returns>
+        </member>
+        <member name="T:KAOP.KibaMessageSink">
+            <summary>
+            定义消息接收器。
+            </summary>
+        </member>
+        <member name="T:KAOP.KAOPHelper">
+            <summary>
+            KAOP帮助类
+            </summary>
+        </member>
+        <member name="M:KAOP.KAOPHelper.GetParamDictionary(System.Runtime.Remoting.Messaging.IMethodCallMessage)">
+            <summary>
+            获取参数字典（不包括out参数）
+            </summary>
+            <param name="call">方法调用消息接口</param>
+            <returns>参数字典</returns>
+        </member>
+        <member name="M:KAOP.KAOPHelper.IsHaveKAopMethod(System.Runtime.Remoting.Messaging.IMethodCallMessage)">
+            <summary>
+            验证是否KAopMethodAttribute特性
+            </summary>
+            <param name="call">方法调用消息接口</param>
+            <returns>true：是；false：否</returns>
+        </member>
+        <member name="M:KAOP.KAOPHelper.FindTypeInCurrentDomain(System.String)">
+            <summary>
+            根据类型名获取类型
+            </summary>
+            <param name="typeName">类型名</param>
+            <returns>类型</returns>
+        </member>
+    </members>
+</doc>

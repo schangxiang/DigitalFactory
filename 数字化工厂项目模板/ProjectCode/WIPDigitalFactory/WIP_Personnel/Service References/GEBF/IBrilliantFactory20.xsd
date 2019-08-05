@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.MobileObject" />
+  <xs:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Operations" />
+  <xs:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem" />
+  <xs:complexType name="ArrayOfParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameter" nillable="true" type="tns:Parameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParameter" nillable="true" type="tns:ArrayOfParameter" />
+  <xs:complexType name="Parameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.MobileObject" minOccurs="0" name="_value" nillable="true" type="q1:CrudItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Parameter" nillable="true" type="tns:Parameter" />
+  <xs:complexType name="DirectoryResource">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_attributesCached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="_description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_displayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_ldapAddress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DirectoryResource" nillable="true" type="tns:DirectoryResource" />
+  <xs:complexType name="ProcessValue">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DataValue">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="_quality" type="tns:PlatformQuality" />
+          <xs:element minOccurs="0" name="_timestamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessValue" nillable="true" type="tns:ProcessValue" />
+  <xs:complexType name="DataValue">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DataItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="_objV" nillable="true" type="xs:anyType" />
+          <xs:element minOccurs="0" name="_type" type="tns:SysInterfaceType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataValue" nillable="true" type="tns:DataValue" />
+  <xs:complexType name="DataItem">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="DataItem" nillable="true" type="tns:DataItem" />
+  <xs:simpleType name="SysInterfaceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSupported">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Empty">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Null">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Short">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Integer">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Float">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Double">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Date" />
+      <xs:enumeration value="String" />
+      <xs:enumeration value="Bit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Byte">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Long">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BigDecimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">52</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DateOnly">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">71</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TimeOnly">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">72</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Timestamp">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Blob">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SByte">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UInt16">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UInt32">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">33</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SysInterfaceType" nillable="true" type="tns:SysInterfaceType" />
+  <xs:simpleType name="PlatformQuality">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="QualityBad" />
+      <xs:enumeration value="QualityUninitialized">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">207</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QualityUncertain">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QualityGood">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">192</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QualityNotARealPoint">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">138</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PlatformQuality" nillable="true" type="tns:PlatformQuality" />
+  <xs:complexType name="DirectoryResourceMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DataItemDescription">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="_availableDataQuery" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="_entryPointFilterType" type="tns:DirectoryResourceFilterType" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="_entryPointFilters" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element minOccurs="0" name="_invalidClassificationExpression" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="_modelFilterType" type="tns:DirectoryResourceFilterType" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="_modelFilters" nillable="true" type="q3:ArrayOfstring" />
+          <xs:element minOccurs="0" name="_validClassificationExpression" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DirectoryResourceMetadata" nillable="true" type="tns:DirectoryResourceMetadata" />
+  <xs:complexType name="DataItemDescription">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="DataItemDescription" nillable="true" type="tns:DataItemDescription" />
+  <xs:simpleType name="DirectoryResourceFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Include" />
+      <xs:enumeration value="Exclude" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DirectoryResourceFilterType" nillable="true" type="tns:DirectoryResourceFilterType" />
+  <xs:complexType name="AttrItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_type" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="_values" nillable="true" type="q4:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttrItem" nillable="true" type="tns:AttrItem" />
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_document" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_errorType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_status" type="xs:boolean" />
+      <xs:element minOccurs="0" name="_subStatus" type="tns:ResponseStatus" />
+      <xs:element minOccurs="0" name="_wait" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response" nillable="true" type="tns:Response" />
+  <xs:simpleType name="ResponseStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Complete" />
+      <xs:enumeration value="Incomplete" />
+      <xs:enumeration value="ShutdownRequested" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResponseStatus" nillable="true" type="tns:ResponseStatus" />
+  <xs:complexType name="MethodIdentification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Operations" minOccurs="0" name="OperationCode" type="q5:OperationCode" />
+      <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequiresConfigData" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TargetsNodes" type="xs:boolean" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Operations" minOccurs="0" name="_operationQualifier" type="q6:OperationQualifier" />
+      <xs:element minOccurs="0" name="SilverlightName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MethodIdentification" nillable="true" type="tns:MethodIdentification" />
+  <xs:complexType name="ArrayOfMethodInvocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MethodInvocation" nillable="true" type="tns:MethodInvocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMethodInvocation" nillable="true" type="tns:ArrayOfMethodInvocation" />
+  <xs:complexType name="MethodInvocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_clientRequestTime" type="xs:long" />
+      <xs:element minOccurs="0" name="_clientTimeZoneID" type="xs:int" />
+      <xs:element minOccurs="0" name="_displayTimeZoneID" type="xs:int" />
+      <xs:element minOccurs="0" name="_inParams" nillable="true" type="tns:ArrayOfParameter" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Operations" minOccurs="0" name="_opCode" type="q7:OperationCode" />
+      <xs:element minOccurs="0" name="_opID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Operations" minOccurs="0" name="_opQualifier" type="q8:OperationQualifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MethodInvocation" nillable="true" type="tns:MethodInvocation" />
+  <xs:complexType name="ArrayOfResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Response" nillable="true" type="tns:Response" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponse" nillable="true" type="tns:ArrayOfResponse" />
+  <xs:complexType name="ArrayOfDataValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataValue" nillable="true" type="tns:DataValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataValue" nillable="true" type="tns:ArrayOfDataValue" />
+  <xs:complexType name="ArrayOfMethodDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MethodDescription" nillable="true" type="tns:MethodDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMethodDescription" nillable="true" type="tns:ArrayOfMethodDescription" />
+  <xs:complexType name="MethodDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_inParamsDescription" nillable="true" type="tns:ArrayOfParameterDescription" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Operations" minOccurs="0" name="_opCode" type="q9:OperationCode" />
+      <xs:element minOccurs="0" name="_opDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_opID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_opName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Operations" minOccurs="0" name="_opQualifier" type="q10:OperationQualifier" />
+      <xs:element minOccurs="0" name="_outParamsDescription" nillable="true" type="tns:ArrayOfParameterDescription" />
+      <xs:element minOccurs="0" name="_scalarWriteParameterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_targetNodeParameterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_targetsNodes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="_translatorTypeQualifiedName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MethodDescription" nillable="true" type="tns:MethodDescription" />
+  <xs:complexType name="ArrayOfParameterDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParameterDescription" nillable="true" type="tns:ParameterDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParameterDescription" nillable="true" type="tns:ArrayOfParameterDescription" />
+  <xs:complexType name="ParameterDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addressable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanBeNullOutput" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOverride" type="xs:boolean" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem" minOccurs="0" name="ContructionFactory" nillable="true" type="q11:ConstructionParametersFactory" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.MobileObject" minOccurs="0" name="DataItemDescription" nillable="true" type="q12:CrudItem" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.MobileObject" minOccurs="0" name="DefaultValue" nillable="true" type="q13:CrudItem" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsExternallyAddedParameter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOnSignature" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Required" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Visible" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParameterDescription" nillable="true" type="tns:ParameterDescription" />
+  <xs:complexType name="ArrayOfArrayOfMethodDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfMethodDescription" nillable="true" type="tns:ArrayOfMethodDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArrayOfMethodDescription" nillable="true" type="tns:ArrayOfArrayOfMethodDescription" />
+  <xs:complexType name="ArrayOfMethodIdentification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MethodIdentification" nillable="true" type="tns:MethodIdentification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMethodIdentification" nillable="true" type="tns:ArrayOfMethodIdentification" />
+  <xs:complexType name="FormParameterDescription">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ParameterDescription">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CanUpdateAfterInitialize" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormParameterDescription" nillable="true" type="tns:FormParameterDescription" />
+  <xs:complexType name="ResourceMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Events" nillable="true" type="tns:ArrayOfResourceEventDescription" />
+      <xs:element minOccurs="0" name="InputParameters" nillable="true" type="tns:ArrayOfParameterDescription" />
+      <xs:element minOccurs="0" name="OutputParameters" nillable="true" type="tns:ArrayOfParameterDescription" />
+      <xs:element minOccurs="0" name="TechnologyType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceMetadata" nillable="true" type="tns:ResourceMetadata" />
+  <xs:complexType name="ArrayOfResourceEventDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceEventDescription" nillable="true" type="tns:ResourceEventDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResourceEventDescription" nillable="true" type="tns:ArrayOfResourceEventDescription" />
+  <xs:complexType name="ResourceEventDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceEventDescription" nillable="true" type="tns:ResourceEventDescription" />
+</xs:schema>

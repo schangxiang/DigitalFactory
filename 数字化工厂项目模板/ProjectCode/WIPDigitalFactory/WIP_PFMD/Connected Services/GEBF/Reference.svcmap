@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="037f64b6-5d96-42d7-a249-ae37cf83d1ee" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IBrilliantFactory.xsd" MetadataType="Schema" ID="2b58d60e-79f0-4944-ab54-ac362c1d15a8" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd14" />
+    <MetadataFile FileName="IBrilliantFactory1.xsd" MetadataType="Schema" ID="be69fa8a-e8c1-4926-a681-3f734c0b832d" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd10" />
+    <MetadataFile FileName="IBrilliantFactory2.xsd" MetadataType="Schema" ID="3b9c92b5-faec-44c5-9b44-6527c8984787" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd8" />
+    <MetadataFile FileName="IBrilliantFactory3.xsd" MetadataType="Schema" ID="5e41a13b-98f6-4e19-abb0-896f595f57b6" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd20" />
+    <MetadataFile FileName="IBrilliantFactory4.xsd" MetadataType="Schema" ID="eccc29ad-d9d5-466c-9824-581b64960c59" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd3" />
+    <MetadataFile FileName="IBrilliantFactory5.xsd" MetadataType="Schema" ID="49cd6450-464a-4372-a7f4-710a794e49e3" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd4" />
+    <MetadataFile FileName="IBrilliantFactory6.xsd" MetadataType="Schema" ID="3f77c90f-cccd-4db8-8c78-39cdc9d88730" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd12" />
+    <MetadataFile FileName="IBrilliantFactory.wsdl" MetadataType="Wsdl" ID="94f3a763-8c10-4e1f-aa80-2c642cd22cd4" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?wsdl=wsdl0" />
+    <MetadataFile FileName="IBrilliantFactory7.xsd" MetadataType="Schema" ID="2865b90d-089a-4676-a228-5c20ca9d1b01" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd19" />
+    <MetadataFile FileName="IBrilliantFactory8.xsd" MetadataType="Schema" ID="621d52ee-2991-40ea-9fa6-cd0de9824825" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd7" />
+    <MetadataFile FileName="IBrilliantFactory9.xsd" MetadataType="Schema" ID="bc43574d-ed44-42cd-b7af-12e555176932" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd15" />
+    <MetadataFile FileName="IBrilliantFactory1.wsdl" MetadataType="Wsdl" ID="b00d0648-9347-4355-b024-7fbd6ea43ce6" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?wsdl=wsdl1" />
+    <MetadataFile FileName="BFServiceProvider.wsdl" MetadataType="Wsdl" ID="54d55f00-ad1c-40fb-bee5-89af7eef6b32" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?wsdl" />
+    <MetadataFile FileName="IBrilliantFactory10.xsd" MetadataType="Schema" ID="e3fc540f-fc32-482d-b378-ebdaa7f373e3" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd9" />
+    <MetadataFile FileName="IBrilliantFactory11.xsd" MetadataType="Schema" ID="96ce3652-72e7-4981-9f03-37eb56571844" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd2" />
+    <MetadataFile FileName="IBrilliantFactory12.xsd" MetadataType="Schema" ID="af5a3d58-c6fd-4e15-bd9d-4133472d9c0f" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd17" />
+    <MetadataFile FileName="IBrilliantFactory13.xsd" MetadataType="Schema" ID="fe8a54fc-e508-459a-88bd-97508221eb44" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd6" />
+    <MetadataFile FileName="IBrilliantFactory14.xsd" MetadataType="Schema" ID="5d4127f3-819e-4e50-a406-6e8c6603cc53" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd0" />
+    <MetadataFile FileName="IBrilliantFactory15.xsd" MetadataType="Schema" ID="bdfca9f1-ec7a-433c-8296-1fd1562df908" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd5" />
+    <MetadataFile FileName="IBrilliantFactory16.xsd" MetadataType="Schema" ID="d1215254-d943-44e1-a7bd-3ba2c98035db" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd18" />
+    <MetadataFile FileName="IBrilliantFactory.disco" MetadataType="Disco" ID="7d66ba07-4b09-44d2-8e10-0e166a83f1a7" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?disco" />
+    <MetadataFile FileName="IBrilliantFactory17.xsd" MetadataType="Schema" ID="2ede1bca-8ee8-45f1-95f5-3d44ecac8bd1" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd16" />
+    <MetadataFile FileName="IBrilliantFactory18.xsd" MetadataType="Schema" ID="9541b413-7cee-4561-951e-f43a593ca671" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd13" />
+    <MetadataFile FileName="IBrilliantFactory2.wsdl" MetadataType="Wsdl" ID="c33f1099-eee6-451d-8378-3c055be00aed" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?wsdl=wsdl2" />
+    <MetadataFile FileName="IBrilliantFactory19.xsd" MetadataType="Schema" ID="e1a3cc59-db9e-491a-89e7-61ec7c2c67e8" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd1" />
+    <MetadataFile FileName="IBrilliantFactory20.xsd" MetadataType="Schema" ID="a031b11f-3b3d-4712-8eb4-12a2a2076bcd" SourceId="1" SourceUrl="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd11" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

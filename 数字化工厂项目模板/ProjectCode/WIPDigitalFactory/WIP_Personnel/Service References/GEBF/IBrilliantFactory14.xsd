@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Model" />
+  <xs:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR" />
+  <xs:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" />
+  <xs:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR.Interfaces" />
+  <xs:element name="LogAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cFunction" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LogActionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HandShake">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HandShakeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HandShakeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductionLines">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="plantName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductionLinesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetProductionLinesResult" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="testEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="plantName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="testEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="testEquipmentResult" nillable="true" type="q2:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestMaterial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="materialName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="proNames" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestMaterialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TestMaterialResult" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="materialName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPropertyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllPropertyResult" nillable="true" type="q5:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uPwd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanLoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CanLoginResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanLoginViaDomain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uPwd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanLoginViaDomainResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CanLoginViaDomainResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePwd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uPwd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uNewPwd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePwdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePwdResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="proNames" nillable="true" type="q6:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalPropertiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Model" minOccurs="0" name="GetPersonalPropertiesResult" nillable="true" type="q7:ArrayOfPersonalProperties" />
+        <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoot">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="providerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ldapAddress" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRootResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR" minOccurs="0" name="GetRootResult" nillable="true" type="q8:DefaultAttributeNode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBrowseResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBrowseResponseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="GetBrowseResponseResult" nillable="true" type="q9:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ldapAddress" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR.Interfaces" minOccurs="0" name="browseScope" type="q10:INodeOps.Scope" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR" minOccurs="0" name="GetNodeResult" nillable="true" type="q11:DefaultAttributeNode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ldapAddress" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="args" nillable="true" type="q12:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR" minOccurs="0" name="AddNodeResult" nillable="true" type="q13:DefaultAttributeNode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryChildCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ldapAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="childDisplayNameMask" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryChildCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryChildCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryChildren">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ldapAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="childDisplayNameMask" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="start" type="xs:int" />
+        <xs:element minOccurs="0" name="end" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryChildrenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR" minOccurs="0" name="QueryChildrenResult" nillable="true" type="q14:ArrayOfDefaultAttributeNode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupChild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ldapAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="childDN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupChildResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR" minOccurs="0" name="LookupChildResult" nillable="true" type="q15:DefaultAttributeNode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryChecksum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ldapAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="childDisplayNameMask" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryChecksumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryChecksumResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Initialize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="names" nillable="true" type="q16:ArrayOfstring" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="values" nillable="true" type="q17:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitializeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="InitializeResult" nillable="true" type="q18:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuildModel">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuildModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="BuildModelResult" nillable="true" type="q19:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Start">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="StartResult" nillable="true" type="q20:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Stop">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="StopResult" nillable="true" type="q21:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Uninitialize">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UninitializeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="UninitializeResult" nillable="true" type="q22:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ping">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="PingResult" nillable="true" type="q23:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

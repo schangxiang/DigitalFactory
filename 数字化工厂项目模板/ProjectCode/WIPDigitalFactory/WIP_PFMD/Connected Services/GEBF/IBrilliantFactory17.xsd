@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:Proficy:System:2009" elementFormDefault="qualified" targetNamespace="urn:Proficy:System:2009" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" />
+  <xs:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem" />
+  <xs:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" />
+  <xs:element name="GetConfigPanel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q1:IConfigGetConfigPanelRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConfigPanelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="GetConfigPanelResult" nillable="true" type="q2:IConfigGetConfigPanelResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddConfigPanel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q3:IConfigAddConfigPanelRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddConfigPanelResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteConfigPanel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q4:IConfigAddConfigPanelRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteConfigPanelResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BatchExecute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q5:IDataBatchExecuteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BatchExecuteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="BatchExecuteResult" nillable="true" type="q6:IDataBatchExecuteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiscardResults">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q7:IDataDiscardResultsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Execute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q8:IDataExecuteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="ExecuteResult" nillable="true" type="q9:IDataExecuteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextResultSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q10:IDataGetNextResultSetRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextResultSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="GetNextResultSetResult" nillable="true" type="q11:IDataGetNextResultSetResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResults">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q12:IDataGetResultsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResultsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="GetResultsResult" nillable="true" type="q13:IDataGetResultsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveBatchItemsk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q14:IDataRemoveBatchItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem" minOccurs="0" name="readRequest" nillable="true" type="q15:ReadRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem" minOccurs="0" name="ReadDataResult" nillable="true" type="q16:ReadResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem" minOccurs="0" name="writeRequest" nillable="true" type="q17:WriteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteDataResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMetaData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q18:IMetadataGetMetadataRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMetaDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="GetMetaDataResult" nillable="true" type="q19:IMetadataGetMetadataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMetaDataBatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q20:IMetadataGetMetadataBatchRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMetaDataBatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="GetMetaDataBatchResult" nillable="true" type="q21:IMetadataGetMetadataBatchResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMethodIdentifications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q22:IMetadataGetMethodIdentificationsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMethodIdentificationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="GetMethodIdentificationsResult" nillable="true" type="q23:IMetadataGetMethodIdentificationsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMetaDataForIdentifications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="request" nillable="true" type="q24:IMetadataGetMetadataForIdentificationsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMetaDataForIdentificationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" minOccurs="0" name="GetMetaDataForIdentificationsResult" nillable="true" type="q25:IMetadataGetMetadataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetResourceMetadata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="resource" nillable="true" type="q26:DirectoryResource" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="metadata" nillable="true" type="q27:ResourceMetadata" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetResourceMetadataResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceMetadata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="resource" nillable="true" type="q28:DirectoryResource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceMetadataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="GetResourceMetadataResult" nillable="true" type="q29:ResourceMetadata" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C4A8F076-DD3A-42D6-859A-CFB4A1C197C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WIP_BLL</RootNamespace>
+    <AssemblyName>WIP_BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KAOP">
+      <HintPath>..\CommDLL\KAOP\KAOP.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SysManager.Common.Utilities">
+      <HintPath>..\CommDLL\SysManager.Common.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AOP\LogAopAttribute.cs" />
+    <Compile Include="MailMgr\IMail.cs" />
+    <Compile Include="MailMgr\Mail.cs" />
+    <Compile Include="MailMgr\MailRuleBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PR_AuthorizationBLL.cs" />
+    <Compile Include="SysIntegr\ResponseFactory\Default\PushProcessCardInfoToWCS_ResUpdater.cs" />
+    <Compile Include="SysIntegr\ResponseFactory\Default\PredictiveTask_ResUpdater.cs" />
+    <Compile Include="SysIntegr\ResponseFactory\ResponseUpdater.cs" />
+    <Compile Include="SysIntegr\SysIntegrCommon.cs" />
+    <Compile Include="BusinessExceptionMgrBLL.cs" />
+    <Compile Include="CodeItemsBLL.cs" />
+    <Compile Include="CodeSetsBLL.cs" />
+    <Compile Include="PrintConfigBLL.cs" />
+    <Compile Include="PrintInfoBLL.cs" />
+    <Compile Include="UserLoginLogBLL.cs" />
+    <Compile Include="Utility\BLLHelpler.cs" />
+    <Compile Include="Utility\HttpUtility\HTTPLongConnectionService.cs" />
+    <Compile Include="Utility\HttpUtility\HTTPLongConnectionService2.cs" />
+    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForC2H2.cs" />
+    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForCCF.cs" />
+    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForCTG.cs" />
+    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForExCAR.cs" />
+    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForInCAR.cs" />
+    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForPREOX.cs" />
+    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForTemper.cs" />
+    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForTunnel.cs" />
+    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForWash.cs" />
+    <Compile Include="Utility\IntegerToken.cs" />
+    <Compile Include="Utility\PFMDHelper.cs" />
+    <Compile Include="Utility\RequestHelper.cs" />
+    <Compile Include="Utility\WipLogHelper.cs" />
+    <Compile Include="ValidateFactory\Factory\Default\ValidateInStoreFactory.cs" />
+    <Compile Include="ValidateFactory\Factory\IValidateFactory.cs" />
+    <Compile Include="ValidateFactory\IValidate.cs" />
+    <Compile Include="ValidateFactory\ValidateDataHelper.cs" />
+    <Compile Include="ValidateFactory\WCSIntegrValidate.cs" />
+    <Compile Include="ValidateFactory\WCSIntegrValidate\WIW_InStore.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WIP_common\WIP_common.csproj">
+      <Project>{1103472d-6a5c-4135-b359-0dfc72e71533}</Project>
+      <Name>WIP_common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_DAL\WIP_DAL.csproj">
+      <Project>{A6A4C9FD-A504-4B5C-B2E4-33AC03002212}</Project>
+      <Name>WIP_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_IBLL\WIP_IBLL.csproj">
+      <Project>{264dfcf5-688f-4351-84ee-7b2b73a782a9}</Project>
+      <Name>WIP_IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_Models\WIP_Models.csproj">
+      <Project>{45cc6d7c-f2b9-4037-897c-2cc10910cc78}</Project>
+      <Name>WIP_Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_PFMD\WIP_PFMD.csproj">
+      <Project>{dddfba2a-f77a-4584-8d36-60f46be0c3f3}</Project>
+      <Name>WIP_PFMD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="urn:Proficy:Events:2009" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:i1="urn:Proficy:System:2011" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i2="urn:Proficy:System:2009" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BFServiceProvider" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IBrilliantFactory_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IEventSubscriptionCallback_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IFolders_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IBrowse_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IConfig_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IData_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IDataAccess_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IMetadata_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IServiceControl_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="urn:Proficy:Events:2009" location="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?wsdl=wsdl0" />
+  <wsdl:import namespace="urn:Proficy:System:2011" location="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?wsdl=wsdl1" />
+  <wsdl:import namespace="urn:Proficy:System:2009" location="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?wsdl=wsdl2" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Model" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd5" namespace="urn:Proficy:Events:2009" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Events" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.MobileObject" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd9" namespace="Proficy.Platform.Core.ProficySystem.Types.Client" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd11" namespace="urn:Proficy:System:2011" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Folders.Interfaces" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.XmlItems" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR.Interfaces" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Server.Interfaces" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd16" namespace="urn:Proficy:System:2009" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Operations" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBrilliantFactory_LogAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogAction" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_LogAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_LogAction_GeneralFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" name="detail" element="q1:GeneralFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_HandShake_InputMessage">
+    <wsdl:part name="parameters" element="tns:HandShake" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_HandShake_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HandShakeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_HandShake_GeneralFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" name="detail" element="q2:GeneralFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_GetProductionLines_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductionLines" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_GetProductionLines_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductionLinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_GetProductionLines_GeneralFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" name="detail" element="q3:GeneralFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_testEquipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:testEquipment" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_testEquipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:testEquipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_testEquipment_GeneralFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" name="detail" element="q4:GeneralFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_TestMaterial_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestMaterial" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_TestMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_TestMaterial_GeneralFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" name="detail" element="q5:GeneralFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_CanLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:CanLogin" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_CanLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CanLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_CanLogin_GeneralFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" name="detail" element="q6:GeneralFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_CanLoginViaDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:CanLoginViaDomain" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_CanLoginViaDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CanLoginViaDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_CanLoginViaDomain_GeneralFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" name="detail" element="q7:GeneralFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_UpdatePwd_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePwd" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_UpdatePwd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_UpdatePwd_GeneralFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" name="detail" element="q8:GeneralFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_GetPersonalProperties_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalProperties" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_GetPersonalProperties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrilliantFactory_GetPersonalProperties_GeneralFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" name="detail" element="q9:GeneralFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_GetRoot_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoot" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_GetRoot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRootResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_GetBrowseResponse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBrowseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_GetBrowseResponse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBrowseResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_GetNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNode" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_GetNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_AddNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNode" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_AddNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_QueryChildCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryChildCount" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_QueryChildCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryChildCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_QueryChildren_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryChildren" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_QueryChildren_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryChildrenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_LookupChild_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupChild" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_LookupChild_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupChildResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_QueryChecksum_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryChecksum" />
+  </wsdl:message>
+  <wsdl:message name="IBrowse_QueryChecksum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryChecksumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_Initialize_InputMessage">
+    <wsdl:part name="parameters" element="tns:Initialize" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_Initialize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitializeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_Initialize_ServerCannotProceedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Server.Interfaces" name="detail" element="q10:ServerCannotProceedFault" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_BuildModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuildModel" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_BuildModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuildModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_BuildModel_ServerCannotProceedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Server.Interfaces" name="detail" element="q11:ServerCannotProceedFault" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_Start_InputMessage">
+    <wsdl:part name="parameters" element="tns:Start" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_Start_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_Start_ServerCannotProceedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Server.Interfaces" name="detail" element="q12:ServerCannotProceedFault" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_Stop_InputMessage">
+    <wsdl:part name="parameters" element="tns:Stop" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_Stop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_Uninitialize_InputMessage">
+    <wsdl:part name="parameters" element="tns:Uninitialize" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_Uninitialize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UninitializeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IServiceControl_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBrilliantFactory">
+    <wsdl:operation name="LogAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrilliantFactory/LogAction" message="tns:IBrilliantFactory_LogAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrilliantFactory/LogActionResponse" message="tns:IBrilliantFactory_LogAction_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBrilliantFactory/LogActionGeneralFaultExceptionFault" name="GeneralFaultExceptionFault" message="tns:IBrilliantFactory_LogAction_GeneralFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HandShake">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrilliantFactory/HandShake" message="tns:IBrilliantFactory_HandShake_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrilliantFactory/HandShakeResponse" message="tns:IBrilliantFactory_HandShake_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBrilliantFactory/HandShakeGeneralFaultExceptionFault" name="GeneralFaultExceptionFault" message="tns:IBrilliantFactory_HandShake_GeneralFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductionLines">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrilliantFactory/GetProductionLines" message="tns:IBrilliantFactory_GetProductionLines_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrilliantFactory/GetProductionLinesResponse" message="tns:IBrilliantFactory_GetProductionLines_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBrilliantFactory/GetProductionLinesGeneralFaultExceptionFault" name="GeneralFaultExceptionFault" message="tns:IBrilliantFactory_GetProductionLines_GeneralFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="testEquipment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrilliantFactory/testEquipment" message="tns:IBrilliantFactory_testEquipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrilliantFactory/testEquipmentResponse" message="tns:IBrilliantFactory_testEquipment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBrilliantFactory/testEquipmentGeneralFaultExceptionFault" name="GeneralFaultExceptionFault" message="tns:IBrilliantFactory_testEquipment_GeneralFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestMaterial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrilliantFactory/TestMaterial" message="tns:IBrilliantFactory_TestMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrilliantFactory/TestMaterialResponse" message="tns:IBrilliantFactory_TestMaterial_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBrilliantFactory/TestMaterialGeneralFaultExceptionFault" name="GeneralFaultExceptionFault" message="tns:IBrilliantFactory_TestMaterial_GeneralFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CanLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrilliantFactory/CanLogin" message="tns:IBrilliantFactory_CanLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrilliantFactory/CanLoginResponse" message="tns:IBrilliantFactory_CanLogin_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBrilliantFactory/CanLoginGeneralFaultExceptionFault" name="GeneralFaultExceptionFault" message="tns:IBrilliantFactory_CanLogin_GeneralFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CanLoginViaDomain">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrilliantFactory/CanLoginViaDomain" message="tns:IBrilliantFactory_CanLoginViaDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrilliantFactory/CanLoginViaDomainResponse" message="tns:IBrilliantFactory_CanLoginViaDomain_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBrilliantFactory/CanLoginViaDomainGeneralFaultExceptionFault" name="GeneralFaultExceptionFault" message="tns:IBrilliantFactory_CanLoginViaDomain_GeneralFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePwd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrilliantFactory/UpdatePwd" message="tns:IBrilliantFactory_UpdatePwd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrilliantFactory/UpdatePwdResponse" message="tns:IBrilliantFactory_UpdatePwd_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBrilliantFactory/UpdatePwdGeneralFaultExceptionFault" name="GeneralFaultExceptionFault" message="tns:IBrilliantFactory_UpdatePwd_GeneralFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalProperties">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrilliantFactory/GetPersonalProperties" message="tns:IBrilliantFactory_GetPersonalProperties_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrilliantFactory/GetPersonalPropertiesResponse" message="tns:IBrilliantFactory_GetPersonalProperties_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBrilliantFactory/GetPersonalPropertiesGeneralFaultExceptionFault" name="GeneralFaultExceptionFault" message="tns:IBrilliantFactory_GetPersonalProperties_GeneralFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IBrowse">
+    <wsdl:operation name="GetRoot">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrowse/GetRoot" message="tns:IBrowse_GetRoot_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrowse/GetRootResponse" message="tns:IBrowse_GetRoot_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBrowseResponse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrowse/GetBrowseResponse" message="tns:IBrowse_GetBrowseResponse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrowse/GetBrowseResponseResponse" message="tns:IBrowse_GetBrowseResponse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrowse/GetNode" message="tns:IBrowse_GetNode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrowse/GetNodeResponse" message="tns:IBrowse_GetNode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrowse/AddNode" message="tns:IBrowse_AddNode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrowse/AddNodeResponse" message="tns:IBrowse_AddNode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryChildCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrowse/QueryChildCount" message="tns:IBrowse_QueryChildCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrowse/QueryChildCountResponse" message="tns:IBrowse_QueryChildCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryChildren">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrowse/QueryChildren" message="tns:IBrowse_QueryChildren_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrowse/QueryChildrenResponse" message="tns:IBrowse_QueryChildren_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupChild">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrowse/LookupChild" message="tns:IBrowse_LookupChild_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrowse/LookupChildResponse" message="tns:IBrowse_LookupChild_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryChecksum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBrowse/QueryChecksum" message="tns:IBrowse_QueryChecksum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBrowse/QueryChecksumResponse" message="tns:IBrowse_QueryChecksum_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IServiceControl">
+    <wsdl:operation name="Initialize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceControl/Initialize" message="tns:IServiceControl_Initialize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceControl/InitializeResponse" message="tns:IServiceControl_Initialize_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IServiceControl/InitializeServerCannotProceedFaultFault" name="ServerCannotProceedFaultFault" message="tns:IServiceControl_Initialize_ServerCannotProceedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuildModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceControl/BuildModel" message="tns:IServiceControl_BuildModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceControl/BuildModelResponse" message="tns:IServiceControl_BuildModel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IServiceControl/BuildModelServerCannotProceedFaultFault" name="ServerCannotProceedFaultFault" message="tns:IServiceControl_BuildModel_ServerCannotProceedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Start">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceControl/Start" message="tns:IServiceControl_Start_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceControl/StartResponse" message="tns:IServiceControl_Start_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IServiceControl/StartServerCannotProceedFaultFault" name="ServerCannotProceedFaultFault" message="tns:IServiceControl_Start_ServerCannotProceedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Stop">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceControl/Stop" message="tns:IServiceControl_Stop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceControl/StopResponse" message="tns:IServiceControl_Stop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Uninitialize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceControl/Uninitialize" message="tns:IServiceControl_Uninitialize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceControl/UninitializeResponse" message="tns:IServiceControl_Uninitialize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceControl/Ping" message="tns:IServiceControl_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceControl/PingResponse" message="tns:IServiceControl_Ping_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBrilliantFactory" type="tns:IBrilliantFactory">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IBrilliantFactory_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LogAction">
+      <soap:operation soapAction="http://tempuri.org/IBrilliantFactory/LogAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultExceptionFault">
+        <soap:fault use="literal" name="GeneralFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HandShake">
+      <soap:operation soapAction="http://tempuri.org/IBrilliantFactory/HandShake" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultExceptionFault">
+        <soap:fault use="literal" name="GeneralFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductionLines">
+      <soap:operation soapAction="http://tempuri.org/IBrilliantFactory/GetProductionLines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultExceptionFault">
+        <soap:fault use="literal" name="GeneralFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="testEquipment">
+      <soap:operation soapAction="http://tempuri.org/IBrilliantFactory/testEquipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultExceptionFault">
+        <soap:fault use="literal" name="GeneralFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TestMaterial">
+      <soap:operation soapAction="http://tempuri.org/IBrilliantFactory/TestMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultExceptionFault">
+        <soap:fault use="literal" name="GeneralFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CanLogin">
+      <soap:operation soapAction="http://tempuri.org/IBrilliantFactory/CanLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultExceptionFault">
+        <soap:fault use="literal" name="GeneralFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CanLoginViaDomain">
+      <soap:operation soapAction="http://tempuri.org/IBrilliantFactory/CanLoginViaDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultExceptionFault">
+        <soap:fault use="literal" name="GeneralFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePwd">
+      <soap:operation soapAction="http://tempuri.org/IBrilliantFactory/UpdatePwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultExceptionFault">
+        <soap:fault use="literal" name="GeneralFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalProperties">
+      <soap:operation soapAction="http://tempuri.org/IBrilliantFactory/GetPersonalProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultExceptionFault">
+        <soap:fault use="literal" name="GeneralFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IEventSubscriptionCallback" type="i0:IEventSubscriptionCallback">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IEventSubscriptionCallback_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OnSubscriptionStart">
+      <soap:operation soapAction="urn:Proficy:Events:2009/IEventSubscriptionCallback/OnSubscriptionStart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnSubscriptionStop">
+      <soap:operation soapAction="urn:Proficy:Events:2009/IEventSubscriptionCallback/OnSubscriptionStop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnManualTriggerEvent">
+      <soap:operation soapAction="urn:Proficy:Events:2009/IEventSubscriptionCallback/OnManualTriggerEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IFolders" type="i1:IFolders">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IFolders_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateFolder">
+      <soap:operation soapAction="urn:Proficy:System:2011/IFolders/CreateFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DuplicateFolderFaultFault">
+        <soap:fault use="literal" name="DuplicateFolderFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFolder">
+      <soap:operation soapAction="urn:Proficy:System:2011/IFolders/DeleteFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFolder">
+      <soap:operation soapAction="urn:Proficy:System:2011/IFolders/UpdateFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DuplicateFolderFaultFault">
+        <soap:fault use="literal" name="DuplicateFolderFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MoveToFolder">
+      <soap:operation soapAction="urn:Proficy:System:2011/IFolders/MoveToFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidContentFaultFault">
+        <soap:fault use="literal" name="InvalidContentFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="CircularHierarchyFaultFault">
+        <soap:fault use="literal" name="CircularHierarchyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DuplicateFolderFaultFault">
+        <soap:fault use="literal" name="DuplicateFolderFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetContentResourceSelectionMetadata">
+      <soap:operation soapAction="urn:Proficy:System:2011/IFolders/GetContentResourceSelectionMetadata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IBrowse" type="tns:IBrowse">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IBrowse_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRoot">
+      <soap:operation soapAction="http://tempuri.org/IBrowse/GetRoot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrowseResponse">
+      <soap:operation soapAction="http://tempuri.org/IBrowse/GetBrowseResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNode">
+      <soap:operation soapAction="http://tempuri.org/IBrowse/GetNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNode">
+      <soap:operation soapAction="http://tempuri.org/IBrowse/AddNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryChildCount">
+      <soap:operation soapAction="http://tempuri.org/IBrowse/QueryChildCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryChildren">
+      <soap:operation soapAction="http://tempuri.org/IBrowse/QueryChildren" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupChild">
+      <soap:operation soapAction="http://tempuri.org/IBrowse/LookupChild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryChecksum">
+      <soap:operation soapAction="http://tempuri.org/IBrowse/QueryChecksum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IConfig" type="i2:IConfig">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IConfig_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetConfigPanel">
+      <soap:operation soapAction="urn:Proficy:System:2009/IConfig/GetConfigPanel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddConfigPanel">
+      <soap:operation soapAction="urn:Proficy:System:2009/IConfig/AddConfigPanel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteConfigPanel">
+      <soap:operation soapAction="urn:Proficy:System:2009/IConfig/DeleteConfigPanel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IData" type="i2:IData">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IData_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BatchExecute">
+      <soap:operation soapAction="urn:Proficy:System:2009/IData/BatchExecute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DiscardResults">
+      <soap:operation soapAction="urn:Proficy:System:2009/IData/DiscardResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Execute">
+      <soap:operation soapAction="urn:Proficy:System:2009/IData/Execute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextResultSet">
+      <soap:operation soapAction="urn:Proficy:System:2009/IData/GetNextResultSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResults">
+      <soap:operation soapAction="urn:Proficy:System:2009/IData/GetResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBatchItemsk">
+      <soap:operation soapAction="urn:Proficy:System:2009/IData/RemoveBatchItemsk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IDataAccess" type="i2:IDataAccess">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IDataAccess_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadData">
+      <soap:operation soapAction="urn:Proficy:System:2009/IDataAccess/ReadData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteData">
+      <soap:operation soapAction="urn:Proficy:System:2009/IDataAccess/WriteData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IMetadata" type="i2:IMetadata">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IMetadata_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMetaData">
+      <soap:operation soapAction="urn:Proficy:System:2009/IMetadata/GetMetaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMetaDataBatch">
+      <soap:operation soapAction="urn:Proficy:System:2009/IMetadata/GetMetaDataBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMethodIdentifications">
+      <soap:operation soapAction="urn:Proficy:System:2009/IMetadata/GetMethodIdentifications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMetaDataForIdentifications">
+      <soap:operation soapAction="urn:Proficy:System:2009/IMetadata/GetMetaDataForIdentifications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetResourceMetadata">
+      <soap:operation soapAction="urn:Proficy:System:2009/IMetadata/SetResourceMetadata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceMetadata">
+      <soap:operation soapAction="urn:Proficy:System:2009/IMetadata/GetResourceMetadata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IServiceControl" type="tns:IServiceControl">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IServiceControl_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Initialize">
+      <soap:operation soapAction="http://tempuri.org/IServiceControl/Initialize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerCannotProceedFaultFault">
+        <soap:fault use="literal" name="ServerCannotProceedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuildModel">
+      <soap:operation soapAction="http://tempuri.org/IServiceControl/BuildModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerCannotProceedFaultFault">
+        <soap:fault use="literal" name="ServerCannotProceedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Start">
+      <soap:operation soapAction="http://tempuri.org/IServiceControl/Start" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServerCannotProceedFaultFault">
+        <soap:fault use="literal" name="ServerCannotProceedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Stop">
+      <soap:operation soapAction="http://tempuri.org/IServiceControl/Stop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Uninitialize">
+      <soap:operation soapAction="http://tempuri.org/IServiceControl/Uninitialize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://tempuri.org/IServiceControl/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BFServiceProvider">
+    <wsdl:port name="BasicHttpBinding_IBrilliantFactory" binding="tns:BasicHttpBinding_IBrilliantFactory">
+      <soap:address location="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IEventSubscriptionCallback" binding="tns:BasicHttpBinding_IEventSubscriptionCallback">
+      <soap:address location="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IEventSubscriptionCallback" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IFolders" binding="tns:BasicHttpBinding_IFolders">
+      <soap:address location="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IFolders" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IBrowse" binding="tns:BasicHttpBinding_IBrowse">
+      <soap:address location="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrowse" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IConfig" binding="tns:BasicHttpBinding_IConfig">
+      <soap:address location="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IConfig" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IData" binding="tns:BasicHttpBinding_IData">
+      <soap:address location="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IData" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IDataAccess" binding="tns:BasicHttpBinding_IDataAccess">
+      <soap:address location="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IDataAccess" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IMetadata" binding="tns:BasicHttpBinding_IMetadata">
+      <soap:address location="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IMetadata" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IServiceControl" binding="tns:BasicHttpBinding_IServiceControl">
+      <soap:address location="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IServiceControl" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

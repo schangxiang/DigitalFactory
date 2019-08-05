@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="urn:Proficy:System:2009" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Proficy:System:2009" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:Proficy:System:2009/Imports">
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd16" namespace="urn:Proficy:System:2009" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Model" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd5" namespace="urn:Proficy:Events:2009" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Events" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.MobileObject" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd9" namespace="Proficy.Platform.Core.ProficySystem.Types.Client" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd11" namespace="urn:Proficy:System:2011" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Folders.Interfaces" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.XmlItems" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR.Interfaces" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Operations" />
+      <xsd:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IConfig_GetConfigPanel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigPanel" />
+  </wsdl:message>
+  <wsdl:message name="IConfig_GetConfigPanel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigPanelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfig_AddConfigPanel_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddConfigPanel" />
+  </wsdl:message>
+  <wsdl:message name="IConfig_AddConfigPanel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddConfigPanelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfig_DeleteConfigPanel_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteConfigPanel" />
+  </wsdl:message>
+  <wsdl:message name="IConfig_DeleteConfigPanel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteConfigPanelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IData_BatchExecute_InputMessage">
+    <wsdl:part name="parameters" element="tns:BatchExecute" />
+  </wsdl:message>
+  <wsdl:message name="IData_BatchExecute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BatchExecuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IData_DiscardResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:DiscardResults" />
+  </wsdl:message>
+  <wsdl:message name="IData_Execute_InputMessage">
+    <wsdl:part name="parameters" element="tns:Execute" />
+  </wsdl:message>
+  <wsdl:message name="IData_Execute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IData_GetNextResultSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextResultSet" />
+  </wsdl:message>
+  <wsdl:message name="IData_GetNextResultSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextResultSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IData_GetResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResults" />
+  </wsdl:message>
+  <wsdl:message name="IData_GetResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IData_RemoveBatchItemsk_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBatchItemsk" />
+  </wsdl:message>
+  <wsdl:message name="IDataAccess_ReadData_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadData" />
+  </wsdl:message>
+  <wsdl:message name="IDataAccess_ReadData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataAccess_WriteData_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteData" />
+  </wsdl:message>
+  <wsdl:message name="IDataAccess_WriteData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetadata_GetMetaData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMetaData" />
+  </wsdl:message>
+  <wsdl:message name="IMetadata_GetMetaData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMetaDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetadata_GetMetaDataBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMetaDataBatch" />
+  </wsdl:message>
+  <wsdl:message name="IMetadata_GetMetaDataBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMetaDataBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetadata_GetMethodIdentifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMethodIdentifications" />
+  </wsdl:message>
+  <wsdl:message name="IMetadata_GetMethodIdentifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMethodIdentificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetadata_GetMetaDataForIdentifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMetaDataForIdentifications" />
+  </wsdl:message>
+  <wsdl:message name="IMetadata_GetMetaDataForIdentifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMetaDataForIdentificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetadata_SetResourceMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetResourceMetadata" />
+  </wsdl:message>
+  <wsdl:message name="IMetadata_SetResourceMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetResourceMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetadata_GetResourceMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceMetadata" />
+  </wsdl:message>
+  <wsdl:message name="IMetadata_GetResourceMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceMetadataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IConfig">
+    <wsdl:operation name="GetConfigPanel">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IConfig/GetConfigPanel" message="tns:IConfig_GetConfigPanel_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IConfig/GetConfigPanelResponse" message="tns:IConfig_GetConfigPanel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddConfigPanel">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IConfig/AddConfigPanel" message="tns:IConfig_AddConfigPanel_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IConfig/AddConfigPanelResponse" message="tns:IConfig_AddConfigPanel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteConfigPanel">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IConfig/DeleteConfigPanel" message="tns:IConfig_DeleteConfigPanel_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IConfig/DeleteConfigPanelResponse" message="tns:IConfig_DeleteConfigPanel_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IData">
+    <wsdl:operation name="BatchExecute">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IData/BatchExecute" message="tns:IData_BatchExecute_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IData/BatchExecuteResponse" message="tns:IData_BatchExecute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DiscardResults">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IData/DiscardResults" message="tns:IData_DiscardResults_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Execute">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IData/Execute" message="tns:IData_Execute_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IData/ExecuteResponse" message="tns:IData_Execute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextResultSet">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IData/GetNextResultSet" message="tns:IData_GetNextResultSet_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IData/GetNextResultSetResponse" message="tns:IData_GetNextResultSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResults">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IData/GetResults" message="tns:IData_GetResults_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IData/GetResultsResponse" message="tns:IData_GetResults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBatchItemsk">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IData/RemoveBatchItemsk" message="tns:IData_RemoveBatchItemsk_InputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IDataAccess">
+    <wsdl:operation name="ReadData">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IDataAccess/ReadData" message="tns:IDataAccess_ReadData_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IDataAccess/ReadDataResponse" message="tns:IDataAccess_ReadData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteData">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IDataAccess/WriteData" message="tns:IDataAccess_WriteData_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IDataAccess/WriteDataResponse" message="tns:IDataAccess_WriteData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMetadata">
+    <wsdl:operation name="GetMetaData">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IMetadata/GetMetaData" message="tns:IMetadata_GetMetaData_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IMetadata/GetMetaDataResponse" message="tns:IMetadata_GetMetaData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMetaDataBatch">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IMetadata/GetMetaDataBatch" message="tns:IMetadata_GetMetaDataBatch_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IMetadata/GetMetaDataBatchResponse" message="tns:IMetadata_GetMetaDataBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMethodIdentifications">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IMetadata/GetMethodIdentifications" message="tns:IMetadata_GetMethodIdentifications_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IMetadata/GetMethodIdentificationsResponse" message="tns:IMetadata_GetMethodIdentifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMetaDataForIdentifications">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IMetadata/GetMetaDataForIdentifications" message="tns:IMetadata_GetMetaDataForIdentifications_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IMetadata/GetMetaDataForIdentificationsResponse" message="tns:IMetadata_GetMetaDataForIdentifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetResourceMetadata">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IMetadata/SetResourceMetadata" message="tns:IMetadata_SetResourceMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IMetadata/SetResourceMetadataResponse" message="tns:IMetadata_SetResourceMetadata_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceMetadata">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2009/IMetadata/GetResourceMetadata" message="tns:IMetadata_GetResourceMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2009/IMetadata/GetResourceMetadataResponse" message="tns:IMetadata_GetResourceMetadata_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

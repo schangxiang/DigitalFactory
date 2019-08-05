@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.XmlItems" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.XmlItems" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" />
+  <xs:complexType name="XmlItemList">
+    <xs:sequence>
+      <xs:element name="_attributes" nillable="true" type="tns:ArrayOfXmlItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="XmlItemList" nillable="true" type="tns:XmlItemList" />
+  <xs:complexType name="ArrayOfXmlItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="XmlItem" nillable="true" type="tns:XmlItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfXmlItem" nillable="true" type="tns:ArrayOfXmlItem" />
+  <xs:complexType name="XmlItem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="_item" nillable="true" type="q1:AttrItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="XmlItem" nillable="true" type="tns:XmlItem" />
+  <xs:complexType name="ArrayOfXmlItemList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="XmlItemList" nillable="true" type="tns:XmlItemList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfXmlItemList" nillable="true" type="tns:ArrayOfXmlItemList" />
+</xs:schema>

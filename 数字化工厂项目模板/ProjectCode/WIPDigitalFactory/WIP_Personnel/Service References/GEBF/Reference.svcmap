@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e7fda02c-91e2-4872-88dd-9c291b219daf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IBrilliantFactory.xsd" MetadataType="Schema" ID="960dba34-f6b4-4de4-903f-7cc994a483cd" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd5" />
+    <MetadataFile FileName="IBrilliantFactory1.xsd" MetadataType="Schema" ID="087c2bd2-d421-4bb6-9e9d-318178012fd8" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd20" />
+    <MetadataFile FileName="IBrilliantFactory.wsdl" MetadataType="Wsdl" ID="2611941b-034e-4b80-b13d-3366306d925d" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?wsdl=wsdl1" />
+    <MetadataFile FileName="IBrilliantFactory2.xsd" MetadataType="Schema" ID="76879df6-d81c-4bd0-8665-63c2e166099a" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd3" />
+    <MetadataFile FileName="IBrilliantFactory.disco" MetadataType="Disco" ID="7be56fd7-ad56-48c7-9276-8ad0361e3d2a" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?disco" />
+    <MetadataFile FileName="IBrilliantFactory3.xsd" MetadataType="Schema" ID="43aec379-3a89-4af5-baf4-71893c10d480" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd11" />
+    <MetadataFile FileName="IBrilliantFactory1.wsdl" MetadataType="Wsdl" ID="8340db4e-1d9c-4c47-aae9-ed1a1b029330" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?wsdl=wsdl2" />
+    <MetadataFile FileName="IBrilliantFactory4.xsd" MetadataType="Schema" ID="d9378e03-dea1-4faa-af56-d2e2b1de1589" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd2" />
+    <MetadataFile FileName="IBrilliantFactory5.xsd" MetadataType="Schema" ID="2bed6529-e593-4e07-859f-da67da849874" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd8" />
+    <MetadataFile FileName="IBrilliantFactory6.xsd" MetadataType="Schema" ID="858be1fb-5f04-4f18-ad31-1c5cef2f8383" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd16" />
+    <MetadataFile FileName="IBrilliantFactory7.xsd" MetadataType="Schema" ID="175f9ae2-7297-46a4-9bdc-b40e18d54592" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd6" />
+    <MetadataFile FileName="IBrilliantFactory8.xsd" MetadataType="Schema" ID="a2d5c2a5-d01d-4194-bb0d-cb716038b683" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd4" />
+    <MetadataFile FileName="IBrilliantFactory9.xsd" MetadataType="Schema" ID="80fce42a-f3e6-4ef3-94d4-96c8230a6d69" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd17" />
+    <MetadataFile FileName="IBrilliantFactory10.xsd" MetadataType="Schema" ID="724c2b59-2c94-46ef-a94b-3e0c354a6e77" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd15" />
+    <MetadataFile FileName="IBrilliantFactory11.xsd" MetadataType="Schema" ID="35b46a16-9703-478d-a7c1-be659b64d25d" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd14" />
+    <MetadataFile FileName="IBrilliantFactory12.xsd" MetadataType="Schema" ID="697e4a7b-2b0d-4062-bb9c-1e67a04a5613" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd1" />
+    <MetadataFile FileName="IBrilliantFactory13.xsd" MetadataType="Schema" ID="61a478c2-fd31-466d-8ec2-1e8792318ab3" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd12" />
+    <MetadataFile FileName="IBrilliantFactory14.xsd" MetadataType="Schema" ID="3e3c46c5-e1d9-498e-964a-74f274785a31" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd0" />
+    <MetadataFile FileName="IBrilliantFactory15.xsd" MetadataType="Schema" ID="f39f558e-05c2-4bec-b84e-b85e7506b398" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd10" />
+    <MetadataFile FileName="IBrilliantFactory16.xsd" MetadataType="Schema" ID="90a17bbd-5983-44b3-8404-1f5131686a97" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd13" />
+    <MetadataFile FileName="IBrilliantFactory2.wsdl" MetadataType="Wsdl" ID="d1545d68-b828-4e96-bde7-355976bce03e" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?wsdl=wsdl0" />
+    <MetadataFile FileName="IBrilliantFactory17.xsd" MetadataType="Schema" ID="9c8db6cd-8759-49cd-b88e-c73e104bda7d" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd19" />
+    <MetadataFile FileName="IBrilliantFactory18.xsd" MetadataType="Schema" ID="3b36cb2d-f44a-4994-8c9c-f5c7794eb159" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd9" />
+    <MetadataFile FileName="IBrilliantFactory19.xsd" MetadataType="Schema" ID="815cae65-0929-479c-9fa4-88dbb861b894" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd18" />
+    <MetadataFile FileName="BFServiceProvider.wsdl" MetadataType="Wsdl" ID="3dacc7ce-0354-407e-acc8-8c8440862266" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?wsdl" />
+    <MetadataFile FileName="IBrilliantFactory20.xsd" MetadataType="Schema" ID="63e96d83-2c7f-44ad-9776-3c1ff1204157" SourceId="1" SourceUrl="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

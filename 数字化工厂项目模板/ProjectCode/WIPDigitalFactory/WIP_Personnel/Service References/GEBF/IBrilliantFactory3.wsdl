@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="urn:Proficy:Events:2009" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Proficy:Events:2009" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:Proficy:Events:2009/Imports">
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd5" namespace="urn:Proficy:Events:2009" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Model" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Events" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.MobileObject" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd9" namespace="Proficy.Platform.Core.ProficySystem.Types.Client" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEventSubscriptionCallback_OnSubscriptionStart_InputMessage">
+    <wsdl:part name="parameters" element="tns:OnSubscriptionStart" />
+  </wsdl:message>
+  <wsdl:message name="IEventSubscriptionCallback_OnSubscriptionStart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OnSubscriptionStartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventSubscriptionCallback_OnSubscriptionStop_InputMessage">
+    <wsdl:part name="parameters" element="tns:OnSubscriptionStop" />
+  </wsdl:message>
+  <wsdl:message name="IEventSubscriptionCallback_OnSubscriptionStop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OnSubscriptionStopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventSubscriptionCallback_OnManualTriggerEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:OnManualTriggerEvent" />
+  </wsdl:message>
+  <wsdl:message name="IEventSubscriptionCallback_OnManualTriggerEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OnManualTriggerEventResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEventSubscriptionCallback">
+    <wsdl:operation name="OnSubscriptionStart">
+      <wsdl:input wsaw:Action="urn:Proficy:Events:2009/IEventSubscriptionCallback/OnSubscriptionStart" message="tns:IEventSubscriptionCallback_OnSubscriptionStart_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:Events:2009/IEventSubscriptionCallback/OnSubscriptionStartResponse" message="tns:IEventSubscriptionCallback_OnSubscriptionStart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnSubscriptionStop">
+      <wsdl:input wsaw:Action="urn:Proficy:Events:2009/IEventSubscriptionCallback/OnSubscriptionStop" message="tns:IEventSubscriptionCallback_OnSubscriptionStop_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:Events:2009/IEventSubscriptionCallback/OnSubscriptionStopResponse" message="tns:IEventSubscriptionCallback_OnSubscriptionStop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnManualTriggerEvent">
+      <wsdl:input wsaw:Action="urn:Proficy:Events:2009/IEventSubscriptionCallback/OnManualTriggerEvent" message="tns:IEventSubscriptionCallback_OnManualTriggerEvent_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:Events:2009/IEventSubscriptionCallback/OnManualTriggerEventResponse" message="tns:IEventSubscriptionCallback_OnManualTriggerEvent_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

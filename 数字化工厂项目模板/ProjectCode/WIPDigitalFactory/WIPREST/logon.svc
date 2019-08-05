@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WIP_Personnel.ValidateUser" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>

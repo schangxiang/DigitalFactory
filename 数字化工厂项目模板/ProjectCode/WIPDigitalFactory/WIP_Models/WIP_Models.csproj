@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{45CC6D7C-F2B9-4037-897C-2CC10910CC78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WIP_Models</RootNamespace>
+    <AssemblyName>WIP_Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\WIP_Models.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Akshay.5.0.4\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\PrintAttribute.cs" />
+    <Compile Include="CommonModel\ColumnsModel.cs" />
+    <Compile Include="CommonModel\GreenwichTimeStamp.cs" />
+    <Compile Include="CommonModel\Mail\DescribeModel.cs" />
+    <Compile Include="CommonModel\MethodReturnResultModel.cs" />
+    <Compile Include="CommonModel\PageModel.cs" />
+    <Compile Include="CommonModel\PageResultModel.cs" />
+    <Compile Include="CommonModel\Personnel\LogonResult.cs" />
+    <Compile Include="CommonModel\Personnel\ResourceMenu.cs" />
+    <Compile Include="CommonModel\Personnel\ResourceMenuInfo.cs" />
+    <Compile Include="CommonModel\Personnel\UserInfoLogon.cs" />
+    <Compile Include="CommonModel\Mail\MailModel.cs" />
+    <Compile Include="CommonModel\Excel\ExcelCellModel.cs" />
+    <Compile Include="CommonModel\Excel\ExcelPictureModel.cs" />
+    <Compile Include="CommonModel\Excel\ExcelSheetModel.cs" />
+    <Compile Include="CommonModel\Excel\PrintStruct.cs" />
+    <Compile Include="CommonModel\ProcResultModel.cs" />
+    <Compile Include="CommonModel\PropertyParam.cs" />
+    <Compile Include="CommonModel\PropertyUpdateParam.cs" />
+    <Compile Include="CommonModel\RedisModel.cs" />
+    <Compile Include="CommonModel\RequestType.cs" />
+    <Compile Include="CommonModel\ResCode.cs" />
+    <Compile Include="CommonModel\ResponseUpdaterRet.cs" />
+    <Compile Include="CommonModel\ReturnBody.cs" />
+    <Compile Include="CommonModel\SqlParam.cs" />
+    <Compile Include="CommonModel\TokenInfo.cs" />
+    <Compile Include="CommonModel\TransactionModel.cs" />
+    <Compile Include="CommonModel\UnixTimeStamp.cs" />
+    <Compile Include="CommonModel\ValidateModel.cs" />
+    <Compile Include="CommonModel\ValidateResModel.cs" />
+    <Compile Include="EntityModel\BusinessExceptionMgrEntity.cs" />
+    <Compile Include="EntityModel\CodeItemsEntity.cs" />
+    <Compile Include="EntityModel\CodeSetsEntity.cs" />
+    <Compile Include="EntityModel\ExceptionInfoEntity.cs" />
+    <Compile Include="EntityModel\MailPersonEntity.cs" />
+    <Compile Include="EntityModel\MailRuleEntity.cs" />
+    <Compile Include="EntityModel\PrintConfigEntity.cs" />
+    <Compile Include="EntityModel\PrintInfoEntity.cs" />
+    <Compile Include="EntityModel\RequestRecordEntity.cs" />
+    <Compile Include="EntityModel\UserLoginLogEntity.cs" />
+    <Compile Include="Enum\CommEnum.cs" />
+    <Compile Include="Enum\PrintStatus.cs" />
+    <Compile Include="Enum\PrintType.cs" />
+    <Compile Include="Enum\QAStatus.cs" />
+    <Compile Include="Enum\SerialNoType.cs" />
+    <Compile Include="ParamModel\BaseDataSynParamModel.cs" />
+    <Compile Include="ParamModel\BusinessExceptionMgrParam.cs" />
+    <Compile Include="ParamModel\GetAllCodeItemsByCodeSetParam.cs" />
+    <Compile Include="ParamModel\InspectOrderPrintParam.cs" />
+    <Compile Include="ParamModel\MailParam.cs" />
+    <Compile Include="ParamModel\QualityTaskParam.cs" />
+    <Compile Include="ParamModel\QueryCodeItemsModel.cs" />
+    <Compile Include="ParamModel\QueryCodeSetsModel.cs" />
+    <Compile Include="ParamModel\QueryMailPersonParam.cs" />
+    <Compile Include="ParamModel\QueryPrintConfigParam.cs" />
+    <Compile Include="ParamModel\UpdateMailPersonParam.cs" />
+    <Compile Include="ParamModel\UserPassWordParam.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Struct\BusinessExceptionCode.cs" />
+    <Compile Include="Struct\DisposeStatus.cs" />
+    <Compile Include="Struct\MailCategory.cs" />
+    <Compile Include="Struct\SysCode.cs" />
+    <Compile Include="Struct\Table.cs" />
+    <Compile Include="Struct\WipAuthType.cs" />
+    <Compile Include="Struct\WipSource.cs" />
+    <Compile Include="ViewModel\AuthorizationUserModel.cs" />
+    <Compile Include="ViewModel\BaseDataSynResultModel.cs" />
+    <Compile Include="ViewModel\BusinessExceptionMgrModel.cs" />
+    <Compile Include="ViewModel\CodeSetsModel.cs" />
+    <Compile Include="ViewModel\MailPersonModel.cs" />
+    <Compile Include="ViewModel\PoductionProcessModel.cs" />
+    <Compile Include="ViewModel\PrintConfigModel.cs" />
+    <Compile Include="ViewModel\PrintInfoModel.cs" />
+    <Compile Include="ViewModel\ProcessCardInfoPrintModel.cs" />
+    <Compile Include="ViewModel\PushProcessCardInfoToWCSModel.cs" />
+    <Compile Include="ViewModel\QueryBusinessExceptionMgrModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

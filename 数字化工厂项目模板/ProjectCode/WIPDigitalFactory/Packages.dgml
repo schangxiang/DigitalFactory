@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="6-Service\5-WIP_EurekaHeartbeatService\WIP_EurekaHeartbeatServiceTask" Label="WIP_EurekaHeartbeatServiceTask" Category="项目" />
+    <Node Id="Common.Logging 3.3.1" Label="Common.Logging 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Core 3.3.1" Label="Common.Logging.Core 3.3.1" Category="包" />
+    <Node Id="log4net 2.0.3" Label="log4net 2.0.3" Category="包" />
+    <Node Id="Quartz 2.6.2" Label="Quartz 2.6.2" Category="包" />
+    <Node Id="6-Service\5-WIP_EurekaHeartbeatService\WIP_EurekaHeartbeatService" Label="WIP_EurekaHeartbeatService" Category="项目" />
+    <Node Id="Common.Logging 3.3.1" Label="Common.Logging 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Core 3.3.1" Label="Common.Logging.Core 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Log4Net1213 3.3.1" Label="Common.Logging.Log4Net1213 3.3.1" Category="包" />
+    <Node Id="log4net 2.0.3" Label="log4net 2.0.3" Category="包" />
+    <Node Id="Quartz 2.6.2" Label="Quartz 2.6.2" Category="包" />
+    <Node Id="6-Service\4-IssueOutStoreTaskService\WIP_IssueOutStoreTaskService" Label="WIP_IssueOutStoreTaskService" Category="项目" />
+    <Node Id="Common.Logging 3.3.1" Label="Common.Logging 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Core 3.3.1" Label="Common.Logging.Core 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Log4Net1213 3.3.1" Label="Common.Logging.Log4Net1213 3.3.1" Category="包" />
+    <Node Id="log4net 2.0.3" Label="log4net 2.0.3" Category="包" />
+    <Node Id="6-Service\3-IssueService\WIP_IssueScheduleTaskService" Label="WIP_IssueScheduleTaskService" Category="项目" />
+    <Node Id="Common.Logging 3.3.1" Label="Common.Logging 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Core 3.3.1" Label="Common.Logging.Core 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Log4Net1213 3.3.1" Label="Common.Logging.Log4Net1213 3.3.1" Category="包" />
+    <Node Id="log4net 2.0.3" Label="log4net 2.0.3" Category="包" />
+    <Node Id="6-Service\2-PrintService\WIP_PrintService" Label="WIP_PrintService" Category="项目" />
+    <Node Id="Common.Logging 3.3.1" Label="Common.Logging 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Core 3.3.1" Label="Common.Logging.Core 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Log4Net1213 3.3.1" Label="Common.Logging.Log4Net1213 3.3.1" Category="包" />
+    <Node Id="log4net 2.0.3" Label="log4net 2.0.3" Category="包" />
+    <Node Id="6-Service\2-PrintService\WIP_PrintClient" Label="WIP_PrintClient" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="6-Service\1-QuartzService\WIP_QuartzTask" Label="WIP_QuartzTask" Category="项目" />
+    <Node Id="Common.Logging 3.3.1" Label="Common.Logging 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Core 3.3.1" Label="Common.Logging.Core 3.3.1" Category="包" />
+    <Node Id="log4net 2.0.3" Label="log4net 2.0.3" Category="包" />
+    <Node Id="Quartz 2.6.2" Label="Quartz 2.6.2" Category="包" />
+    <Node Id="6-Service\1-QuartzService\WIP_QuartzService" Label="WIP_QuartzService" Category="项目" />
+    <Node Id="Common.Logging 3.3.1" Label="Common.Logging 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Core 3.3.1" Label="Common.Logging.Core 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Log4Net1213 3.3.1" Label="Common.Logging.Log4Net1213 3.3.1" Category="包" />
+    <Node Id="log4net 2.0.3" Label="log4net 2.0.3" Category="包" />
+    <Node Id="Quartz 2.6.2" Label="Quartz 2.6.2" Category="包" />
+    <Node Id="8-UnitTest\WIP_Test" Label="WIP_Test" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="8-UnitTest\WIP_InterFaceTestForm" Label="WIP_InterFaceTestForm" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="5-Common\WIP_common" Label="WIP_common" Category="项目" />
+    <Node Id="Common.Logging 3.3.1" Label="Common.Logging 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Core 3.3.1" Label="Common.Logging.Core 3.3.1" Category="包" />
+    <Node Id="Common.Logging.Log4Net1213 3.3.1" Label="Common.Logging.Log4Net1213 3.3.1" Category="包" />
+    <Node Id="log4net 2.0.3" Label="log4net 2.0.3" Category="包" />
+    <Node Id="Microsoft.IdentityModel.JsonWebTokens 5.2.4" Label="Microsoft.IdentityModel.JsonWebTokens 5.2.4" Category="包" />
+    <Node Id="Microsoft.IdentityModel.Logging 5.2.4" Label="Microsoft.IdentityModel.Logging 5.2.4" Category="包" />
+    <Node Id="Microsoft.IdentityModel.Tokens 5.2.4" Label="Microsoft.IdentityModel.Tokens 5.2.4" Category="包" />
+    <Node Id="System.IdentityModel.Tokens.Jwt 5.2.4" Label="System.IdentityModel.Tokens.Jwt 5.2.4" Category="包" />
+    <Node Id="5-Common\WIP_Print" Label="WIP_Print" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="4-Infrastructure\WIP_Models" Label="WIP_Models" Category="项目" />
+    <Node Id="Newtonsoft.Json.Akshay 5.0.4" Label="Newtonsoft.Json.Akshay 5.0.4" Category="包" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="4-Infrastructure\WIP_DAL" Label="WIP_DAL" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="3-BussinessLogic\WIP_BLL" Label="WIP_BLL" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="2-Application\WIP_QAMSIntegr" Label="WIP_QAMSIntegr" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="2-Application\WIP_Personnel" Label="WIP_Personnel" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="2-Application\WIP_WCSIntegr" Label="WIP_WCSIntegr" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="2-Application\WIP_BasicInfo" Label="WIP_BasicInfo" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="2-Application\WIP_TaskExecute" Label="WIP_TaskExecute" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="2-Application\WIP_RCSIntegr" Label="WIP_RCSIntegr" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="2-Application\WIP_ECMIntegr" Label="WIP_ECMIntegr" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="2-Application\WIP_PlanManagement" Label="WIP_PlanManagement" Category="项目" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+    <Node Id="2-Application\WIP_MES" Label="WIP_MES" Category="项目" />
+    <Node Id="NPOI 2.3.0" Label="NPOI 2.3.0" Category="包" />
+    <Node Id="SharpZipLib 0.86.0" Label="SharpZipLib 0.86.0" Category="包" />
+    <Node Id="Newtonsoft.Json 10.0.1" Label="Newtonsoft.Json 10.0.1" Category="包" />
+  </Nodes>
+  <Links>
+    <Link Source="Common.Logging 3.3.1" Target="Common.Logging.Core 3.3.1" Category="程序包依赖项" />
+    <Link Source="Quartz 2.6.2" Target="Common.Logging 3.3.1" Category="程序包依赖项" />
+    <Link Source="6-Service\5-WIP_EurekaHeartbeatService\WIP_EurekaHeartbeatServiceTask" Target="log4net 2.0.3" Category="安装的程序包" />
+    <Link Source="6-Service\5-WIP_EurekaHeartbeatService\WIP_EurekaHeartbeatServiceTask" Target="Quartz 2.6.2" Category="安装的程序包" />
+    <Link Source="Common.Logging 3.3.1" Target="Common.Logging.Core 3.3.1" Category="程序包依赖项" />
+    <Link Source="Common.Logging.Log4Net1213 3.3.1" Target="Common.Logging 3.3.1" Category="程序包依赖项" />
+    <Link Source="Common.Logging.Log4Net1213 3.3.1" Target="log4net 2.0.3" Category="程序包依赖项" />
+    <Link Source="Quartz 2.6.2" Target="Common.Logging 3.3.1" Category="程序包依赖项" />
+    <Link Source="6-Service\5-WIP_EurekaHeartbeatService\WIP_EurekaHeartbeatService" Target="Common.Logging.Log4Net1213 3.3.1" Category="安装的程序包" />
+    <Link Source="6-Service\5-WIP_EurekaHeartbeatService\WIP_EurekaHeartbeatService" Target="Quartz 2.6.2" Category="安装的程序包" />
+    <Link Source="Common.Logging 3.3.1" Target="Common.Logging.Core 3.3.1" Category="程序包依赖项" />
+    <Link Source="Common.Logging.Log4Net1213 3.3.1" Target="Common.Logging 3.3.1" Category="程序包依赖项" />
+    <Link Source="Common.Logging.Log4Net1213 3.3.1" Target="log4net 2.0.3" Category="程序包依赖项" />
+    <Link Source="6-Service\4-IssueOutStoreTaskService\WIP_IssueOutStoreTaskService" Target="Common.Logging.Log4Net1213 3.3.1" Category="安装的程序包" />
+    <Link Source="Common.Logging 3.3.1" Target="Common.Logging.Core 3.3.1" Category="程序包依赖项" />
+    <Link Source="Common.Logging.Log4Net1213 3.3.1" Target="Common.Logging 3.3.1" Category="程序包依赖项" />
+    <Link Source="Common.Logging.Log4Net1213 3.3.1" Target="log4net 2.0.3" Category="程序包依赖项" />
+    <Link Source="6-Service\3-IssueService\WIP_IssueScheduleTaskService" Target="Common.Logging.Log4Net1213 3.3.1" Category="安装的程序包" />
+    <Link Source="Common.Logging 3.3.1" Target="Common.Logging.Core 3.3.1" Category="程序包依赖项" />
+    <Link Source="Common.Logging.Log4Net1213 3.3.1" Target="Common.Logging 3.3.1" Category="程序包依赖项" />
+    <Link Source="Common.Logging.Log4Net1213 3.3.1" Target="log4net 2.0.3" Category="程序包依赖项" />
+    <Link Source="6-Service\2-PrintService\WIP_PrintService" Target="Common.Logging.Log4Net1213 3.3.1" Category="安装的程序包" />
+    <Link Source="6-Service\2-PrintService\WIP_PrintClient" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="Common.Logging 3.3.1" Target="Common.Logging.Core 3.3.1" Category="程序包依赖项" />
+    <Link Source="Quartz 2.6.2" Target="Common.Logging 3.3.1" Category="程序包依赖项" />
+    <Link Source="6-Service\1-QuartzService\WIP_QuartzTask" Target="log4net 2.0.3" Category="安装的程序包" />
+    <Link Source="6-Service\1-QuartzService\WIP_QuartzTask" Target="Quartz 2.6.2" Category="安装的程序包" />
+    <Link Source="Common.Logging 3.3.1" Target="Common.Logging.Core 3.3.1" Category="程序包依赖项" />
+    <Link Source="Common.Logging.Log4Net1213 3.3.1" Target="Common.Logging 3.3.1" Category="程序包依赖项" />
+    <Link Source="Common.Logging.Log4Net1213 3.3.1" Target="log4net 2.0.3" Category="程序包依赖项" />
+    <Link Source="Quartz 2.6.2" Target="Common.Logging 3.3.1" Category="程序包依赖项" />
+    <Link Source="6-Service\1-QuartzService\WIP_QuartzService" Target="Common.Logging.Log4Net1213 3.3.1" Category="安装的程序包" />
+    <Link Source="6-Service\1-QuartzService\WIP_QuartzService" Target="Quartz 2.6.2" Category="安装的程序包" />
+    <Link Source="8-UnitTest\WIP_Test" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="8-UnitTest\WIP_InterFaceTestForm" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="Common.Logging 3.3.1" Target="Common.Logging.Core 3.3.1" Category="程序包依赖项" />
+    <Link Source="Common.Logging.Log4Net1213 3.3.1" Target="Common.Logging 3.3.1" Category="程序包依赖项" />
+    <Link Source="Common.Logging.Log4Net1213 3.3.1" Target="log4net 2.0.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.IdentityModel.JsonWebTokens 5.2.4" Target="Microsoft.IdentityModel.Tokens 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.IdentityModel.JsonWebTokens 5.2.4" Target="Microsoft.IdentityModel.Tokens 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.IdentityModel.JsonWebTokens 5.2.4" Target="Microsoft.IdentityModel.Tokens 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.IdentityModel.Tokens 5.2.4" Target="Microsoft.IdentityModel.Logging 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.IdentityModel.Tokens 5.2.4" Target="Microsoft.IdentityModel.Logging 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.IdentityModel.Tokens 5.2.4" Target="Microsoft.IdentityModel.Logging 5.2.4" Category="程序包依赖项" />
+    <Link Source="System.IdentityModel.Tokens.Jwt 5.2.4" Target="Microsoft.IdentityModel.JsonWebTokens 5.2.4" Category="程序包依赖项" />
+    <Link Source="System.IdentityModel.Tokens.Jwt 5.2.4" Target="Microsoft.IdentityModel.Tokens 5.2.4" Category="程序包依赖项" />
+    <Link Source="System.IdentityModel.Tokens.Jwt 5.2.4" Target="Microsoft.IdentityModel.JsonWebTokens 5.2.4" Category="程序包依赖项" />
+    <Link Source="System.IdentityModel.Tokens.Jwt 5.2.4" Target="Microsoft.IdentityModel.Tokens 5.2.4" Category="程序包依赖项" />
+    <Link Source="System.IdentityModel.Tokens.Jwt 5.2.4" Target="Microsoft.IdentityModel.JsonWebTokens 5.2.4" Category="程序包依赖项" />
+    <Link Source="System.IdentityModel.Tokens.Jwt 5.2.4" Target="Microsoft.IdentityModel.Tokens 5.2.4" Category="程序包依赖项" />
+    <Link Source="5-Common\WIP_common" Target="Common.Logging.Log4Net1213 3.3.1" Category="安装的程序包" />
+    <Link Source="5-Common\WIP_common" Target="System.IdentityModel.Tokens.Jwt 5.2.4" Category="安装的程序包" />
+    <Link Source="5-Common\WIP_Print" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="4-Infrastructure\WIP_Models" Target="Newtonsoft.Json.Akshay 5.0.4" Category="安装的程序包" />
+    <Link Source="4-Infrastructure\WIP_Models" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="4-Infrastructure\WIP_DAL" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="3-BussinessLogic\WIP_BLL" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="2-Application\WIP_QAMSIntegr" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="2-Application\WIP_Personnel" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="2-Application\WIP_WCSIntegr" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="2-Application\WIP_BasicInfo" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="2-Application\WIP_TaskExecute" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="2-Application\WIP_RCSIntegr" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="2-Application\WIP_ECMIntegr" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="2-Application\WIP_PlanManagement" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+    <Link Source="NPOI 2.3.0" Target="SharpZipLib 0.86.0" Category="程序包依赖项" />
+    <Link Source="2-Application\WIP_MES" Target="NPOI 2.3.0" Category="安装的程序包" />
+    <Link Source="2-Application\WIP_MES" Target="Newtonsoft.Json 10.0.1" Category="安装的程序包" />
+  </Links>
+  <Categories>
+    <Category Id="项目" />
+    <Category Id="包" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="项目" ValueLabel="True">
+      <Condition Expression="HasCategory('项目')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="程序包依赖项" ValueLabel="True">
+      <Condition Expression="HasCategory('程序包依赖项')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

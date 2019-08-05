@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{391980FA-F367-4AC2-9DD7-2070300D2BC4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BrilliantFactory.ServiceProvider</RootNamespace>
+    <AssemblyName>BrilliantFactory.ServiceProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Proficy.OpenEnterprise.Types">
+      <HintPath>..\..\ProficyDLL\Proficy.OpenEnterprise.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.PFM.Solutions.Common.Interfaces">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Applications\PFMCommon\Proficy.PFM.Solutions.Common.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.PFM.Solutions.DocMgmt.Interfaces">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Applications\DocumentManagement\Proficy.PFM.Solutions.DocMgmt.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.PFM.Solutions.QM.Interfaces">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Applications\QualificationMgmt\Proficy.PFM.Solutions.QM.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.PFM.Solutions.QualityForms.Interfaces">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Applications\QualityForms\Proficy.PFM.Solutions.QualityForms.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.PFM.Solutions.QualityForms.ServiceProvider">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Applications\QualityForms\Proficy.PFM.Solutions.QualityForms.ServiceProvider.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.PFM.Solutions.Route.Interfaces">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Applications\Route\Proficy.PFM.Solutions.Route.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.PFM.Solutions.Route.Model">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Applications\Route\Proficy.PFM.Solutions.Route.Model.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.PFM.Solutions.Route.Service">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Applications\Route\Proficy.PFM.Solutions.Route.Service.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Core.ClientTools.Interfaces.IServiceDirectory">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Core.ClientTools.Interfaces.IServiceDirectory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Core.ClientTools.ServiceDirectory">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Core.ClientTools.ServiceDirectory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Core.Diagnostics.Log">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Core.Diagnostics.Log.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Core.Dms.Dmfc">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Core.Dms.Dmfc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Core.DOR">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Core.DOR.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Core.Events">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Core.Events.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Core.Events.Interface">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Core.Events.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Core.Events.Manager">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Core.Events.Manager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Core.ProficySystem">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Core.ProficySystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Core.ProficySystem.Crypto">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Core.ProficySystem.Crypto.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Core.Server.Interfaces.IServiceControl">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Core.Server.Interfaces.IServiceControl.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Models.ClientElement.Model">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Models.ClientElement.Model.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Models.Material.Model">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Models.Material.Model.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Models.Production.Common">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Models.Production.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Models.Production.Model">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Models.Production.Model.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.ServiceModel">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.ServiceModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Services.Database.Interfaces">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Services.Database.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Services.Directory.IDirectoryPublish">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Services.Directory.IDirectoryPublish.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Services.Equipment">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Services.Equipment.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Services.Equipment.Interfaces">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Services.Equipment.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Services.Material.Interfaces">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Services.Material.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Services.Material.ServiceProvider">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Services.Material.ServiceProvider.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Services.Navigation.Interfaces">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Services.Navigation.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Services.Personnel.Interfaces">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Services.Personnel.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Services.Production.Common">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Services.Production.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Proficy.Platform.Services.Production.Interfaces">
+      <HintPath>C:\Program Files\Proficy\Proficy Workflow\Program\Proficy.Platform.Services.Production.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BFServiceProvider.cs" />
+    <Compile Include="BFServiceProvider.Material.cs" />
+    <Compile Include="BFServiceProvider.Personal.cs" />
+    <Compile Include="Managers\BFHelper.cs" />
+    <Compile Include="Managers\DatabaseManager.cs" />
+    <Compile Include="Managers\EquipmentManager.cs" />
+    <Compile Include="Managers\MaterialDefinitionManager.cs" />
+    <Compile Include="Managers\MaterialLotManager.cs" />
+    <Compile Include="Managers\PersonnelManager.cs" />
+    <Compile Include="Managers\ServiceDirectoryManager.cs" />
+    <Compile Include="Managers\SocketHelp.cs" />
+    <Compile Include="Managers\WorkRequestManager.cs" />
+    <Compile Include="Managers\WorkResponseManager.cs" />
+    <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\WorkOrder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BrilliantFactory.DataModel\BrilliantFactory.DataModel.csproj">
+      <Project>{c947494c-7fc9-4589-9bd0-652cf1c4cd12}</Project>
+      <Name>BrilliantFactory.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrilliantFactory.Interfaces\BrilliantFactory.Interfaces.csproj">
+      <Project>{9be0c25e-1623-4fa1-8398-15f9b0ef178b}</Project>
+      <Name>BrilliantFactory.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BFServiceProvider.Equipment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

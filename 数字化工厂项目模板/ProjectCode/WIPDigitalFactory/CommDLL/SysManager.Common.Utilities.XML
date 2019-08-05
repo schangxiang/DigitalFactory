@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SysManager.Common.Utilities</name>
+    </assembly>
+    <members>
+        <member name="T:SysManager.Common.Utilities.ConfigHelper">
+            <summary>
+            配置帮助类
+            </summary>
+        </member>
+        <member name="M:SysManager.Common.Utilities.ConfigHelper.GetValue(System.String)">
+            <summary>
+            根据Key取Value值
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="T:SysManager.Common.Utilities.DESEncryptHelper">
+            <summary>
+            DES加密/解密类。
+            </summary>
+        </member>
+        <member name="M:SysManager.Common.Utilities.DESEncryptHelper.Encrypt(System.String)">
+            <summary>
+            加密数据
+            </summary>
+            <param name="Text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.DESEncryptHelper.Decrypt(System.String)">
+            <summary>
+            解密数据
+            </summary>
+            <param name="Text"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SysManager.Common.Utilities.CommonHelper">
+            <summary>
+            公共帮助类
+            </summary>
+        </member>
+        <member name="M:SysManager.Common.Utilities.CommonHelper.T1ToT2``2(``0)">
+            <summary>
+            对象互转
+            </summary>
+            <typeparam name="T1">原对象</typeparam>
+            <typeparam name="T2">新对象</typeparam>
+            <param name="param">原对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.CommonHelper.ListToDataTable``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            List转换DataTable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SysManager.Common.Utilities.DateTimeHelper">
+            <summary>
+            日期帮助类
+            </summary>
+        </member>
+        <member name="M:SysManager.Common.Utilities.DateTimeHelper.GetNow">
+            <summary>
+            获取当前时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.DateTimeHelper.ForamtCurDateTime">
+            <summary>
+            格式化当前日期成字符串(yyyy-MM-dd HH:mm:ss)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.DateTimeHelper.ForamtCurDateTimeWithF">
+            <summary>
+            格式化当前日期成字符串(到毫秒的小数精度为七位。其余数字被截断。)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.DateTimeHelper.FormatDateTime(System.Nullable{System.DateTime})">
+            <summary>
+            格式化日期成字符串(yyyy-MM-dd HH:mm:ss)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.DateTimeHelper.FormatDateTimePreciseToFFF(System.Nullable{System.DateTime})">
+            <summary>
+            格式化日期成字符串(yyyy-MM-dd HH:mm:ss:fff)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.DateTimeHelper.FormatDateTimeToyyyyMMdd(System.Nullable{System.DateTime})">
+            <summary>
+            格式化日期成字符串(yyyyMMdd hh:mm:ss)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SysManager.Common.Utilities.EnumHelper">
+            <summary>
+            枚举帮助类
+            </summary>
+        </member>
+        <member name="M:SysManager.Common.Utilities.EnumHelper.EnumToList``1">
+            <summary>
+            枚举转集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.EnumHelper.GetEnumDescription(System.Enum)">
+            <summary>
+            获取枚举的描述属性
+            </summary>
+            <param name="en">枚举值</param>
+            <returns>枚举的描述属性</returns>
+        </member>
+        <member name="T:SysManager.Common.Utilities.EnumberEntity">
+            <summary>
+            枚举实体类
+            </summary>
+        </member>
+        <member name="P:SysManager.Common.Utilities.EnumberEntity.Desction">
+            <summary>  
+            枚举的描述  
+            </summary>  
+        </member>
+        <member name="P:SysManager.Common.Utilities.EnumberEntity.EnumName">
+            <summary>  
+            枚举名称  
+            </summary>  
+        </member>
+        <member name="P:SysManager.Common.Utilities.EnumberEntity.EnumValue">
+            <summary>  
+            枚举对象的值  
+            </summary>  
+        </member>
+        <member name="T:SysManager.Common.Utilities.StringHelper">
+            <summary>
+            字符串帮助
+            </summary>
+        </member>
+        <member name="M:SysManager.Common.Utilities.StringHelper.StringCompareWithIgnoreCase(System.String,System.String)">
+            <summary>
+            比较两个字符串是否相等，不区分大小写
+            </summary>
+            <param name="strA"></param>
+            <param name="strB"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.StringHelper.NullToEmpty(System.String)">
+            <summary>
+            Null值转Empty
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SysManager.Common.Utilities.UnixTimeStampHelper">
+            <summary>
+            UNIX时间戳帮助类
+            </summary>
+        </member>
+        <member name="M:SysManager.Common.Utilities.UnixTimeStampHelper.GetUnixTimeStamp(SysManager.Common.Utilities.TimeZoneType,SysManager.Common.Utilities.TimeSpanPrecisionType)">
+            <summary>
+            当前时间生成Unix时间戳
+            </summary>
+            <param name="timeZoneType">时区类型</param>
+            <param name="timeSpanPrecisionType">时间戳精度类型</param>
+            <returns>Unix时间戳</returns>
+        </member>
+        <member name="T:SysManager.Common.Utilities.TimeSpanPrecisionType">
+            <summary>
+            时间戳精度类型
+            </summary>
+        </member>
+        <member name="F:SysManager.Common.Utilities.TimeSpanPrecisionType.Milliseconds">
+            <summary>
+            毫秒
+            </summary>
+        </member>
+        <member name="F:SysManager.Common.Utilities.TimeSpanPrecisionType.Seconds">
+            <summary>
+            秒
+            </summary>
+        </member>
+        <member name="T:SysManager.Common.Utilities.TimeZoneType">
+            <summary>
+            时区类型
+            </summary>
+        </member>
+        <member name="F:SysManager.Common.Utilities.TimeZoneType.EasEightArea">
+            <summary>
+            东八区
+            </summary>
+        </member>
+        <member name="F:SysManager.Common.Utilities.TimeZoneType.ZeroTimeZone">
+            <summary>
+            零时区(格林威治时间)
+            </summary>
+        </member>
+        <member name="T:SysManager.Common.Utilities.HTTPHelper">
+            <summary>
+            HTTP请求帮助类
+            </summary>
+        </member>
+        <member name="M:SysManager.Common.Utilities.HTTPHelper.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="baseURI">请求地址</param>
+        </member>
+        <member name="M:SysManager.Common.Utilities.HTTPHelper.getContent``1(System.String,System.Guid,System.Int32)">
+            <summary>
+            通过GET方法调用HTTP服务
+            </summary>
+            <typeparam name="T">入参类型</typeparam>
+            <param name="url">服务地址</param>
+            <param name="requestId">发起请求的行为标识</param>
+            <param name="timeout">超时时间，单位：秒，默认为30秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.HTTPHelper.getContentForString(System.String,System.Guid,System.Int32)">
+            <summary>
+            通过GET方法调用HTTP服务
+            </summary>
+            <param name="url">服务地址</param>
+            <param name="requestId">发起请求的行为标识</param>
+            <param name="timeout">超时时间，单位：秒，默认为30秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.HTTPHelper.postContent``2(System.String,``0,System.Guid,System.Int32)">
+            <summary>
+            通过POST方法调用HTTP服务
+            </summary>
+            <typeparam name="T">入参类型</typeparam>
+            <typeparam name="T2">出参类型</typeparam>
+            <param name="url">服务地址</param>
+            <param name="parameter">入参</param>
+            <param name="requestId">发起请求的行为标识</param>
+            <param name="timeout">超时时间，单位：秒，默认为30秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.HTTPHelper.postContentForString(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Guid,System.Int32)">
+            <summary>
+            通过POST方法调用HTTP服务
+            </summary>
+            <param name="url">服务地址</param>
+            <param name="parameter">入参</param>
+            <param name="requestId">发起请求的行为标识</param>
+            <param name="timeout">超时时间，单位：秒，默认为30秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.HTTPHelper.postContentForString(System.String,System.String,System.Guid,System.Int32)">
+            <summary>
+            通过POST方法调用HTTP服务
+            </summary>
+            <param name="url">服务地址</param>
+            <param name="parameter">入参字符串</param>
+            <param name="requestId">发起请求的行为标识</param>
+            <param name="timeout">超时时间，单位：秒，默认为30秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.HTTPHelper.postContentForStringWithToken(System.String,System.String,System.Guid,System.String,System.Int32)">
+            <summary>
+            通过POST方法调用HTTP服务
+            </summary>
+            <param name="url">服务地址</param>
+            <param name="parameter">入参字符串</param>
+            <param name="requestId">发起请求的行为标识</param>
+            <param name="token">令牌</param>
+            <param name="timeout">超时时间，单位：秒，默认为30秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.HTTPHelper.putContent``2(System.String,``0,System.Guid,System.Int32)">
+            <summary>
+            通过PUT方法调用HTTP服务
+            </summary>
+            <typeparam name="T">入参类型</typeparam>
+            <typeparam name="T2">出参类型</typeparam>
+            <param name="url">服务地址</param>
+            <param name="parameter">入参</param>
+            <param name="requestId">发起请求的行为标识</param>
+            <param name="timeout">超时时间，单位：秒，默认为30秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.HTTPHelper.putContentForString(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Guid,System.Int32)">
+            <summary>
+            通过PUT方法调用HTTP服务
+            </summary>
+            <param name="url">服务地址</param>
+            <param name="parameter">入参</param>
+            <param name="requestId">发起请求的行为标识</param>
+            <param name="timeout">超时时间，单位：秒，默认为30秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.Common.Utilities.HTTPHelper.putContentForString(System.String,System.String,System.Guid,System.Int32)">
+            <summary>
+            通过POST方法调用HTTP服务
+            </summary>
+            <param name="url">服务地址</param>
+            <param name="parameter">入参字符串</param>
+            <param name="requestId">发起请求的行为标识</param>
+            <param name="timeout">超时时间，单位：秒，默认为30秒</param>
+            <returns></returns>
+        </member>
+        <member name="T:SysManager.Common.Utilities.Log4netHelper">
+            <summary>
+            Log4net帮助类
+            </summary>
+        </member>
+        <member name="M:SysManager.Common.Utilities.Log4netHelper.WriteErrorLogByLog4Net(System.Type,System.String,System.Exception)">
+            <summary>
+             输出异常日志到Log4Net
+            </summary>
+            <param name="t">类型</param>
+            <param name="msg">错误信息</param>
+            <param name="ex">异常对象</param>
+        </member>
+        <member name="M:SysManager.Common.Utilities.Log4netHelper.WriteInfoLogByLog4Net(System.Type,System.String)">
+            <summary>
+            输出info日志到Log4Net
+            </summary>
+            <param name="t"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="T:SysManager.Common.Utilities.SMTPHelper">
+            <summary>
+            邮件帮助类
+            </summary>
+        </member>
+        <member name="M:SysManager.Common.Utilities.SMTPHelper.MailSending(SysManager.Common.Utilities.MailBaseData,System.String,System.String,System.String,System.String)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="_MailBaseData">邮件基础对象</param>
+            <param name="recipientsAddressRange">邮件收件人集合</param>
+            <param name="MailSubject">邮件标题</param>
+            <param name="Describe">内容</param>
+            <param name="File_Path">附件</param>
+            <returns></returns>
+        </member>
+        <member name="T:SysManager.Common.Utilities.MailBaseData">
+            <summary>
+            邮箱基础数据
+            </summary>
+        </member>
+        <member name="P:SysManager.Common.Utilities.MailBaseData.mailAddress">
+            <summary>
+            邮箱发件人地址
+            </summary>
+        </member>
+        <member name="P:SysManager.Common.Utilities.MailBaseData.mailDisplayName">
+            <summary>
+            邮箱发件人地址的显示名
+            </summary>
+        </member>
+        <member name="P:SysManager.Common.Utilities.MailBaseData.mailHost">
+            <summary>
+            SMTP 事务的主机的名称或 IP 地址
+            </summary>
+        </member>
+        <member name="P:SysManager.Common.Utilities.MailBaseData.mailPort">
+            <summary>
+            SMTP 事务的主机的端口号
+            </summary>
+        </member>
+        <member name="P:SysManager.Common.Utilities.MailBaseData.mailPwd">
+            <summary>
+            邮箱密码(加密)
+            </summary>
+        </member>
+    </members>
+</doc>

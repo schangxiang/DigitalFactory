@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" />
+  <xs:complexType name="ReadRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="_attributeNames" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="_filters" nillable="true" type="q2:ArrayOfParameter" />
+      <xs:element minOccurs="0" name="_itemAddress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReadRequest" nillable="true" type="tns:ReadRequest" />
+  <xs:complexType name="ReadResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_dataTable" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="_dataValue" nillable="true" type="q3:DataValue" />
+      <xs:element minOccurs="0" name="_isDataTable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="_tableTruncated" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReadResult" nillable="true" type="tns:ReadResult" />
+  <xs:complexType name="WriteRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ReadRequest">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="_attributeValues" nillable="true" type="q4:ArrayOfDataValue" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WriteRequest" nillable="true" type="tns:WriteRequest" />
+  <xs:complexType name="ConstructionParametersFactory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ParameterTypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConstructionParametersFactory" nillable="true" type="tns:ConstructionParametersFactory" />
+</xs:schema>

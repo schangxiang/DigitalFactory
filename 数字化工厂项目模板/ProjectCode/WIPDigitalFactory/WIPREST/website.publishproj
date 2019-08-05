@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+***********************************************************************************************
+website.publishproj
+
+警告: 请勿修改此文件，它将用于 Web 发布过程。
+
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+***********************************************************************************************
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9ed3333c-24ac-42e5-8485-590cb46359e9}</ProjectGuid>
+    <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
+    <SourceWebVirtualPath>/WIPREST</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SourceWebProject>http://localhost:44501</SourceWebProject>
+    <SourceWebMetabasePath>/IISExpress/7.5/LM/W3SVC/67/ROOT</SourceWebMetabasePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- for VS2010 we need to use 10.5 but for VS2012+ we should use VisualStudioVersion -->
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)' =='' and '$(VisualStudioVersion)' == 10.0 ">10.5</WebPublishTargetsVersion>
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)'=='' ">$(VisualStudioVersion)</WebPublishTargetsVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(WebPublishTargetsVersion)</VSToolsPath>
+    <_WebPublishTargetsPath Condition=" '$(_WebPublishTargetsPath)'=='' ">$(VSToolsPath)</_WebPublishTargetsPath>
+    <AssemblyFileVersion Condition="'$(AssemblyFileVersion)' == ''">1.0.0.0</AssemblyFileVersion>
+    <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WIP_BasicInfo\WIP_BasicInfo.csproj">
+      <Project>{49F1349C-9C11-4474-983E-E3B7B3B7DCE3}</Project>
+      <Name>WIP_BasicInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_BLL\WIP_BLL.csproj">
+      <Project>{C4A8F076-DD3A-42D6-859A-CFB4A1C197C7}</Project>
+      <Name>WIP_BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_common\WIP_common.csproj">
+      <Project>{1103472D-6A5C-4135-B359-0DFC72E71533}</Project>
+      <Name>WIP_common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_DAL\WIP_DAL.csproj">
+      <Project>{A6A4C9FD-A504-4B5C-B2E4-33AC03002212}</Project>
+      <Name>WIP_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_IBLL\WIP_IBLL.csproj">
+      <Project>{264DFCF5-688F-4351-84EE-7B2B73A782A9}</Project>
+      <Name>WIP_IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_MES\WIP_MES.csproj">
+      <Project>{5693C3EF-526E-4BAC-8CD1-104F8791089D}</Project>
+      <Name>WIP_MES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_Models\WIP_Models.csproj">
+      <Project>{45CC6D7C-F2B9-4037-897C-2CC10910CC78}</Project>
+      <Name>WIP_Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_Personnel\WIP_Personnel.csproj">
+      <Project>{C31A07C2-7EE8-4007-8972-0F05D2642811}</Project>
+      <Name>WIP_Personnel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_PFMD\WIP_PFMD.csproj">
+      <Project>{DDDFBA2A-F77A-4584-8D36-60F46BE0C3F3}</Project>
+      <Name>WIP_PFMD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_Print\WIP_Print.csproj">
+      <Project>{B0AD1F34-4C94-4CA8-9F14-823FF09E7876}</Project>
+      <Name>WIP_Print</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_Test\WIP_Test.csproj">
+      <Project>{AFACC1CB-80B6-4F07-B59B-37D308B4AD35}</Project>
+      <Name>WIP_Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_WIPMgmt\WIP_WIPMgmt.csproj">
+      <Project>{D73BA92C-053B-461D-A7E6-01347A41C30C}</Project>
+      <Name>WIP_WIPMgmt</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(_WebPublishTargetsPath)\Web\Microsoft.WebSite.Publishing.targets" />
+</Project>

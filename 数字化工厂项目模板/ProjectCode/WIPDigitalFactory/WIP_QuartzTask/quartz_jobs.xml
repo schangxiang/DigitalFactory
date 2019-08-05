@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains job definitions in schema version 2.0 format -->
+
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+
+  <schedule>
+    <!--AfterHotExceptionInventoryDataJob Job-->
+    <job>
+      <name>AfterHotExceptionInventoryDataJob</name>
+      <group>AfterHotExceptionInventoryDataJobGroup</group>
+      <description>每天上午8点执行热后库中超过指定时间还是待检状态的库存统计数据</description>
+      <job-type>WIP_QuartzTask.AfterHotExceptionInventoryDataJob,WIP_QuartzTask</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <!--AfterHotExceptionInventoryDataJob 触发器-->
+    <trigger>
+      <cron>
+        <name>AfterHotExceptionInventoryDataJobTrigger</name>
+        <group>AfterHotExceptionInventoryDataJobTriggerGroup</group>
+        <job-name>AfterHotExceptionInventoryDataJob</job-name>
+        <job-group>AfterHotExceptionInventoryDataJobGroup</job-group>
+        <cron-expression>0 0 8 * * ?</cron-expression>
+      </cron>
+    </trigger>
+    <!--ClearData Job-->
+    <job>
+      <name>ClearDataJob</name>
+      <group>ClearDataJobGroup</group>
+      <description>每天凌晨3点执行清除数据</description>
+      <job-type>WIP_QuartzTask.ClearDataJob,WIP_QuartzTask</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <!--ClearData 触发器 每天凌晨3点秒执行一次任务-->
+    <trigger>
+      <cron>
+        <name>ClearDataJobTrigger</name>
+        <group>ClearDataJobTriggerGroup</group>
+        <job-name>ClearDataJob</job-name>
+        <job-group>ClearDataJobGroup</job-group>
+        <cron-expression>0 0 3 * * ?</cron-expression>
+      </cron>
+    </trigger>
+    <!--ECMSystemRealTimeStatusJob Job-->
+    <job>
+      <name>ECMSystemRealTimeStatusJob</name>
+      <group>ECMSystemRealTimeStatusJobGroup</group>
+      <description>ECM系统实时状态任务</description>
+      <job-type>WIP_QuartzTask.ECMSystemRealTimeStatusJob,WIP_QuartzTask</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <!--ECMSystemRealTimeStatusJob 触发器 每5秒执行一次任务-->
+    <trigger>
+      <cron>
+        <name>ECMSystemRealTimeStatusJobTrigger</name>
+        <group>ECMSystemRealTimeStatusJobTriggerGroup</group>
+        <job-name>ECMSystemRealTimeStatusJob</job-name>
+        <job-group>ECMSystemRealTimeStatusJobGroup</job-group>
+        <cron-expression>0/5 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+    <!--DataSnapShoot Job-->
+    <job>
+      <name>DataSnapShootJob</name>
+      <group>DataSnapShootJobGroup</group>
+      <description>每天凌晨0点执行数据快照</description>
+      <job-type>WIP_QuartzTask.DataSnapShootJob,WIP_QuartzTask</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <!--DataSnapShoot 触发器 每天凌晨0点秒执行一次数据快照任务-->
+    <trigger>
+      <cron>
+        <name>DataSnapShootJobTrigger</name>
+        <group>DataSnapShootJobTriggerGroup</group>
+        <job-name>DataSnapShootJob</job-name>
+        <job-group>DataSnapShootJobGroup</job-group>
+        <cron-expression>0 0 0 * * ?</cron-expression>
+      </cron>
+    </trigger>
+  </schedule>
+</job-scheduling-data>

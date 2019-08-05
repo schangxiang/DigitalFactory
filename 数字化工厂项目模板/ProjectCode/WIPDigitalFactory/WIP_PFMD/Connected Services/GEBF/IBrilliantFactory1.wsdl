@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="urn:Proficy:System:2011" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Proficy:System:2011" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:Proficy:System:2011/Imports">
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd11" namespace="urn:Proficy:System:2011" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Folders.Interfaces" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Faults" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BrilliantFactory.Interfaces.Model" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd5" namespace="urn:Proficy:Events:2009" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Events" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.MobileObject" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd9" namespace="Proficy.Platform.Core.ProficySystem.Types.Client" />
+      <xsd:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFolders_CreateFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFolder" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_CreateFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_CreateFolder_DuplicateFolderFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Folders.Interfaces" name="detail" element="q1:DuplicateFolderFault" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_DeleteFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFolder" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_DeleteFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_UpdateFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFolder" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_UpdateFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_UpdateFolder_DuplicateFolderFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Folders.Interfaces" name="detail" element="q2:DuplicateFolderFault" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_MoveToFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveToFolder" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_MoveToFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveToFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_MoveToFolder_InvalidContentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Folders.Interfaces" name="detail" element="q3:InvalidContentFault" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_MoveToFolder_CircularHierarchyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Folders.Interfaces" name="detail" element="q4:CircularHierarchyFault" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_MoveToFolder_DuplicateFolderFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.Folders.Interfaces" name="detail" element="q5:DuplicateFolderFault" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_GetContentResourceSelectionMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContentResourceSelectionMetadata" />
+  </wsdl:message>
+  <wsdl:message name="IFolders_GetContentResourceSelectionMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContentResourceSelectionMetadataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFolders">
+    <wsdl:operation name="CreateFolder">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2011/IFolders/CreateFolder" message="tns:IFolders_CreateFolder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2011/IFolders/CreateFolderResponse" message="tns:IFolders_CreateFolder_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:Proficy:System:2011/IFolders/CreateFolderDuplicateFolderFaultFault" name="DuplicateFolderFaultFault" message="tns:IFolders_CreateFolder_DuplicateFolderFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFolder">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2011/IFolders/DeleteFolder" message="tns:IFolders_DeleteFolder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2011/IFolders/DeleteFolderResponse" message="tns:IFolders_DeleteFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFolder">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2011/IFolders/UpdateFolder" message="tns:IFolders_UpdateFolder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2011/IFolders/UpdateFolderResponse" message="tns:IFolders_UpdateFolder_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:Proficy:System:2011/IFolders/UpdateFolderDuplicateFolderFaultFault" name="DuplicateFolderFaultFault" message="tns:IFolders_UpdateFolder_DuplicateFolderFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveToFolder">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2011/IFolders/MoveToFolder" message="tns:IFolders_MoveToFolder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2011/IFolders/MoveToFolderResponse" message="tns:IFolders_MoveToFolder_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:Proficy:System:2011/IFolders/MoveToFolderInvalidContentFaultFault" name="InvalidContentFaultFault" message="tns:IFolders_MoveToFolder_InvalidContentFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:Proficy:System:2011/IFolders/MoveToFolderCircularHierarchyFaultFault" name="CircularHierarchyFaultFault" message="tns:IFolders_MoveToFolder_CircularHierarchyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:Proficy:System:2011/IFolders/MoveToFolderDuplicateFolderFaultFault" name="DuplicateFolderFaultFault" message="tns:IFolders_MoveToFolder_DuplicateFolderFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContentResourceSelectionMetadata">
+      <wsdl:input wsaw:Action="urn:Proficy:System:2011/IFolders/GetContentResourceSelectionMetadata" message="tns:IFolders_GetContentResourceSelectionMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Proficy:System:2011/IFolders/GetContentResourceSelectionMetadataResponse" message="tns:IFolders_GetContentResourceSelectionMetadata_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

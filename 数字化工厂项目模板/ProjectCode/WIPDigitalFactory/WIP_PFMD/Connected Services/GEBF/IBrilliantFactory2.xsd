@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.MobileObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.MobileObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd9" namespace="Proficy.Platform.Core.ProficySystem.Types.Client" />
+  <xs:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CrudItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element xmlns:q1="Proficy.Platform.Core.ProficySystem.Types.Client" minOccurs="0" name="Storage" nillable="true" type="q1:MobileObjectData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrudItem" nillable="true" type="tns:CrudItem" />
+  <xs:complexType name="ArrayOfMobileMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MobileMessage" nillable="true" type="tns:MobileMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMobileMessage" nillable="true" type="tns:ArrayOfMobileMessage" />
+  <xs:complexType name="MobileMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_objectTypeName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="_propertyNames" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="_propertyValues" nillable="true" type="q3:ArrayOfanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MobileMessage" nillable="true" type="tns:MobileMessage" />
+  <xs:complexType name="CrudList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Base" type="xs:long" />
+      <xs:element minOccurs="0" name="Storage" nillable="true" type="tns:ArrayOfCrudItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrudList" nillable="true" type="tns:CrudList" />
+  <xs:complexType name="ArrayOfCrudItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CrudItem" nillable="true" type="tns:CrudItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCrudItem" nillable="true" type="tns:ArrayOfCrudItem" />
+</xs:schema>

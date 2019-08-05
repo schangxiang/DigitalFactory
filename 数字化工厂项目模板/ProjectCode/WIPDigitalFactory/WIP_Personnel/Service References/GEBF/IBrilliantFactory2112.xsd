@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" />
+  <xs:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.XmlItems" />
+  <xs:import schemaLocation="https://shaocx:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Operations" />
+  <xs:complexType name="IConfigGetConfigPanelRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FullTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MethodAddress" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="MethodIdentification" nillable="true" type="q1:MethodIdentification" />
+          <xs:element minOccurs="0" name="TechnologyType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IConfigGetConfigPanelRequest" nillable="true" type="tns:IConfigGetConfigPanelRequest" />
+  <xs:complexType name="ProficyMessageRequest">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TargetNodeList" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.XmlItems" minOccurs="0" name="TargetXmlItems" nillable="true" type="q3:ArrayOfXmlItemList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProficyMessageRequest" nillable="true" type="tns:ProficyMessageRequest" />
+  <xs:complexType name="IConfigGetConfigPanelResponse">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="ConstructionParameters" nillable="true" type="q4:ArrayOfParameter" />
+      <xs:element minOccurs="0" name="PanelContent" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IConfigGetConfigPanelResponse" nillable="true" type="tns:IConfigGetConfigPanelResponse" />
+  <xs:complexType name="IConfigAddConfigPanelRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssemblyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FullTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImplementationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperationID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TechnologyType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Version" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IConfigAddConfigPanelRequest" nillable="true" type="tns:IConfigAddConfigPanelRequest" />
+  <xs:complexType name="IDataBatchExecuteRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConfigData" nillable="true" type="q5:ArrayOfstring" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="MethodInvocations" nillable="true" type="q6:ArrayOfMethodInvocation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IDataBatchExecuteRequest" nillable="true" type="tns:IDataBatchExecuteRequest" />
+  <xs:complexType name="IDataBatchExecuteResponse">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Handles" nillable="true" type="q7:ArrayOfint" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="Responses" nillable="true" type="q8:ArrayOfResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDataBatchExecuteResponse" nillable="true" type="tns:IDataBatchExecuteResponse" />
+  <xs:complexType name="IDataDiscardResultsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Handle" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IDataDiscardResultsRequest" nillable="true" type="tns:IDataDiscardResultsRequest" />
+  <xs:complexType name="IDataExecuteRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConfigData" nillable="true" type="xs:string" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="Invocation" nillable="true" type="q9:MethodInvocation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IDataExecuteRequest" nillable="true" type="tns:IDataExecuteRequest" />
+  <xs:complexType name="IDataExecuteResponse">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Outputs" nillable="true" type="q10:ArrayOfKeyValueOfstringCrudItemknatgAaI" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="Response" nillable="true" type="q11:Response" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDataExecuteResponse" nillable="true" type="tns:IDataExecuteResponse" />
+  <xs:complexType name="IDataGetNextResultSetRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Handle" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IDataGetNextResultSetRequest" nillable="true" type="tns:IDataGetNextResultSetRequest" />
+  <xs:complexType name="IDataGetNextResultSetResponse">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="DataItem" nillable="true" type="q12:DataItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDataGetNextResultSetResponse" nillable="true" type="tns:IDataGetNextResultSetResponse" />
+  <xs:complexType name="IDataGetResultsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ItemHandles" nillable="true" type="q13:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IDataGetResultsRequest" nillable="true" type="tns:IDataGetResultsRequest" />
+  <xs:complexType name="IDataGetResultsResponse">
+    <xs:sequence>
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="_responses" nillable="true" type="q14:ArrayOfResponse" />
+      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="_results" nillable="true" type="q15:ArrayOfArrayOfKeyValueOfstringCrudItemknatgAaI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDataGetResultsResponse" nillable="true" type="tns:IDataGetResultsResponse" />
+  <xs:complexType name="IDataRemoveBatchItemsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ItemHandles" nillable="true" type="q16:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IDataRemoveBatchItemsRequest" nillable="true" type="tns:IDataRemoveBatchItemsRequest" />
+  <xs:complexType name="IMetadataGetMetadataRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConfigData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IMetadataGetMetadataRequest" nillable="true" type="tns:IMetadataGetMetadataRequest" />
+  <xs:complexType name="IMetadataGetMetadataResponse">
+    <xs:sequence>
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="_methodDescriptions" nillable="true" type="q17:ArrayOfMethodDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IMetadataGetMetadataResponse" nillable="true" type="tns:IMetadataGetMetadataResponse" />
+  <xs:complexType name="IMetadataGetMetadataBatchRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConfigData" nillable="true" type="q18:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IMetadataGetMetadataBatchRequest" nillable="true" type="tns:IMetadataGetMetadataBatchRequest" />
+  <xs:complexType name="IMetadataGetMetadataBatchResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="MethodDescriptions" nillable="true" type="q19:ArrayOfArrayOfMethodDescription" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IMetadataGetMetadataBatchResponse" nillable="true" type="tns:IMetadataGetMetadataBatchResponse" />
+  <xs:complexType name="IMetadataGetMethodIdentificationsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Operations" minOccurs="0" name="OperationCode" type="q20:OperationCode" />
+          <xs:element minOccurs="0" name="ReturnClassfications" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ReturnPermissions" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IMetadataGetMethodIdentificationsRequest" nillable="true" type="tns:IMetadataGetMethodIdentificationsRequest" />
+  <xs:complexType name="IMetadataGetMethodIdentificationsResponse">
+    <xs:sequence>
+      <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Classifications" nillable="true" type="q21:ArrayOfArrayOfstring" />
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="MethodIdentifications" nillable="true" type="q22:ArrayOfMethodIdentification" />
+      <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Permissions" nillable="true" type="q23:ArrayOfArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IMetadataGetMethodIdentificationsResponse" nillable="true" type="tns:IMetadataGetMethodIdentificationsResponse" />
+  <xs:complexType name="IMetadataGetMetadataForIdentificationsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProficyMessageRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConfigData" nillable="true" type="xs:string" />
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.ProficySystem.Types" minOccurs="0" name="MethodIdentifications" nillable="true" type="q24:ArrayOfMethodIdentification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IMetadataGetMetadataForIdentificationsRequest" nillable="true" type="tns:IMetadataGetMetadataForIdentificationsRequest" />
+</xs:schema>

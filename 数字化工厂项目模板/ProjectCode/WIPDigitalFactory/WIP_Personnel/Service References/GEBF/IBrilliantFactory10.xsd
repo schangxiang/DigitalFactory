@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR.Interfaces" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Proficy.Platform.Core.DOR.Interfaces" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://desktop-nuvt97p:8202/SOAServer/SOAProject/IBrilliantFactory/BFServiceProvider/IBrilliantFactory?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="NodeState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_TOV" type="xs:long" />
+      <xs:element minOccurs="0" name="_childCount" type="xs:int" />
+      <xs:element minOccurs="0" name="_childTotal" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="_localArgs" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="_localProviderServiceAddress" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="_sourceArgs" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="_sourceProviderServiceAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_state" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NodeState" nillable="true" type="tns:NodeState" />
+  <xs:simpleType name="INodeOps.Scope">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Node" />
+      <xs:enumeration value="Children" />
+      <xs:enumeration value="Hierarchy" />
+      <xs:enumeration value="ChildrenResolve" />
+      <xs:enumeration value="HierarchyResolve" />
+      <xs:enumeration value="NodeInternal" />
+      <xs:enumeration value="ChildrenInternal" />
+      <xs:enumeration value="HierarchyInternal" />
+      <xs:enumeration value="HierarchyNow" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="INodeOps.Scope" nillable="true" type="tns:INodeOps.Scope" />
+</xs:schema>

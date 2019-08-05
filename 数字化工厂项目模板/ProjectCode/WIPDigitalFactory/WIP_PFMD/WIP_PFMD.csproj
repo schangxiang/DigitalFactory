@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDDFBA2A-F77A-4584-8D36-60F46BE0C3F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WIP_PFMD</RootNamespace>
+    <AssemblyName>WIP_PFMD</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\GEBF\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="PfmdComm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\GEBF\BFServiceProvider.wsdl" />
+    <None Include="Connected Services\GEBF\IBrilliantFactory.wsdl" />
+    <None Include="Connected Services\GEBF\IBrilliantFactory.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory1.wsdl" />
+    <None Include="Connected Services\GEBF\IBrilliantFactory1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory2.wsdl" />
+    <None Include="Connected Services\GEBF\IBrilliantFactory2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\IBrilliantFactory9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.CanLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.CanLoginViaDomainResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.DefaultAttributeNode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.DirectoryResource.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.DirectoryResourceMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.GetPersonalPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.IConfigGetConfigPanelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.IDataBatchExecuteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.IDataExecuteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.IDataGetNextResultSetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.IDataGetResultsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.IMetadataGetMetadataBatchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.IMetadataGetMetadataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.IMetadataGetMethodIdentificationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.MobileMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.PersonalProperties.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.ReadResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.ResourceMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GEBF\WIP_PFMD.GEBF.UpdatePwdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\GEBF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GEBF\IBrilliantFactory.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GEBF\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GEBF\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GEBF\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WIP_common\WIP_common.csproj">
+      <Project>{1103472d-6a5c-4135-b359-0dfc72e71533}</Project>
+      <Name>WIP_common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
