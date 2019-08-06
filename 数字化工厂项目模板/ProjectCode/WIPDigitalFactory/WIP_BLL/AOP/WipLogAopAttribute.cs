@@ -12,6 +12,7 @@
 
 using KAOP;
 using Newtonsoft.Json;
+using SysManager.Common.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,11 +28,11 @@ namespace WIP_BLL
 
     [Serializable]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
-    public sealed class LogAopAttribute : KAopClassAttribute
+    public sealed class WipLogAopAttribute : KAopClassAttribute
     {
         private static RequestRecordDAL requestRecordDAL = new WIP_DAL.RequestRecordDAL();
 
-        public LogAopAttribute(string namespaceName, string msgSource = WipSource.WIPREST)
+        public WipLogAopAttribute(string namespaceName, string msgSource = WipSource.WIPREST)
         {
             this.namespaceName = namespaceName;
             this.msgSource = msgSource;
@@ -61,7 +62,7 @@ namespace WIP_BLL
                     fullFun = namespaceName + "." + MethodName,//方法名
                     param = JsonConvert.SerializeObject(InParams), //入参
                 };
-                LogHelper.WriteInfoLogByLog4Net(typeof(LogHelper), JsonConvert.SerializeObject(requestRecord));
+                Log4netHelper.WriteInfoLogByLog4Net(typeof(Log4netHelper), JsonConvert.SerializeObject(requestRecord));
                 requestRecordDAL.Add(requestRecord);
             });
             //*/

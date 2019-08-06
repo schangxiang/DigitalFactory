@@ -17,7 +17,7 @@ namespace WIP_common
     public class RabbitClient
     {
         //小车实时位置 消息主题名称
-        private static readonly string topicName = "";// BLLHelpler.GetConfigValue("RabbitMQ_AgvRealTimeLocation");//订阅名称
+        private static readonly string topicName = "";// ConfigHelper.GetValue("RabbitMQ_AgvRealTimeLocation");//订阅名称
 
         //定义连接工厂
         ConnectionFactory factory = new ConnectionFactory();

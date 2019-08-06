@@ -21,6 +21,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using SysManager.Common.Utilities;
 
 namespace WIP_common
 {
@@ -56,7 +57,7 @@ namespace WIP_common
                 }
                 catch (Exception ex)
                 {//吞掉异常
-                    LogHelper.WriteErrorLogByLog4Net(typeof(IOCContainer), "注册MEF出错：ex:" + JsonConvert.SerializeObject(ex));
+                    Log4netHelper.WriteErrorLogByLog4Net(typeof(IOCContainer), "注册MEF出错：ex:" + JsonConvert.SerializeObject(ex));
                 }
             }
         }

@@ -54,7 +54,7 @@ namespace WIP_Print
 
                 defaultPrint = fPrintDocument.PrinterSettings.PrinterName;
                 //defaultPrint = @"\\prtsvr\MP 3054 PCL 6 jszx";
-                //new LogHelper().AddLog("默认打印机名称是:"+defaultPrint);
+                //new Log4netHelper().AddLog("默认打印机名称是:"+defaultPrint);
 
                 SheetRender sr = new SheetRender(worksheet, options);
                 if (printName != "")

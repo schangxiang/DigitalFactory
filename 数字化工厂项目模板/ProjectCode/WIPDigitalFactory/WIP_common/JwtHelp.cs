@@ -408,7 +408,7 @@ namespace WIP_common
             //return getResourceMenu(userName, rank, parentId);
 
             RedisModel redisModel = getResourceMenuOnlyFormRedisOrMemory(userName);
-            //LogHelper.WriteErrorLogByLog4Net(typeof(JwtHelp), "查询内存数据:" + JsonConvert.SerializeObject(redisModel));
+            //Log4netHelper.WriteErrorLogByLog4Net(typeof(JwtHelp), "查询内存数据:" + JsonConvert.SerializeObject(redisModel));
             List<ResourceMenuInfo> menus = new List<ResourceMenuInfo>();
 
             if (redisModel == null)
@@ -422,7 +422,7 @@ namespace WIP_common
                     updateTime = WIPCommon.ForamtCurDateTime(),
                     userName = userName
                 };
-                //LogHelper.WriteInfoLogByLog4Net(typeof(JwtHelp), "redisModel:" + JsonConvert.SerializeObject(redisModel));
+                //Log4netHelper.WriteInfoLogByLog4Net(typeof(JwtHelp), "redisModel:" + JsonConvert.SerializeObject(redisModel));
             }
 
             if (redisModel == null)

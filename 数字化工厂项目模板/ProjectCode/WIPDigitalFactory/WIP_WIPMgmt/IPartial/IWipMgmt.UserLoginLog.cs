@@ -19,6 +19,8 @@ using System.ServiceModel.Web;
 using System.Text;
 using System.Threading.Tasks;
 using WIP_Models;
+using KAOP;
+
 
 namespace WIP_WIPMgmt
 {
@@ -30,8 +32,10 @@ namespace WIP_WIPMgmt
         /// </summary>
         /// <param name="userName">用户名</param>
         /// <returns>用户登录记录列表</returns>
+        [KAopMethod]
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "getUserLoginLogList?userName={userName}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+
         ReturnBody<List<UserLoginLogEntity>> GetUserLoginLogList(string userName);
 
         [OperationContract]

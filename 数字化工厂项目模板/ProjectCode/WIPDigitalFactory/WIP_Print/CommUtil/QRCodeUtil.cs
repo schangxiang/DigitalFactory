@@ -122,7 +122,7 @@ namespace WIP_Print
             if (File.Exists(savePathAndName))
             {
                 File.Delete(savePathAndName);
-                //LogHelper.Info(typeof(QRCode), "【文件重复】覆盖 - "+ savePathAndName.Substring(savePathAndName.Length-13, 13));
+                //Log4netHelper.Info(typeof(QRCode), "【文件重复】覆盖 - "+ savePathAndName.Substring(savePathAndName.Length-13, 13));
             }
 
             Bitmap newImg = new Bitmap(img, size.Width, size.Height);//图片保存的大小尺寸  

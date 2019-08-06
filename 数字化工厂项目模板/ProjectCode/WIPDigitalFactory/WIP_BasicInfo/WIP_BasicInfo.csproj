@@ -55,13 +55,11 @@
     <Compile Include="IPartial\IBasicInfo.GetAuthorization.cs" />
     <Compile Include="IPartial\IBasicInfo.CodeItems.cs" />
     <Compile Include="IPartial\IBasicInfo.CodeSet.cs" />
-    <Compile Include="IPartial\IBasicInfo.SendMail.cs" />
     <Compile Include="IPartial\IBasicInfo.PrintConfig.cs" />
     <Compile Include="Partial\BasicInfo.MailRule.cs" />
     <Compile Include="Partial\BasicInfo.GetAuthorization.cs" />
     <Compile Include="Partial\BasicInfo.CodeItems.cs" />
     <Compile Include="Partial\BasicInfo.CodeSet.cs" />
-    <Compile Include="Partial\BasicInfo.SendMail.cs" />
     <Compile Include="Partial\BasicInfo.PrintConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BasicInfo.cs" />

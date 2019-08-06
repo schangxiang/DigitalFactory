@@ -29,13 +29,13 @@ namespace WIP_BLL
             try
             {
                 Guid guid = Guid.NewGuid();
-                WipLogHelper.WriteRequestRecord<T>(host, url, param, guid);
+                WipLog4netHelper.WriteRequestRecord<T>(host, url, param, guid);
 
                 JavaScriptDateTimeConverter convert = new JavaScriptDateTimeConverter();
                 var strParam = JsonConvert.SerializeObject(param, Formatting.None, convert);//序列化后的字符串
                 string content = new HTTPHelper(host).postContentForString(url,
                                 strParam, new Guid(), timeout);
-                WipLogHelper.WriteRequestRecord<T>(host, url, param, guid, content);
+                WipLog4netHelper.WriteRequestRecord<T>(host, url, param, guid, content);
                 if (!string.IsNullOrEmpty(content))
                 {
                     ReturnBody<T1> result = JsonConvert.DeserializeObject<ReturnBody<T1>>(content);
@@ -51,50 +51,6 @@ namespace WIP_BLL
             }
             return null;
         }
-
-
-        /// <summary>
-        /// 公共处理post请求
-        /// </summary>
-        /// <typeparam name="T">请求参数对象</typeparam>
-        /// <typeparam name="T1">返回的data对象</typeparam>
-        /// <param name="host">主机名</param>
-        /// <param name="url">请求地址</param>
-        /// <param name="param">请求参数对象</param>
-        /// <returns>返回对象</returns>
-        public static ReturnBody<T1> CommonHttpRequestForPostWithToken<T, T1>(string host, string url, T param, string token = "")
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(token))
-                {
-                    token = IntegerToken.wcsintegrated;
-                }
-
-                Guid guid = Guid.NewGuid();
-                WipLogHelper.WriteRequestRecord<T>(host, url, param, guid);
-
-                JavaScriptDateTimeConverter convert = new JavaScriptDateTimeConverter();
-                var strParam = JsonConvert.SerializeObject(param, Formatting.None, convert);//序列化后的字符串
-                string content = new HTTPHelper(host).postContentForStringWithToken(url,
-                                strParam, new Guid(), token);
-                WipLogHelper.WriteRequestRecord<T>(host, url, param, guid, content);
-                if (!string.IsNullOrEmpty(content))
-                {
-                    ReturnBody<T1> result = JsonConvert.DeserializeObject<ReturnBody<T1>>(content);
-                    if (result != null)
-                    {
-                        return result;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return null;
-        }
-
 
         /// <summary>
         /// 公共处理get请求
@@ -111,10 +67,10 @@ namespace WIP_BLL
             try
             {
                 Guid guid = Guid.NewGuid();
-                WipLogHelper.WriteRequestRecord<T>(host, url, param, guid);
+                WipLog4netHelper.WriteRequestRecord<T>(host, url, param, guid);
 
                 string content = new HTTPHelper(host).getContentForString(url, new Guid(), timeout);
-                WipLogHelper.WriteRequestRecord<T>(host, url, param, guid, content);
+                WipLog4netHelper.WriteRequestRecord<T>(host, url, param, guid, content);
                 if (!string.IsNullOrEmpty(content))
                 {
                     ReturnBody<T1> result = JsonConvert.DeserializeObject<ReturnBody<T1>>(content);

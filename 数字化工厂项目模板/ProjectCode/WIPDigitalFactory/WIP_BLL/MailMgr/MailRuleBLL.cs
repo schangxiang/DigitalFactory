@@ -303,7 +303,7 @@ namespace WIP_BLL
                 logDict.Add("businessExceptionMgr", businessExceptionMgr);
                 logDict.Add("ex", ex);
                 string errMsg = "准备发送邮件(业务异常情况)出现异常：" + JsonConvert.SerializeObject(logDict);
-                LogHelper.WriteErrorLogByLog4Net(typeof(MailRuleBLL), errMsg);
+                Log4netHelper.WriteErrorLogByLog4Net(typeof(MailRuleBLL), errMsg);
             }
         }
     }

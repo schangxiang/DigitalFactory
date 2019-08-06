@@ -55,7 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AOP\LogAopAttribute.cs" />
+    <Compile Include="AOP\WipLogAopAttribute.cs" />
     <Compile Include="MailMgr\IMail.cs" />
     <Compile Include="MailMgr\Mail.cs" />
     <Compile Include="MailMgr\MailRuleBLL.cs" />
@@ -72,18 +72,6 @@
     <Compile Include="PrintInfoBLL.cs" />
     <Compile Include="UserLoginLogBLL.cs" />
     <Compile Include="Utility\BLLHelpler.cs" />
-    <Compile Include="Utility\HttpUtility\HTTPLongConnectionService.cs" />
-    <Compile Include="Utility\HttpUtility\HTTPLongConnectionService2.cs" />
-    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForC2H2.cs" />
-    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForCCF.cs" />
-    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForCTG.cs" />
-    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForExCAR.cs" />
-    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForInCAR.cs" />
-    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForPREOX.cs" />
-    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForTemper.cs" />
-    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForTunnel.cs" />
-    <Compile Include="Utility\HttpUtility\HTTPLongConnServiceForWash.cs" />
-    <Compile Include="Utility\IntegerToken.cs" />
     <Compile Include="Utility\PFMDHelper.cs" />
     <Compile Include="Utility\RequestHelper.cs" />
     <Compile Include="Utility\WipLogHelper.cs" />

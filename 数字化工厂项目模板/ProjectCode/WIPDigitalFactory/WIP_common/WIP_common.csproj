@@ -87,7 +87,6 @@
   <ItemGroup>
     <Compile Include="IOCContainer.cs" />
     <Compile Include="Common.cs" />
-    <Compile Include="LogHelper.cs" />
     <Compile Include="MEFBaseClass.cs" />
     <Compile Include="SerialNumberHelper.cs" />
     <Compile Include="Utility\HttpClientHelper.cs" />

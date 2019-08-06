@@ -48,9 +48,9 @@ namespace WIP_BLL
                 logDict.Add("MailSubject", MailSubject);
                 logDict.Add("Describe", Describe);
 
-                ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfo<IDictionary<string, object>>(namespaceName, "MailSending", logDict, "", "");
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
-                WipLogHelper.WriteExceptionInfo(exception);
+                ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfo<IDictionary<string, object>>(namespaceName, "MailSending", logDict, "", "");
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.WriteExceptionInfo(exception);
             }
 
 
@@ -73,7 +73,7 @@ namespace WIP_BLL
             logDict.Add("MailSubject", MailSubject);
             logDict.Add("Describe", Describe);
             logDict.Add("File_Path", File_Path);
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfo<IDictionary<string, object>>(namespaceName, "MailSending", logDict, "", "");
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfo<IDictionary<string, object>>(namespaceName, "MailSending", logDict, "", "");
             try
             {
                 if (File_Path == null)
@@ -83,8 +83,8 @@ namespace WIP_BLL
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
-                WipLogHelper.WriteExceptionInfo(exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.WriteExceptionInfo(exception);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using SysManager.Common.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -290,7 +291,7 @@ namespace WIP_BLL
                 logDict.Add("creator", creator);
                 logDict.Add("ex", ex);
                 string errMsg = "增加一条业务异常管理数据出现异常：" + JsonConvert.SerializeObject(logDict);
-                LogHelper.WriteErrorLogByLog4Net(typeof(BusinessExceptionMgrBLL), errMsg);
+                Log4netHelper.WriteErrorLogByLog4Net(typeof(BusinessExceptionMgrBLL), errMsg);
             }
         }
 

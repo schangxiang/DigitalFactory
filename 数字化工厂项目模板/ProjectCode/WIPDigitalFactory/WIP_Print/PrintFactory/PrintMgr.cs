@@ -61,7 +61,7 @@ namespace WIP_Print
             IDictionary<string, object> logDict = new Dictionary<string, object>();
             logDict.Add("printResult", printResult);
             logDict.Add("printInfo", printInfo);
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfo<IDictionary<string, object>>(namespaceName, "DoByPrintResult", logDict
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfo<IDictionary<string, object>>(namespaceName, "DoByPrintResult", logDict
                 , "", printInfo == null ? "" : printInfo.processCardNumber, ExceptionSource.WIPPost, ExceptionLevel.BusinessError, wipSource);
             try
             {
@@ -111,8 +111,8 @@ namespace WIP_Print
             catch (Exception ex)
             {
                 retResult = false;
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
-                WipLogHelper.WriteExceptionInfo(exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.WriteExceptionInfo(exception);
             }
             return retResult;
         }
@@ -153,7 +153,7 @@ namespace WIP_Print
             logDict.Add("json_cellList", json_cellList);
             logDict.Add("printInfo", printInfo);
             logDict.Add("orientation", orientation);
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfo<IDictionary<string, object>>(namespaceName, "Print", logDict
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfo<IDictionary<string, object>>(namespaceName, "Print", logDict
                 , "", printInfo == null ? "" : printInfo.processCardNumber, ExceptionSource.WIPPost, ExceptionLevel.BusinessError, wipSource);
             try
             {
@@ -182,8 +182,8 @@ namespace WIP_Print
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
-                WipLogHelper.WriteExceptionInfo(exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.WriteExceptionInfo(exception);
 
                 //打印失败
                 this.DoByPrintResultFailure(printInfo, ex);

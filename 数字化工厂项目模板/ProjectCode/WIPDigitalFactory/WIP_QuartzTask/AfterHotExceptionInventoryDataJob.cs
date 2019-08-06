@@ -18,7 +18,7 @@ namespace WIP_QuartzTask
         //使用Common.Logging.dll日志接口实现日志记录
         private static readonly Common.Logging.ILog logger = Common.Logging.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        private static readonly string wipHost = BLLHelpler.GetConfigValue("WIPHost");
+        private static readonly string wipHost = ConfigHelper.GetValue("WIPHost");
         private static readonly string url= "/quartz/afterHotExceptionInventoryData";
 
         #region IJob 成员

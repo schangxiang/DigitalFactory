@@ -6,6 +6,7 @@ using WIP_DAL;
 using WIP_Models;
 using Newtonsoft.Json;
 using WIP_common;
+using SysManager.Common.Utilities;
 
 namespace WIP_BLL
 {
@@ -68,7 +69,7 @@ namespace WIP_BLL
         /// <returns></returns>
         public List<PrintInfoModel> GetNeedPrintList()
         {
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfo<string>(namespaceName,
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfo<string>(namespaceName,
                 "GetNeedPrintList", "", "", "", ExceptionSource.WIPReceive, ExceptionLevel.BusinessError, WipSource.PrintService);
             List<PrintInfoModel> printList = null;
             try
@@ -79,16 +80,16 @@ namespace WIP_BLL
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
                 //判断ex的内容，如果是数据库超时，则过滤，直接光写文本日志
                 if (ex.Message.Contains("信号灯超时时间已到") || ex.Message.Contains("未找到或无法访问服务器")
                     || ex.Message.Contains("超时时间已到"))
                 {
-                    LogHelper.WriteErrorLogByLog4Net(typeof(PrintConfigBLL), ex.Message, ex);
+                    Log4netHelper.WriteErrorLogByLog4Net(typeof(PrintConfigBLL), ex.Message, ex);
                 }
                 else
                 {
-                    WipLogHelper.WriteExceptionInfo(exception);
+                    WipLog4netHelper.WriteExceptionInfo(exception);
                 }
             }
             return printList;

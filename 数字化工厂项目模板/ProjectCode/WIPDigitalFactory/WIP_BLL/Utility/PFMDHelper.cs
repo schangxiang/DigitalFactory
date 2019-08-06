@@ -1,4 +1,5 @@
 ﻿
+using SysManager.Common.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace WIP_BLL
 
         public PfmdComm GetPfmdCommObject()
         {
-            string url = BLLHelpler.GetConfigValue("GEBF_URL");
+            string url = ConfigHelper.GetValue("GEBF_URL");
             return new PfmdComm(url);
         }
     }

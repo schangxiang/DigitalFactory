@@ -25,7 +25,7 @@ namespace WIP_MES
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    [LogAop("WIP_MES.MesSysInteg", WipSource.WIPREST)]
+    [WipLogAop("WIP_MES.MesSysInteg", WipSource.WIPREST)]
     /// <summary>
     /// MES集成
     /// </summary>

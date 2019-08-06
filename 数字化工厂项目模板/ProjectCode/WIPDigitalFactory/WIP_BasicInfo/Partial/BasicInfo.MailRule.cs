@@ -21,7 +21,7 @@ namespace WIP_BasicInfo
         /// <returns></returns> 
         public ReturnBody<List<MailRuleEntity>> GetMailRuleList()
         {
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfo<string>(namespaceName, "GetMailRuleList", "", "", "");
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfo<string>(namespaceName, "GetMailRuleList", "", "", "");
             try
             {
                 List<MailRuleEntity> list = MailRuleBLL.GetInstance().GetMailRuleList();
@@ -29,7 +29,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<List<MailRuleEntity>>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }
@@ -48,7 +48,7 @@ namespace WIP_BasicInfo
         /// <returns></returns> 
         public ReturnBody<List<MailPersonModel>> GetMailPersonList(QueryMailPersonParam param)
         {
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfo<string>(namespaceName, "GetMailPersonList", "", "", "");
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfo<string>(namespaceName, "GetMailPersonList", "", "", "");
             try
             {
                 if (param == null || string.IsNullOrEmpty(param.categoryId))
@@ -60,7 +60,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<List<MailPersonModel>>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }
@@ -79,7 +79,7 @@ namespace WIP_BasicInfo
         /// <returns></returns> 
         public ReturnBody<string> UpdateMailPerson(UpdateMailPersonParam param)
         {
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfo<UpdateMailPersonParam>(namespaceName, "UpdateMailPerson", param, "", "");
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfo<UpdateMailPersonParam>(namespaceName, "UpdateMailPerson", param, "", "");
             try
             {
                 MethodReturnResultModel ret = MailRuleBLL.GetInstance().UpdateMailPerson(param, JwtHelp.GetCurUserName());
@@ -94,7 +94,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<string>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }

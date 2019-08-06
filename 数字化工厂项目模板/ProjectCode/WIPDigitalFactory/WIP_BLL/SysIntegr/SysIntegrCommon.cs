@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using WIP_common;
 using WIP_Models;
 using WIP_DAL;
+using SysManager.Common.Utilities;
 
 namespace WIP_BLL
 {
@@ -88,7 +89,7 @@ namespace WIP_BLL
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
                 exception.exceptionMsg += ",执行次数:" + execCount.ToString();
                 execResult = false;
             }
@@ -119,7 +120,7 @@ namespace WIP_BLL
             RequestType requestType,
             int execCount)
         {
-            WipLogHelper.WriteExceptionInfo(exception);
+            WipLog4netHelper.WriteExceptionInfo(exception);
             int retryCount = GetRequestRetryCount();
             if (execCount < retryCount)
             {
@@ -141,7 +142,7 @@ namespace WIP_BLL
                 else
                 {
                     exception.exceptionMsg += "执行次数已超过限制值:" + retryCount.ToString();
-                    WipLogHelper.WriteExceptionInfo(exception);
+                    WipLog4netHelper.WriteExceptionInfo(exception);
 
                     //发送报警邮件
                     if (IsSendMail(requestType))
@@ -234,7 +235,7 @@ namespace WIP_BLL
             int retryCount = 3;//默认3个
             try
             {
-                string RequestRetryCount = BLLHelpler.GetConfigValue("RequestRetryCount");
+                string RequestRetryCount = ConfigHelper.GetValue("RequestRetryCount");
                 int.TryParse(RequestRetryCount, out retryCount);
             }
             catch

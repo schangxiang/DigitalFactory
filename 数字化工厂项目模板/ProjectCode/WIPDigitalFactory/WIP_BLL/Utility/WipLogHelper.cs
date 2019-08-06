@@ -1,5 +1,6 @@
 ﻿using log4net;
 using Newtonsoft.Json;
+using SysManager.Common.Utilities;
 using System;
 using System.Threading.Tasks;
 using WIP_common;
@@ -12,7 +13,7 @@ namespace WIP_BLL
     /// <summary>
     /// 日志帮助
     /// </summary>
-    public class WipLogHelper
+    public class WipLog4netHelper
     {
         private static ExceptionInfoDAL dal = ExceptionInfoDAL.GetInstance();
         private static RequestRecordDAL requestRecordDAL = new WIP_DAL.RequestRecordDAL();
@@ -32,12 +33,12 @@ namespace WIP_BLL
                 try
                 {
                     //只是记录日志吧 
-                    LogHelper.WriteErrorLogByLog4Net(typeof(LogHelper), JsonConvert.SerializeObject(exception));
+                    Log4netHelper.WriteErrorLogByLog4Net(typeof(Log4netHelper), JsonConvert.SerializeObject(exception));
                     dal.AddWithKey(exception);
                 }
                 catch (Exception ex)
                 {
-                    LogHelper.WriteErrorLogByLog4Net(typeof(LogHelper), "WriteExceptionInfo记录异常表出现异常,exception:" + JsonConvert.SerializeObject(exception), ex);
+                    Log4netHelper.WriteErrorLogByLog4Net(typeof(Log4netHelper), "WriteExceptionInfo记录异常表出现异常,exception:" + JsonConvert.SerializeObject(exception), ex);
                 }
             });
         }
@@ -57,7 +58,7 @@ namespace WIP_BLL
                 try
                 {
                     //只是记录日志吧 
-                    LogHelper.WriteErrorLogByLog4Net(typeof(LogHelper), JsonConvert.SerializeObject(exception));
+                    Log4netHelper.WriteErrorLogByLog4Net(typeof(Log4netHelper), JsonConvert.SerializeObject(exception));
                     dal.Add(exception);
 
                     #region 报警邮件
@@ -82,7 +83,7 @@ namespace WIP_BLL
                 }
                 catch (Exception ex)
                 {
-                    LogHelper.WriteErrorLogByLog4Net(typeof(LogHelper), "WriteExceptionInfo记录异常表出现异常,exception:" + JsonConvert.SerializeObject(exception), ex);
+                    Log4netHelper.WriteErrorLogByLog4Net(typeof(Log4netHelper), "WriteExceptionInfo记录异常表出现异常,exception:" + JsonConvert.SerializeObject(exception), ex);
                 }
             });
 
@@ -132,7 +133,7 @@ namespace WIP_BLL
                         fullFun = namespaceName + "." + exceptionFun,//方法名
                         param = JsonConvert.SerializeObject(param), //入参
                     };
-                    LogHelper.WriteInfoLogByLog4Net(typeof(LogHelper), JsonConvert.SerializeObject(requestRecord));
+                    Log4netHelper.WriteInfoLogByLog4Net(typeof(Log4netHelper), JsonConvert.SerializeObject(requestRecord));
                     requestRecordDAL.Add(requestRecord);
                 });
 
@@ -176,7 +177,7 @@ namespace WIP_BLL
                         fullFun = namespaceName + "." + exceptionFun,//方法名
                         param = JsonConvert.SerializeObject(param), //入参
                     };
-                    LogHelper.WriteInfoLogByLog4Net(typeof(LogHelper), JsonConvert.SerializeObject(requestRecord));
+                    Log4netHelper.WriteInfoLogByLog4Net(typeof(Log4netHelper), JsonConvert.SerializeObject(requestRecord));
                     requestRecordDAL.AddWithKey(requestRecord);
                 });
 
@@ -241,7 +242,7 @@ namespace WIP_BLL
             }
             catch (Exception ex)
             {
-                LogHelper.WriteErrorLogByLog4Net(typeof(LogHelper), "WriteRequestRecord记录异常表出现异常,exception:" + JsonConvert.SerializeObject(requestRecord), ex);
+                Log4netHelper.WriteErrorLogByLog4Net(typeof(Log4netHelper), "WriteRequestRecord记录异常表出现异常,exception:" + JsonConvert.SerializeObject(requestRecord), ex);
             }
         }
 

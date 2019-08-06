@@ -24,7 +24,7 @@ namespace WIP_BasicInfo
         public ReturnBody<string> InsertCodeSets(CodeSetsEntity model)
         {
             ReturnBody<string> retBody = null;
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfoNoKey<CodeSetsEntity>(namespaceName, "InsertCodeSets", model);
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<CodeSetsEntity>(namespaceName, "InsertCodeSets", model);
             try
             {
                 #region 验证
@@ -72,7 +72,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
                 retBody = BLLHelpler.GetReturnBody<string>(ResCode.FAILURE, ResMsg.FAILURE + ":" + ex.Message, exception);
                 return retBody;
             }
@@ -94,7 +94,7 @@ namespace WIP_BasicInfo
         public ReturnBody<string> UpdateCodeSets(CodeSetsEntity model)
         {
             ReturnBody<string> retBody = null;
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfoNoKey<CodeSetsEntity>(namespaceName, "UpdateCodeSets", model);
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<CodeSetsEntity>(namespaceName, "UpdateCodeSets", model);
             try
             {
                 #region 验证
@@ -143,7 +143,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
                 retBody = BLLHelpler.GetReturnBody<string>(ResCode.FAILURE, ResMsg.FAILURE + ":" + ex.Message, exception);
                 return retBody;
             }
@@ -165,7 +165,7 @@ namespace WIP_BasicInfo
         {
             var strOrderBy = " codeSets.lastModifyTime DESC";
             var strWhere = "";
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfoNoKey<QueryCodeSetsModel>(namespaceName, "GetCodeSetsList", queryModel);
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<QueryCodeSetsModel>(namespaceName, "GetCodeSetsList", queryModel);
             try
             {
                 if (queryModel != null)
@@ -191,7 +191,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<PageResultModel<CodeSetsEntity>>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }
@@ -210,7 +210,7 @@ namespace WIP_BasicInfo
         /// <returns></returns> 
         public ReturnBody<List<CodeSetsModel>> GetAllCodeSets()
         {
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfoNoKey<string>(namespaceName, "GetAllCodeSets", "");
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<string>(namespaceName, "GetAllCodeSets", "");
             try
             {
                 List<CodeSetsModel> list = codeSetsBLL.GetModelList();
@@ -218,7 +218,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<List<CodeSetsModel>>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }
@@ -239,7 +239,7 @@ namespace WIP_BasicInfo
         /// <returns></returns> 
         public ReturnBody<CodeSetsEntity> GetSingleCodeSets(QueryCodeSetsModel model)
         {
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfoNoKey<QueryCodeSetsModel>(namespaceName, "GetSingleCodeSets", model);
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<QueryCodeSetsModel>(namespaceName, "GetSingleCodeSets", model);
             try
             {
                 #region 验证
@@ -259,7 +259,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<CodeSetsEntity>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }
@@ -283,7 +283,7 @@ namespace WIP_BasicInfo
         /// <returns></returns> 
         public ReturnBody<bool> EnableCodeSets(QueryCodeSetsModel model)
         {
-            ExceptionInfoEntity exception = WipLogHelper.GetNewExceptionInfoNoKey<QueryCodeSetsModel>(namespaceName, "EnableCodeSets", model);
+            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<QueryCodeSetsModel>(namespaceName, "EnableCodeSets", model);
             try
             {
                 #region 验证
@@ -300,7 +300,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<bool>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }

@@ -65,7 +65,7 @@
             getParamDict.Add(key, Request.QueryString[key].ToString());
         }
         dict.Add("GetParam", Newtonsoft.Json.JsonConvert.SerializeObject(getParamDict));
-        LogHelper.WriteInfoLogByLog4Net(typeof(string), Newtonsoft.Json.JsonConvert.SerializeObject(dict));
+        Log4netHelper.WriteInfoLogByLog4Net(typeof(string), Newtonsoft.Json.JsonConvert.SerializeObject(dict));
         
         //*/
         return;
@@ -118,7 +118,7 @@
                 getParamDict.Add(key, Request.QueryString[key].ToString());
             }
             dict.Add("GetParam", Newtonsoft.Json.JsonConvert.SerializeObject(getParamDict));
-            LogHelper.WriteErrorLogByLog4Net(typeof(string), "权限不足->" + Newtonsoft.Json.JsonConvert.SerializeObject(dict));
+            SysManager.Common.Utilities.Log4netHelper.WriteErrorLogByLog4Net(typeof(string), "权限不足->" + Newtonsoft.Json.JsonConvert.SerializeObject(dict));
 
             return;
         }
