@@ -30,7 +30,6 @@ namespace WIP_Personnel
         [WebGet(UriTemplate = "validateuserTest", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         Dictionary<String, String> testGet();
 
-
         #region 修改密码
 
         [OperationContract]
@@ -57,8 +56,6 @@ namespace WIP_Personnel
         ReturnBody<string> UpdateAuth();
 
         #endregion
-
-
 
         #region 获取权限
 

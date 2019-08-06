@@ -22,7 +22,6 @@ namespace WIP_Personnel
 
     public class ValidateUser : IValidateUser
     {
-
         private string GEBFUrl = ConfigHelper.GetValue("GEBF_URL");
         private string namespaceName = "WIP_Personnel.ValidateUser";
 
@@ -248,11 +247,6 @@ namespace WIP_Personnel
 
         #endregion
 
-
-
-
-
-
         #region 更新权限到缓存
 
         /// <summary>
@@ -280,7 +274,6 @@ namespace WIP_Personnel
         }
 
         #endregion
-
 
         #region 获取权限
 
