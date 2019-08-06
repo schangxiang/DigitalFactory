@@ -85,7 +85,6 @@ namespace WIP_BLL
 
         #endregion
 
-
         #region Query(Single)
 
         /// <summary> 

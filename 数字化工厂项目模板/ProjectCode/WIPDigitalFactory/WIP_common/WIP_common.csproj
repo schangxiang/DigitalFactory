@@ -87,23 +87,10 @@
   <ItemGroup>
     <Compile Include="IOCContainer.cs" />
     <Compile Include="Common.cs" />
-    <Compile Include="Utility\HttpClientHelper.cs" />
-    <Compile Include="Utility\RabbitClient.cs" />
-    <Compile Include="Utility\RequestMessage.cs" />
     <Compile Include="Utility\SectionConfig\Mail\MailValueCollection.cs" />
     <Compile Include="Utility\SectionConfig\Mail\MailSection.cs" />
-    <Compile Include="Utility\SectionConfig\RabbitMQConfig\RabbitMQConfigCollection.cs" />
-    <Compile Include="Utility\SectionConfig\RabbitMQConfig\RabbitMQConfigSection.cs" />
-    <Compile Include="Utility\SectionConfig\SysIntegrConfig\MangoDBSection.cs" />
-    <Compile Include="Utility\SectionConfig\SysIntegrConfig\IntegrKeyValueCollection.cs" />
-    <Compile Include="Utility\SectionConfig\SysIntegrConfig\LIMSIntegrSection.cs" />
-    <Compile Include="Utility\SectionConfig\SysIntegrConfig\ScheduleIntegrSection.cs" />
-    <Compile Include="Utility\SectionConfig\SysIntegrConfig\QAMSIntegrSection.cs" />
     <Compile Include="Utility\SectionConfig\PrintType\PrintTypeSection.cs" />
     <Compile Include="Utility\SectionConfig\PrintType\PrintKeyValueCollection.cs" />
-    <Compile Include="Utility\SectionConfig\SysIntegrConfig\WCSIntegrSection.cs" />
-    <Compile Include="Utility\SectionConfig\SysIntegrConfig\MESIntegrSection.cs" />
-    <Compile Include="Utility\SectionConfig\SysIntegrConfig\ECMIntegrSection.cs" />
     <Compile Include="DatabaseManager.cs" />
     <Compile Include="JwtHelp.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -124,9 +111,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WIP_DAL\WIP_DAL.csproj">
