@@ -89,7 +89,7 @@ namespace WIP_BLL
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 exception.exceptionMsg += ",执行次数:" + execCount.ToString();
                 execResult = false;
             }
@@ -120,7 +120,7 @@ namespace WIP_BLL
             RequestType requestType,
             int execCount)
         {
-            WipLog4netHelper.WriteExceptionInfo(exception);
+            WipLogHelper.WriteExceptionInfo(exception);
             int retryCount = GetRequestRetryCount();
             if (execCount < retryCount)
             {
@@ -142,7 +142,7 @@ namespace WIP_BLL
                 else
                 {
                     exception.exceptionMsg += "执行次数已超过限制值:" + retryCount.ToString();
-                    WipLog4netHelper.WriteExceptionInfo(exception);
+                    WipLogHelper.WriteExceptionInfo(exception);
 
                     //发送报警邮件
                     if (IsSendMail(requestType))

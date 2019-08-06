@@ -18,7 +18,7 @@ namespace WIP_BasicInfo
         public ReturnBody<AuthorizationUserModel> GetAuthorizationuser(AuthorizationUserModel model)
         {
 
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<AuthorizationUserModel>(namespaceName, "GetAuthorizationuser", model);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<AuthorizationUserModel>(namespaceName, "GetAuthorizationuser", model);
             try
             {
                 #region 验证
@@ -38,7 +38,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<AuthorizationUserModel>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }

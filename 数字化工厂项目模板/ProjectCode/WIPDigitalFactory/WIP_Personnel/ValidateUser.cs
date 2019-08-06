@@ -262,7 +262,7 @@ namespace WIP_Personnel
         /// <returns></returns>
         public ReturnBody<string> UpdateAuth()
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfo<string>(namespaceName, "UpdateAuth", "", "", "");
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<string>(namespaceName, "UpdateAuth", "", "", "");
             try
             {
 
@@ -274,7 +274,7 @@ namespace WIP_Personnel
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<string>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }
@@ -291,7 +291,7 @@ namespace WIP_Personnel
         /// <returns></returns>
         public ReturnBody<List<RedisModel>> GetAuth()
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfo<string>(namespaceName, "GetAuth", "", "", "");
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<string>(namespaceName, "GetAuth", "", "", "");
             try
             {
                 List<RedisModel> redisModelList = new List<RedisModel>();
@@ -304,7 +304,7 @@ namespace WIP_Personnel
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<List<RedisModel>>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }

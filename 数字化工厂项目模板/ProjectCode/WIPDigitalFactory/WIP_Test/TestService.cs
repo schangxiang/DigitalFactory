@@ -37,7 +37,7 @@ namespace WIP_Test
         /// <returns></returns>
         public ReturnBody<string> GetEncryptData(GetEncryptData param)
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<GetEncryptData>(namespaceName, "GetEncryptData", param);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<GetEncryptData>(namespaceName, "GetEncryptData", param);
             try
             {
                 string result = "";
@@ -57,7 +57,7 @@ namespace WIP_Test
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<string>(ResCode.FAILURE, ResMsg.FAILURE, exception, "出现错误:" + ex.Message);
             }
         }
@@ -69,7 +69,7 @@ namespace WIP_Test
         /// <returns></returns>
         public ReturnBody<string> GenerateToken(GenerateTokenParam user)
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<GenerateTokenParam>(namespaceName, "GenerateToken", user);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<GenerateTokenParam>(namespaceName, "GenerateToken", user);
             try
             {
                 string token = JwtHelp.GenerateToken(user.Name, null, user.ExpDays);
@@ -77,7 +77,7 @@ namespace WIP_Test
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<string>(ResCode.FAILURE, ResMsg.FAILURE, exception, "出现错误:" + ex.Message);
             }
         }
@@ -90,7 +90,7 @@ namespace WIP_Test
         /// <returns></returns>
         public ReturnBody<bool> SendMail(MailParam param)
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<MailParam>(namespaceName, "SendMail", param);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<MailParam>(namespaceName, "SendMail", param);
             try
             {
                 param.describe = "<p class=\"MsoNormal\"><span lang=\"EN-US\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>上汽项目<span lang=\"EN-US\">,ECM</span>联调问题很多<span lang=\"EN-US\">,</span>项目已经红色预警<span lang=\"EN-US\">,</span>我们将在周末继续配合法方修正各个关键点<span lang=\"EN-US\">.<o:p></o:p></span></p>";
@@ -101,7 +101,7 @@ namespace WIP_Test
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<bool>(ResCode.FAILURE, ResMsg.FAILURE, exception, false);
             }
         }

@@ -23,7 +23,7 @@ namespace WIP_BasicInfo
         public ReturnBody<string> InsertPrintConfig(PrintConfigEntity model)
         {
             ReturnBody<string> retBody = null;
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<PrintConfigEntity>(namespaceName, "InsertPrintConfig", model);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<PrintConfigEntity>(namespaceName, "InsertPrintConfig", model);
             try
             {
                 #region 验证
@@ -72,7 +72,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 retBody = BLLHelpler.GetReturnBody<string>(ResCode.FAILURE, ResMsg.FAILURE + ":" + ex.Message, exception);
                 return retBody;
             }
@@ -94,7 +94,7 @@ namespace WIP_BasicInfo
         public ReturnBody<string> UpdatePrintConfig(PrintConfigEntity model)
         {
             ReturnBody<string> retBody = null;
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<PrintConfigEntity>(namespaceName, "UpdatePrintConfig", model);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<PrintConfigEntity>(namespaceName, "UpdatePrintConfig", model);
             try
             {
                 #region 验证
@@ -143,7 +143,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 retBody = BLLHelpler.GetReturnBody<string>(ResCode.FAILURE, ResMsg.FAILURE + ":" + ex.Message, exception);
                 return retBody;
             }
@@ -163,7 +163,7 @@ namespace WIP_BasicInfo
         /// <returns></returns> 
         public ReturnBody<PageResultModel<PrintConfigModel>> GetPrintConfigList(QueryPrintConfigParam queryModel)
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<QueryPrintConfigParam>(namespaceName, "GetPrintConfigList", queryModel);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<QueryPrintConfigParam>(namespaceName, "GetPrintConfigList", queryModel);
             try
             {
                 PageResultModel<PrintConfigModel> list = printConfigBLL.GetModelListForPage(queryModel);
@@ -171,7 +171,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<PageResultModel<PrintConfigModel>>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }
@@ -192,7 +192,7 @@ namespace WIP_BasicInfo
         /// <returns></returns> 
         public ReturnBody<PrintConfigEntity> GetSinglePrintConfig(QueryPrintConfigParam model)
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<QueryPrintConfigParam>(namespaceName, "GetSinglePrintConfig", model);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<QueryPrintConfigParam>(namespaceName, "GetSinglePrintConfig", model);
             try
             {
                 #region 验证
@@ -212,7 +212,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<PrintConfigEntity>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }
@@ -236,7 +236,7 @@ namespace WIP_BasicInfo
         /// <returns></returns> 
         public ReturnBody<bool> EnablePrintConfig(QueryPrintConfigParam model)
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<QueryPrintConfigParam>(namespaceName, "EnablePrintConfig", model);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<QueryPrintConfigParam>(namespaceName, "EnablePrintConfig", model);
             try
             {
                 #region 验证
@@ -253,7 +253,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<bool>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }

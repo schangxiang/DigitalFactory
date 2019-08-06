@@ -32,7 +32,7 @@ namespace WIP_MES
         /// <returns></returns>
         public ReturnBody<BaseDataSynResultModel> datasyn(List<BaseDataSynParamModel> basedataList)
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfo<List<BaseDataSynParamModel>>(namespaceName, "datasyn", basedataList,"","");
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<List<BaseDataSynParamModel>>(namespaceName, "datasyn", basedataList, "", "");
             try
             {
                 #region  验证
@@ -212,7 +212,7 @@ namespace WIP_MES
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<BaseDataSynResultModel>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }

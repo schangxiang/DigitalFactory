@@ -23,6 +23,7 @@ using WIP_Print;
 
 namespace WIP_MES
 {
+    
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     [WipLogAop("WIP_MES.MesSysInteg", WipSource.WIPREST)]

@@ -45,7 +45,7 @@ namespace WIP_BLL
         {
             if (resCode != ResCode.SUCCESS)
             {
-                WipLog4netHelper.WriteExceptionInfo(exception);
+                WipLogHelper.WriteExceptionInfo(exception);
             }
             return new ReturnBody<T>()
             {

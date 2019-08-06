@@ -24,7 +24,7 @@ namespace WIP_BasicInfo
         public ReturnBody<string> InsertCodeItems(CodeItemsEntity model)
         {
             ReturnBody<string> retBody = null;
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<CodeItemsEntity>(namespaceName, "InsertCodeItems", model);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<CodeItemsEntity>(namespaceName, "InsertCodeItems", model);
             try
             {
                 #region 验证
@@ -75,7 +75,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 retBody = BLLHelpler.GetReturnBody<string>(ResCode.FAILURE, ResMsg.FAILURE + ":" + ex.Message, exception);
                 return retBody;
             }
@@ -97,7 +97,7 @@ namespace WIP_BasicInfo
         public ReturnBody<string> UpdateCodeItems(CodeItemsEntity model)
         {
             ReturnBody<string> retBody = null;
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<CodeItemsEntity>(namespaceName, "UpdateCodeItems", model);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<CodeItemsEntity>(namespaceName, "UpdateCodeItems", model);
             try
             {
                 #region 验证
@@ -147,7 +147,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 retBody = BLLHelpler.GetReturnBody<string>(ResCode.FAILURE, ResMsg.FAILURE + ":" + ex.Message, exception);
                 return retBody;
             }
@@ -169,7 +169,7 @@ namespace WIP_BasicInfo
         {
             var strOrderBy = " codeItems.lastModifyTime DESC";
             var strWhere = "";
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<QueryCodeItemsModel>(namespaceName, "GetCodeItemsList", queryModel);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<QueryCodeItemsModel>(namespaceName, "GetCodeItemsList", queryModel);
             try
             {
                 if (queryModel != null)
@@ -199,7 +199,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<PageResultModel<CodeItemsEntity>>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }
@@ -220,7 +220,7 @@ namespace WIP_BasicInfo
         /// <returns></returns> 
         public ReturnBody<CodeItemsEntity> GetSingleCodeItems(QueryCodeItemsModel model)
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<QueryCodeItemsModel>(namespaceName, "GetSingleCodeItems", model);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<QueryCodeItemsModel>(namespaceName, "GetSingleCodeItems", model);
             try
             {
                 #region 验证
@@ -240,7 +240,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<CodeItemsEntity>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }
@@ -264,7 +264,7 @@ namespace WIP_BasicInfo
         /// <returns></returns> 
         public ReturnBody<bool> EnableCodeItems(QueryCodeItemsModel model)
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<QueryCodeItemsModel>(namespaceName, "DelCodeItems", model);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<QueryCodeItemsModel>(namespaceName, "DelCodeItems", model);
             try
             {
                 #region 验证
@@ -279,7 +279,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<bool>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }
@@ -301,7 +301,7 @@ namespace WIP_BasicInfo
         /// <returns></returns> 
         public ReturnBody<List<CodeSetsModel>> GetAllCodeItemsByCodeSet(GetAllCodeItemsByCodeSetParam param)
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoNoKey<GetAllCodeItemsByCodeSetParam>(namespaceName, "GetAllCodeItemsByCodeSet", param);
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<GetAllCodeItemsByCodeSetParam>(namespaceName, "GetAllCodeItemsByCodeSet", param);
             try
             {
                 string strWhere = " codeItems.setCode='" + param .codeSet+ "' ";
@@ -310,7 +310,7 @@ namespace WIP_BasicInfo
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 return BLLHelpler.GetReturnBody<List<CodeSetsModel>>(ResCode.FAILURE, ResMsg.FAILURE, exception);
             }
         }

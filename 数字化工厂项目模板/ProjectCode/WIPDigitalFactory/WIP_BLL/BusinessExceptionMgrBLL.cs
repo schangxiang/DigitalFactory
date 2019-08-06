@@ -256,7 +256,7 @@ namespace WIP_BLL
             BusinessExceptionMgrEntity businessExceptionMgr = null;
             try
             {
-                businessExceptionMgr = WIPCommon.T1ToT2<BusinessExceptionMgrParam, BusinessExceptionMgrEntity>(businessExceptionParam);
+                businessExceptionMgr = CommonHelper.T1ToT2<BusinessExceptionMgrParam, BusinessExceptionMgrEntity>(businessExceptionParam);
                 businessExceptionMgr.creator = businessExceptionMgr.lastModifier = creator;
                 businessExceptionMgr.createTime = businessExceptionMgr.lastModifyTime = DateTime.Now;
                 businessExceptionMgr.delFlag = false;

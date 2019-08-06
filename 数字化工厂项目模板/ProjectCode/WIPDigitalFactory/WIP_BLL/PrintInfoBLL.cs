@@ -69,7 +69,7 @@ namespace WIP_BLL
         /// <returns></returns>
         public List<PrintInfoModel> GetNeedPrintList()
         {
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfo<string>(namespaceName,
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<string>(namespaceName,
                 "GetNeedPrintList", "", "", "", ExceptionSource.WIPReceive, ExceptionLevel.BusinessError, WipSource.PrintService);
             List<PrintInfoModel> printList = null;
             try
@@ -80,7 +80,7 @@ namespace WIP_BLL
             }
             catch (Exception ex)
             {
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
                 //判断ex的内容，如果是数据库超时，则过滤，直接光写文本日志
                 if (ex.Message.Contains("信号灯超时时间已到") || ex.Message.Contains("未找到或无法访问服务器")
                     || ex.Message.Contains("超时时间已到"))
@@ -89,7 +89,7 @@ namespace WIP_BLL
                 }
                 else
                 {
-                    WipLog4netHelper.WriteExceptionInfo(exception);
+                    WipLogHelper.WriteExceptionInfo(exception);
                 }
             }
             return printList;

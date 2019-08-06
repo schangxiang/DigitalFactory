@@ -36,7 +36,7 @@ namespace WIP_WIPMgmt
         {
             ReturnBody<List<UserLoginLogEntity>> ret = null;
             //请求信息没记录下来
-            ExceptionInfoEntity exception = WipLog4netHelper.GetNewExceptionInfoOnly<string>(namespaceName,
+            ExceptionInfoEntity exception = WipLogHelper.GetExceptionInfo<string>(namespaceName,
                "GetUserLoginLogList", userName,
                "", "");
             try
@@ -48,8 +48,8 @@ namespace WIP_WIPMgmt
             catch (Exception ex)
             {//异常信息没有记录下来
 
-                WipLog4netHelper.GetExceptionInfoForError(ex, ref exception);
-                WipLog4netHelper.WriteExceptionInfo(exception);
+                WipLogHelper.GetExceptionInfoForError(ex, ref exception);
+                WipLogHelper.WriteExceptionInfo(exception);
 
                 ret.resCode = ResCode.FAILURE;
                 ret.resMsg = ex.Message;

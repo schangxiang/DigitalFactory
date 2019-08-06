@@ -29,13 +29,13 @@ namespace WIP_BLL
             try
             {
                 Guid guid = Guid.NewGuid();
-                WipLog4netHelper.WriteRequestRecord<T>(host, url, param, guid);
+                WipLogHelper.WriteRequestRecord<T>(host, url, param, guid);
 
                 JavaScriptDateTimeConverter convert = new JavaScriptDateTimeConverter();
                 var strParam = JsonConvert.SerializeObject(param, Formatting.None, convert);//序列化后的字符串
                 string content = new HTTPHelper(host).postContentForString(url,
                                 strParam, new Guid(), timeout);
-                WipLog4netHelper.WriteRequestRecord<T>(host, url, param, guid, content);
+                WipLogHelper.WriteRequestRecord<T>(host, url, param, guid, content);
                 if (!string.IsNullOrEmpty(content))
                 {
                     ReturnBody<T1> result = JsonConvert.DeserializeObject<ReturnBody<T1>>(content);
@@ -67,10 +67,10 @@ namespace WIP_BLL
             try
             {
                 Guid guid = Guid.NewGuid();
-                WipLog4netHelper.WriteRequestRecord<T>(host, url, param, guid);
+                WipLogHelper.WriteRequestRecord<T>(host, url, param, guid);
 
                 string content = new HTTPHelper(host).getContentForString(url, new Guid(), timeout);
-                WipLog4netHelper.WriteRequestRecord<T>(host, url, param, guid, content);
+                WipLogHelper.WriteRequestRecord<T>(host, url, param, guid, content);
                 if (!string.IsNullOrEmpty(content))
                 {
                     ReturnBody<T1> result = JsonConvert.DeserializeObject<ReturnBody<T1>>(content);
