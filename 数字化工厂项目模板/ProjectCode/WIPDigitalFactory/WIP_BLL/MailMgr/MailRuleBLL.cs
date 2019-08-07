@@ -8,8 +8,9 @@ using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using WIP_common;
-using WIP_SQLServerDAL;
 using WIP_Models;
+using WIP_DALFactory;
+using WIP_IDAL;
 
 namespace WIP_BLL
 {
@@ -33,7 +34,7 @@ namespace WIP_BLL
 
         #endregion
 
-        private readonly MailRuleDAL mailRuleDAL = MailRuleDAL.GetInstance();
+        private readonly IMailRuleDAL mailRuleDAL = WIPDataAccess.CreateDAL<IMailRuleDAL>("MailRuleDAL");
 
         /// <summary>
         /// 更新邮箱人员
@@ -240,40 +241,11 @@ namespace WIP_BLL
             {
                 throw;
             }
-            if (mailAddres == string.Empty)
-            {//记录业务异常信息 
-                BusinessExceptionMgrParam businessExceptionParam = new BusinessExceptionMgrParam()
-                {
-                    exceptionCode = BusinessExceptionCode.WIP_NoMailAddress,
-                    exceptionMsg = BusinessExceptionMessage.WIP_NoMailAddress + ",邮箱类型ID:" + categoryId,
-                };
-                BusinessExceptionMgrBLL.GetInstance().AddBusinessException(businessExceptionParam, "sys", false);
-            }
             return mailAddres;
         }
 
 
         #endregion
-
-
-        /// <summary>
-        /// 发送邮件(异常情况)
-        /// </summary>
-        /// <param name="mail"></param>
-        public void MailSendingForException(MailModel mail, string categoryId)
-        {
-            Task.Run(() =>
-            {
-                StringBuilder Describe = new StringBuilder();
-                Describe.Append("错误信息:" + mail.Describe.exceptionMsg + "<br/>");
-                Describe.Append("异常信息:" + mail.Describe.exceptionData + "<br/>");
-                Describe.Append("源数据:" + mail.Describe.sourceData + "<br/>");
-
-
-                IMail mail_1 = new Mail(categoryId);
-                mail_1.MailSending(mail.MailSubject, Describe.ToString(), mail.File_Path);
-            });
-        }
 
         /// <summary>
         /// 发送邮件(业务异常情况)
@@ -293,7 +265,7 @@ namespace WIP_BLL
                 Describe.Append("零件号:" + businessExceptionMgr.partNumber + "<br/>");
                 Describe.Append("零件名称:" + businessExceptionMgr.partName + "<br/>");
                 Describe.Append("主机名:" + businessExceptionMgr.host + "<br/>");
-               
+
 
                 IMail mail = new Mail(categoryId);
                 mail.MailSending("业务异常-" + businessExceptionMgr.exceptionMsg, Describe.ToString(), "");

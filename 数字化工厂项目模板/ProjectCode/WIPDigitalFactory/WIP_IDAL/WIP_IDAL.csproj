@@ -33,6 +33,9 @@
     <Reference Include="SysManager.Common.Models">
       <HintPath>..\CommDLL\SysManager.Common.Models.dll</HintPath>
     </Reference>
+    <Reference Include="SysManager.Common.Utilities">
+      <HintPath>..\CommDLL\SysManager.Common.Utilities.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,9 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICommonDAL.cs" />
+    <Compile Include="ICodeSetsDAL.cs" />
+    <Compile Include="IExceptionInfoDAL.cs" />
+    <Compile Include="ICodeItemsDAL.cs" />
     <Compile Include="IPrintInfoDAL.cs" />
+    <Compile Include="IMailRuleDAL.cs" />
+    <Compile Include="IPrintConfigDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IUserLoginLogDAL.cs" />
+    <Compile Include="IAuthorizationDAL.cs" />
+    <Compile Include="IRequestRecordDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WIP_Models\WIP_Models.csproj">

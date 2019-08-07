@@ -4,13 +4,14 @@ using System.Data.SqlClient;
 using System.Data;
 using WIP_Models;
 using SysManager.DB.Utilities;
+using WIP_IDAL;
 
 namespace WIP_SQLServerDAL
 {
     /// <summary> 
     /// 请求记录表数据访问类 
     /// </summary> 
-    public class RequestRecordDAL
+    public class RequestRecordDAL: IRequestRecordDAL
     {
         #region Add
 

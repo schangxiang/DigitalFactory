@@ -2,12 +2,14 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Data;
-using WIP_SQLServerDAL;
+
 using WIP_Models;
 using Newtonsoft.Json;
 using WIP_common;
 using SysManager.Common.Utilities;
 using SysManager.DB.Utilities;
+using WIP_IDAL;
+using WIP_DALFactory;
 
 namespace WIP_BLL
 {
@@ -28,7 +30,7 @@ namespace WIP_BLL
         }
         #endregion
 
-        private readonly PrintInfoDAL dal = new PrintInfoDAL();
+        private readonly IPrintInfoDAL dal = WIPDataAccess.CreateDAL<IPrintInfoDAL>("PrintInfoDAL");
         string namespaceName = "WIP_BLL.PrintInfoBLL";
 
         #region  Method

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using WIP_common;
-using WIP_SQLServerDAL;
+using WIP_DALFactory;
 using WIP_Models;
+using WIP_IDAL;
 
 namespace WIP_BLL
 {
@@ -12,7 +13,7 @@ namespace WIP_BLL
     /// </summary> 
     public partial class CodeItemsBLL
     {
-        private readonly CodeItemsDAL codeItemsDAL = new CodeItemsDAL();
+        private readonly ICodeItemsDAL codeItemsDAL = WIPDataAccess.CreateDAL<ICodeItemsDAL>("CodeItemsDAL");
 
         #region Add
 

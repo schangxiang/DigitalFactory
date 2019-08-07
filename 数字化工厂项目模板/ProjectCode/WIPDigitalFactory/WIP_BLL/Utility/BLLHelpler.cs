@@ -13,7 +13,6 @@ namespace WIP_BLL
 {
     public class BLLHelpler
     {
-        private static readonly string namespaceName = "WIP_BLL.BLLHelpler";
 
         /// <summary>
         /// 公共返回方法

@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using WIP_common;
 using WIP_Models;
-using WIP_SQLServerDAL;
+
 using SysManager.Common.Utilities;
 
 namespace WIP_BLL
@@ -149,26 +149,7 @@ namespace WIP_BLL
                     {
                         SendMailForCommonDoRequestFailure(param, requestDesc, exception, sysCode, host, url, retryCount, businessExceptionParam);
                     }
-
-                    //发送业务异常
-                    SendBusinessException(requestType,businessExceptionParam);
                 }
-            }
-        }
-
-        /// <summary>
-        ///  发送业务异常
-        /// </summary>
-        /// <param name="businessExceptionParam"></param>
-        private static void SendBusinessException(RequestType requestType, BusinessExceptionMgrParam businessExceptionParam)
-        {
-            if (businessExceptionParam != null)
-            {
-                if (requestType == RequestType.QualityTaskToLIMS && businessExceptionParam.exceptionMsg.IndexOf("重复提交") > -1)
-                {//质检任务发给LIMS，如果提示 重复提交的话，不要写入业务异常信息表中
-                    return;
-                }
-                BusinessExceptionMgrBLL.GetInstance().AddBusinessException(businessExceptionParam, JwtHelp.GetCurUserName());
             }
         }
 

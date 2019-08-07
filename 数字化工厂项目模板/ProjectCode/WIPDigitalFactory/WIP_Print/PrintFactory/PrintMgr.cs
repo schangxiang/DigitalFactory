@@ -13,7 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WIP_BLL;
-using WIP_SQLServerDAL;
+using WIP_IDAL;
+using WIP_DALFactory;
 using WIP_Models;
 using WIP_common;
 using System.Reflection;
@@ -87,7 +88,7 @@ namespace WIP_Print
                         };
                         try
                         {
-                            var execResult = new PrintInfoDAL().UpdatePrintResult(parameters_UpdatePrintResult, transModel);
+                            var execResult = WIPDataAccess.CreateDAL<IPrintInfoDAL>("PrintInfoDAL").UpdatePrintResult(parameters_UpdatePrintResult, transModel);
                             if (execResult != 1)
                             {//返回1代表执行成功,返回-1代表失败
                                 throw new Exception("处理打印结果失败,parameters:" + JsonConvert.SerializeObject(parameters_UpdatePrintResult)
@@ -357,7 +358,7 @@ namespace WIP_Print
                 ObjectValue = printId,
                 dbType = SqlDbType.Int
             });
-            var result = DALCommon.UpdateExtend(list, Table.PrintInfo);
+            var result = WIPDataAccess.CreateDAL<ICommonDAL>("CommonDAL").UpdateExtend(list, Table.PrintInfo);
             return result;
         }
 

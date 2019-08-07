@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using WIP_common;
-using WIP_SQLServerDAL;
+using WIP_IDAL;
+using WIP_DALFactory;
 using WIP_Models;
 
 namespace WIP_BLL
@@ -12,7 +13,7 @@ namespace WIP_BLL
     /// </summary> 
     public partial class PrintConfigBLL
     {
-        private readonly PrintConfigDAL printConfigDAL = new PrintConfigDAL();
+        private readonly IPrintConfigDAL printConfigDAL = WIPDataAccess.CreateDAL<IPrintConfigDAL>("PrintConfigDAL");
 
         #region Add
 

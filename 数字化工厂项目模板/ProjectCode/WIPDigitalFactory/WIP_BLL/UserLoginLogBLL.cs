@@ -17,10 +17,11 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WIP_SQLServerDAL;
+
 using WIP_IBLL;
 using WIP_Models;
 using WIP_DALFactory;
+using WIP_IDAL;
 
 namespace WIP_BLL
 {
@@ -34,7 +35,7 @@ namespace WIP_BLL
         /// <returns>用户登录记录列表</returns>
         public List<UserLoginLogEntity> GetUserLoginLogList(string userName)
         {
-            return WIPDataAccess.CreateUserLoginLogDAL().GetUserLoginLogList(userName);
+            return WIPDataAccess.CreateDAL<IUserLoginLogDAL>("UserLoginLogDAL").GetUserLoginLogList(userName);
         }
     }
 }

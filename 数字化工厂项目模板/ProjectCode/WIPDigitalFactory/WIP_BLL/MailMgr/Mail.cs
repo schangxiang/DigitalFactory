@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using WIP_common;
 using WIP_Models;
-using WIP_SQLServerDAL;
+using WIP_IDAL;
+using WIP_DALFactory;
 using System.Net.Mail;
 using SysManager.Common.Utilities;
 
@@ -31,7 +32,7 @@ namespace WIP_BLL
             {
                 _recipientsAddressRange = MailRuleBLL.GetInstance().GetMailPersonListRetStr(_categoryId);
 
-                List<MailBaseData> mailBaseDataList = DALCommon.GetMailBaseData();
+                List<MailBaseData> mailBaseDataList = WIPDataAccess.CreateDAL<ICommonDAL>("CommonDAL").GetMailBaseData();
                 if (mailBaseDataList == null || mailBaseDataList.Count == 0)
                 {
                     throw new Exception("没有找到邮箱基础数据");

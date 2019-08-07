@@ -15,20 +15,20 @@ namespace WIP_DALFactory
         private static readonly string path = ConfigHelper.GetValue("DBDAL");
         private WIPDataAccess() { }
 
-        public static IPrintInfoDAL CreatePrintInfoDAL()
+        /// <summary>
+        /// 生成DAL对象
+        /// </summary>
+        /// <typeparam name="T">DAL接口对象</typeparam>
+        /// <param name="dalName">DAL类名</param>
+        /// <returns>DAL接口对象</returns>
+        public static T CreateDAL<T>(string dalName)
         {
-            string className = path + ".PrintInfoDAL";
-            return (IPrintInfoDAL)Assembly.Load(path).CreateInstance(className);
+            string className = path + "." + dalName;
+            return (T)Assembly.Load(path).CreateInstance(className);
         }
 
-        public static IUserLoginLogDAL CreateUserLoginLogDAL()
-        {
-            string className = path + ".UserLoginLogDAL";
-            return (IUserLoginLogDAL)Assembly.Load(path).CreateInstance(className);
-        }
 
-        
-        private object CreateObject(string assemblyPath,string classNamespace)
+        private object CreateObject(string assemblyPath, string classNamespace)
         {
             return null;
         }

@@ -20,7 +20,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using WIP_common;
-using WIP_SQLServerDAL;
+using WIP_IDAL;
+using WIP_DALFactory;
 using WIP_Models;
 
 namespace WIP_BLL
@@ -30,7 +31,7 @@ namespace WIP_BLL
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
     public sealed class WipLogAopAttribute : KAopClassAttribute
     {
-        private static RequestRecordDAL requestRecordDAL = new WIP_SQLServerDAL.RequestRecordDAL();
+        private static IRequestRecordDAL requestRecordDAL = WIPDataAccess.CreateDAL<IRequestRecordDAL>("RequestRecordDAL");
 
         public WipLogAopAttribute(string namespaceName, string msgSource = WipSource.WIPREST)
         {

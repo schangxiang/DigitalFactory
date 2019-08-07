@@ -14,7 +14,8 @@ using System.Web;
 using Newtonsoft.Json;
 using System.Collections.Concurrent;
 using SysManager.Common.Utilities;
-
+using WIP_IDAL;
+using WIP_DALFactory;
 namespace WIP_common
 {
     public class JwtHelp
@@ -468,7 +469,7 @@ namespace WIP_common
             {
                 Task.Run(() =>
                 {
-                    List<UserInfoLogon> userList = WIP_SQLServerDAL.DALCommon.GetUserAccountView();
+                    List<UserInfoLogon> userList = WIPDataAccess.CreateDAL<ICommonDAL>("CommonDAL").GetUserAccountView();
 
                     if (userList != null && userList.Count > 0)
                     {
@@ -516,7 +517,7 @@ namespace WIP_common
             List<RedisModel> redisModelList = new List<RedisModel>();
             try
             {
-                List<UserInfoLogon> userList = WIP_SQLServerDAL.DALCommon.GetUserAccountView();
+                List<UserInfoLogon> userList =WIPDataAccess.CreateDAL<ICommonDAL>("CommonDAL").GetUserAccountView();
                 RedisModel aa = null;
                 if (userList != null && userList.Count > 0)
                 {

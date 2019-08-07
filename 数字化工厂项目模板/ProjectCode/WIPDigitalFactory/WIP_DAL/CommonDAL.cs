@@ -5,19 +5,20 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using WIP_IDAL;
 using WIP_Models;
 
 
 namespace WIP_SQLServerDAL
 {
-    public partial class DALCommon
+    public partial class CommonDAL : ICommonDAL
     {
 
         /// <summary>
         /// 清除数据
         /// </summary>
         /// <param name="procName">存储过程名</param>
-        public static void ClearData(string procName)
+        public void ClearData(string procName)
         {
             int rowsAffected = 0;
             SqlParameter[] parameters = { };
@@ -29,7 +30,7 @@ namespace WIP_SQLServerDAL
         /// 初始化快照数据
         /// </summary>
         /// <returns></returns>
-        public static ProcResultModel InitDayReportData(int year, int month, int day, string dayValue)
+        public ProcResultModel InitDayReportData(int year, int month, int day, string dayValue)
         {
             SqlParameter[] parameters = {
                   new SqlParameter("@errMsg",SqlDbType.NVarChar,50),
@@ -53,7 +54,7 @@ namespace WIP_SQLServerDAL
         /// </summary>
         /// <param name="tableName">要清空的表名</param>
         /// <returns></returns>
-        public static bool TruncateTable(string tableName)
+        public bool TruncateTable(string tableName)
         {
             string sql = " truncate table " + tableName;
             SQLServerHelper.ExecuteSql(sql);
@@ -66,7 +67,7 @@ namespace WIP_SQLServerDAL
         /// <param name="updateArr">要更新的列集合</param>
         /// <param name="tableName">表名</param>
         /// <returns></returns>
-        public static bool UpdateExtend(List<PropertyParam> updateArr, string tableName, TransactionModel transModel = null)
+        public bool UpdateExtend(List<PropertyParam> updateArr, string tableName, TransactionModel transModel = null)
         {
             SqlParam sqlParam = GetStr_UpdateExtend(updateArr, tableName);
             int rows = 0;
@@ -87,7 +88,7 @@ namespace WIP_SQLServerDAL
         /// <param name="updateArr">要更新的列集合</param>
         /// <param name="tableName">表名</param>
         /// <returns></returns>
-        public static SqlParam GetStr_UpdateExtend(List<PropertyParam> updateArr, string tableName)
+        public SqlParam GetStr_UpdateExtend(List<PropertyParam> updateArr, string tableName)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update " + tableName + " set ");
@@ -191,7 +192,7 @@ namespace WIP_SQLServerDAL
         /// <param name="delName">要删除关联的表字段名</param>
         /// <param name="rowId">要删除的关联id</param>
         /// <returns></returns>
-        public static SqlParam GetStr_DeleteExtend(string tableName, string delName, int rowId)
+        public SqlParam GetStr_DeleteExtend(string tableName, string delName, int rowId)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append(" UPDATE " + tableName + " SET ");
@@ -209,7 +210,7 @@ namespace WIP_SQLServerDAL
         /// 事务执行
         /// </summary>
         /// <param name="sqlParamList"></param>
-        public static void ExecuteSqlTranList(List<SqlParam> sqlParamList)
+        public void ExecuteSqlTranList(List<SqlParam> sqlParamList)
         {
             List<Dictionary<string, object>> ListDic = new List<Dictionary<string, object>>();
             Dictionary<string, object> dicstr = null;
@@ -228,7 +229,7 @@ namespace WIP_SQLServerDAL
         /// </summary>
         /// <param name="serialNoType"></param>
         /// <returns></returns>
-        public static string GetSerialNo(SerialNoType serialNoType)
+        public string GetSerialNo(SerialNoType serialNoType)
         {
             try
             {
@@ -260,7 +261,7 @@ namespace WIP_SQLServerDAL
         /// <param name="heatingOutCode">出热物料号</param>
         /// <param name="quantity">数量</param>
         /// <returns>进热物料号(即MaterialCode)</returns>
-        public static string GetMaterialCodeForIssueTask(string partNumber, string heatingOutCode, int quantity)
+        public string GetMaterialCodeForIssueTask(string partNumber, string heatingOutCode, int quantity)
         {
             string materialCode = "";
             SqlParameter[] parameters = { 
@@ -300,7 +301,7 @@ namespace WIP_SQLServerDAL
         /// 获取所有用户
         /// </summary>
         /// <returns></returns>
-        public static List<UserInfoLogon> GetUserAccountView()
+        public List<UserInfoLogon> GetUserAccountView()
         {
             try
             {
@@ -314,7 +315,7 @@ namespace WIP_SQLServerDAL
             }
         }
 
-        private static List<UserInfoLogon> DataTableToListForGetPersonnelGroupViewt(DataTable dt)
+        private List<UserInfoLogon> DataTableToListForGetPersonnelGroupViewt(DataTable dt)
         {
             List<UserInfoLogon> modelList = new List<UserInfoLogon>();
             int rowsCount = dt.Rows.Count;
@@ -339,7 +340,7 @@ namespace WIP_SQLServerDAL
         /// 获取所有用户
         /// </summary>
         /// <returns></returns>
-        public static List<MailBaseData> GetMailBaseData()
+        public List<MailBaseData> GetMailBaseData()
         {
             try
             {
@@ -353,7 +354,7 @@ namespace WIP_SQLServerDAL
             }
         }
 
-        private static List<MailBaseData> DataTableToListForGetMailBaseData(DataTable dt)
+        private List<MailBaseData> DataTableToListForGetMailBaseData(DataTable dt)
         {
             List<MailBaseData> modelList = new List<MailBaseData>();
             int rowsCount = dt.Rows.Count;

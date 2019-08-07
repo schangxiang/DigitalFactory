@@ -6,11 +6,12 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WIP_IDAL;
 using WIP_Models;
 
 namespace WIP_SQLServerDAL
 {
-   public   class PR_AuthorizationDAL
+    public class AuthorizationDAL : IAuthorizationDAL
     {
 
 

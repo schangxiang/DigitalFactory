@@ -4,7 +4,8 @@ using SysManager.Common.Utilities;
 using System;
 using System.Threading.Tasks;
 using WIP_common;
-using WIP_SQLServerDAL;
+using WIP_IDAL;
+using WIP_DALFactory;
 using WIP_Models;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
@@ -15,8 +16,8 @@ namespace WIP_BLL
     /// </summary>
     public class WipLogHelper
     {
-        private static ExceptionInfoDAL dal = ExceptionInfoDAL.GetInstance();
-        private static RequestRecordDAL requestRecordDAL = new WIP_SQLServerDAL.RequestRecordDAL();
+        private static IExceptionInfoDAL dal = WIPDataAccess.CreateDAL<IExceptionInfoDAL>("ExceptionInfoDAL");
+        private static IRequestRecordDAL requestRecordDAL =WIPDataAccess.CreateDAL<IRequestRecordDAL>("RequestRecordDAL");
 
         /// <summary>
         /// 写异常信息表数据

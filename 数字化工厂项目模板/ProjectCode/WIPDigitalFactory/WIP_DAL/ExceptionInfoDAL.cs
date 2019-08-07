@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Data;
 using WIP_Models;
 using SysManager.DB.Utilities;
+using WIP_IDAL;
 
 
 namespace WIP_SQLServerDAL
@@ -11,24 +12,8 @@ namespace WIP_SQLServerDAL
     /// <summary> 
     /// 异常信息表数据访问类 
     /// </summary> 
-    public partial class ExceptionInfoDAL
+    public partial class ExceptionInfoDAL : IExceptionInfoDAL
     {
-
-        #region 单例模式（饿汉模式）
-
-        private static ExceptionInfoDAL _instance = null;
-        private ExceptionInfoDAL() { }
-        static ExceptionInfoDAL()
-        {
-            _instance = new ExceptionInfoDAL();
-        }
-        public static ExceptionInfoDAL GetInstance()
-        {
-            return _instance;
-        }
-
-        #endregion
-
         /// <summary> 
         /// 增加一条异常信息表数据 
         /// </summary> 

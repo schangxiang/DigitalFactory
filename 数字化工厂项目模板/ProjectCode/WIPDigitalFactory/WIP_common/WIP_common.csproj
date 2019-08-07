@@ -113,9 +113,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WIP_DAL\WIP_SQLServerDAL.csproj">
-      <Project>{a6a4c9fd-a504-4b5c-b2e4-33ac03002212}</Project>
-      <Name>WIP_SQLServerDAL</Name>
+    <ProjectReference Include="..\WIP_DALFactory\WIP_DALFactory.csproj">
+      <Project>{4bf3f303-fb76-42e6-b722-64c9b3679f6d}</Project>
+      <Name>WIP_DALFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_IDAL\WIP_IDAL.csproj">
+      <Project>{939faefd-8fdf-44bf-9f85-52247b493b43}</Project>
+      <Name>WIP_IDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\WIP_Models\WIP_Models.csproj">
       <Project>{45cc6d7c-f2b9-4037-897c-2cc10910cc78}</Project>

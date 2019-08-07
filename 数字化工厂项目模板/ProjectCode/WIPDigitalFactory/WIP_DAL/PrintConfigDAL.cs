@@ -4,13 +4,14 @@ using System.Data.SqlClient;
 using System.Data;
 using WIP_Models;
 using SysManager.DB.Utilities;
+using WIP_IDAL;
 
 namespace WIP_SQLServerDAL
 {
     /// <summary> 
     /// 打印配置数据访问类 
     /// </summary> 
-    public partial class PrintConfigDAL
+    public partial class PrintConfigDAL : IPrintConfigDAL
     {
         #region Add
 

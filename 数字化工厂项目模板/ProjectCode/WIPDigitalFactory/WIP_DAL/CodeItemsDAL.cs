@@ -4,13 +4,14 @@ using System.Data.SqlClient;
 using System.Data;
 using WIP_Models;
 using SysManager.DB.Utilities;
+using WIP_IDAL;
 
 namespace WIP_SQLServerDAL
 {
     /// <summary> 
     /// 代码项表数据访问类 
     /// </summary> 
-    public partial class CodeItemsDAL
+    public partial class CodeItemsDAL : ICodeItemsDAL
     {
         #region Add
 

@@ -58,10 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DALCommon.cs" />
+    <Compile Include="CommonDAL.cs" />
     <Compile Include="MailMgr\MailRuleDAL.cs" />
-    <Compile Include="PR_AuthorizationDAL.cs" />
-    <Compile Include="TaskExecMgr\BusinessExceptionMgrDAL.cs" />
+    <Compile Include="AuthorizationDAL.cs" />
     <Compile Include="CodeItemsDAL.cs" />
     <Compile Include="CodeSetsDAL.cs" />
     <Compile Include="PrintConfigDAL.cs" />
