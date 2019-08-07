@@ -3,9 +3,10 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using WIP_Models;
+using SysManager.DB.Utilities;
 
 
-namespace WIP_DAL
+namespace WIP_SQLServerDAL
 {
     /// <summary> 
     /// 异常信息表数据访问类 
@@ -62,7 +63,7 @@ namespace WIP_DAL
 
 
             int rowsAffected;
-            DbHelperSQL.RunProcedure("uspWip_AddExceptionInfo", parameters, out rowsAffected);
+            SQLServerHelper.RunProcedure("uspWip_AddExceptionInfo", parameters, out rowsAffected);
             return (int)parameters[parameters.Length - 1].Value;
         }
 
@@ -105,7 +106,7 @@ namespace WIP_DAL
 
 
             int rowsAffected;
-            DbHelperSQL.RunProcedure("uspWip_AddExceptionInfoWithKey", parameters, out rowsAffected);
+            SQLServerHelper.RunProcedure("uspWip_AddExceptionInfoWithKey", parameters, out rowsAffected);
             return (int)parameters[parameters.Length - 1].Value;
         }
 

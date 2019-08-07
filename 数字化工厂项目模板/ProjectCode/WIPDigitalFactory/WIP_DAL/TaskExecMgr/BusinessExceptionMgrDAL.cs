@@ -3,8 +3,9 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using WIP_Models;
+using SysManager.DB.Utilities;
 
-namespace WIP_DAL
+namespace WIP_SQLServerDAL
 {
     /// <summary> 
     /// 业务异常管理数据访问类 
@@ -95,11 +96,11 @@ namespace WIP_DAL
             string procName = "uspWip_AddBusinessExceptionMgrByLastVersion";
             if (transModel != null)
             {
-                DbHelperSQL.RunProcedure(transModel.conn, transModel.trans, procName, parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure(transModel.conn, transModel.trans, procName, parameters, out rowsAffected);
             }
             else
             {
-                DbHelperSQL.RunProcedure(procName, parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure(procName, parameters, out rowsAffected);
             }
             return (int)parameters[parameters.Length - 1].Value;
         }
@@ -131,7 +132,7 @@ namespace WIP_DAL
 
 
             int rowsAffected = 0;
-            DbHelperSQL.RunProcedure("uspWip_UpdateBusinessExceptionMgr", parameters, out rowsAffected);
+            SQLServerHelper.RunProcedure("uspWip_UpdateBusinessExceptionMgr", parameters, out rowsAffected);
             if (rowsAffected > 0)
             {
                 return true;
@@ -166,7 +167,7 @@ namespace WIP_DAL
             parameters[1].Value = strWhere;
             parameters[2].Value = model.pageIndex;
             parameters[3].Value = model.pageSize;
-            return DbHelperSQL.RunProcedure("uspWip_GetBusinessExceptionMgrPageList", parameters, "pagetable");
+            return SQLServerHelper.RunProcedure("uspWip_GetBusinessExceptionMgrPageList", parameters, "pagetable");
         }
 
         #endregion

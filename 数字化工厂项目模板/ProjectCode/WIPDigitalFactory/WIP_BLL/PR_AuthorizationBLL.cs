@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WIP_DAL;
+using WIP_SQLServerDAL;
 using WIP_Models;
 
 namespace WIP_BLL

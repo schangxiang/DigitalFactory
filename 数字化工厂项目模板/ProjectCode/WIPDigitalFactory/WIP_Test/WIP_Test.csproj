@@ -103,9 +103,9 @@
       <Project>{1103472d-6a5c-4135-b359-0dfc72e71533}</Project>
       <Name>WIP_common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WIP_DAL\WIP_DAL.csproj">
+    <ProjectReference Include="..\WIP_DAL\WIP_SQLServerDAL.csproj">
       <Project>{a6a4c9fd-a504-4b5c-b2e4-33ac03002212}</Project>
-      <Name>WIP_DAL</Name>
+      <Name>WIP_SQLServerDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\WIP_Models\WIP_Models.csproj">
       <Project>{45CC6D7C-F2B9-4037-897C-2CC10910CC78}</Project>

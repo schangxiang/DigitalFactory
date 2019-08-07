@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SysManager.Common.Models</name>
+    </assembly>
+    <members>
+        <member name="T:SysManager.DB.Utilities.ProcResultModel">
+            <summary>
+            存储过程执行返回类
+            </summary>
+        </member>
+        <member name="P:SysManager.DB.Utilities.ProcResultModel.sqlParameterCollection">
+            <summary>
+            SqlCommand 相关联的参数的集合
+            </summary>
+        </member>
+        <member name="P:SysManager.DB.Utilities.ProcResultModel.execResult">
+            <summary>
+            执行结果(-1 失败，1成功)
+            </summary>
+        </member>
+        <member name="P:SysManager.DB.Utilities.ProcResultModel.errMsg">
+            <summary>
+            异常信息
+            </summary>
+        </member>
+        <member name="T:SysManager.DB.Utilities.TransactionModel">
+            <summary>
+            事务类
+            </summary>
+        </member>
+        <member name="P:SysManager.DB.Utilities.TransactionModel.conn">
+            <summary>
+            数据库连接类
+            </summary>
+        </member>
+        <member name="P:SysManager.DB.Utilities.TransactionModel.trans">
+            <summary>
+            事务类
+            </summary>
+        </member>
+    </members>
+</doc>

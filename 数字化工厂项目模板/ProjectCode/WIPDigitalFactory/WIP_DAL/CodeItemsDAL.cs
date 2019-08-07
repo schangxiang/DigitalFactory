@@ -3,8 +3,9 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using WIP_Models;
+using SysManager.DB.Utilities;
 
-namespace WIP_DAL
+namespace WIP_SQLServerDAL
 {
     /// <summary> 
     /// 代码项表数据访问类 
@@ -52,11 +53,11 @@ namespace WIP_DAL
             int rowsAffected;
             if (transModel != null)
             {
-                DbHelperSQL.RunProcedure(transModel.conn, transModel.trans, "uspWip_AddCodeItems", parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure(transModel.conn, transModel.trans, "uspWip_AddCodeItems", parameters, out rowsAffected);
             }
             else
             {
-                DbHelperSQL.RunProcedure("uspWip_AddCodeItems", parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure("uspWip_AddCodeItems", parameters, out rowsAffected);
             }
             return (int)parameters[parameters.Length - 1].Value;
         }
@@ -96,11 +97,11 @@ namespace WIP_DAL
             int rowsAffected = 0;
             if (transModel != null)
             {
-                DbHelperSQL.RunProcedure(transModel.conn, transModel.trans, "uspWip_UpdateCodeItems", parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure(transModel.conn, transModel.trans, "uspWip_UpdateCodeItems", parameters, out rowsAffected);
             }
             else
             {
-                DbHelperSQL.RunProcedure("uspWip_UpdateCodeItems", parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure("uspWip_UpdateCodeItems", parameters, out rowsAffected);
             }
             if (rowsAffected > 0)
             {
@@ -136,11 +137,11 @@ namespace WIP_DAL
             int rows = 0;
             if (transModel != null)
             {
-                rows = DbHelperSQL.ExecuteSql(transModel.conn, transModel.trans, strSql.ToString(), parameters);
+                rows = SQLServerHelper.ExecuteSql(transModel.conn, transModel.trans, strSql.ToString(), parameters);
             }
             else
             {
-                rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+                rows = SQLServerHelper.ExecuteSql(strSql.ToString(), parameters);
             }
             if (rows > 0)
             {
@@ -185,11 +186,11 @@ namespace WIP_DAL
             int rows = 0;
             if (transModel != null)
             {
-                rows = DbHelperSQL.ExecuteSql(transModel.conn, transModel.trans, strSql.ToString(), parameters);
+                rows = SQLServerHelper.ExecuteSql(transModel.conn, transModel.trans, strSql.ToString(), parameters);
             }
             else
             {
-                rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+                rows = SQLServerHelper.ExecuteSql(strSql.ToString(), parameters);
             }
             return rows > 0 ? true : false;
         }
@@ -219,7 +220,7 @@ namespace WIP_DAL
             parameters[1].Value = strWhere;
             parameters[2].Value = model.pageIndex;
             parameters[3].Value = model.pageSize;
-            return DbHelperSQL.RunProcedure("uspWip_GetCodeItemsPageList", parameters, "pagetable");
+            return SQLServerHelper.RunProcedure("uspWip_GetCodeItemsPageList", parameters, "pagetable");
         }
 
         /// <summary> 
@@ -235,7 +236,7 @@ namespace WIP_DAL
             {
                 strSql.Append(" where " + strWhere);
             }
-            object obj = DbHelperSQL.GetSingle(strSql.ToString());
+            object obj = SQLServerHelper.GetSingle(strSql.ToString());
             if (obj == null)
             {
                 return 0;
@@ -264,7 +265,7 @@ namespace WIP_DAL
             parameters[0].Value = setCode;
             parameters[1].Value = code;
 
-            DataSet ds = DbHelperSQL.RunProcedure("uspWip_GetSingleCodeItems", parameters, "pagetable");
+            DataSet ds = SQLServerHelper.RunProcedure("uspWip_GetSingleCodeItems", parameters, "pagetable");
 
             CodeItemsEntity model = new CodeItemsEntity();
 
@@ -326,7 +327,7 @@ namespace WIP_DAL
                         new SqlParameter("@strWhere", SqlDbType.NVarChar,500)  
             };
             parameters[0].Value = strWhere;
-            return DbHelperSQL.RunProcedure("uspWip_GetCodeItemsList", parameters, "table");
+            return SQLServerHelper.RunProcedure("uspWip_GetCodeItemsList", parameters, "table");
         }
 
         #endregion 
@@ -355,7 +356,7 @@ namespace WIP_DAL
             parameters[0].Value = setCode;
             parameters[1].Value = code;
 
-            return DbHelperSQL.Exists(strSql.ToString(), parameters);
+            return SQLServerHelper.Exists(strSql.ToString(), parameters);
         }
 
         #endregion

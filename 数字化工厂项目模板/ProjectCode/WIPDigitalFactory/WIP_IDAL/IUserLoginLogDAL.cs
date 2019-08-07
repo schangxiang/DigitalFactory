@@ -11,35 +11,26 @@
  */
 
 
-using SysManager.DB.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WIP_IDAL;
 using WIP_Models;
 
-namespace WIP_SQLServerDAL
+namespace WIP_IDAL
 {
     /// <summary>
     /// 用户登录记录数据访问类
     /// </summary>
-    public class UserLoginLogDAL : IUserLoginLogDAL
+    public interface IUserLoginLogDAL
     {
         /// <summary>
         /// 查询用户登录记录列表
         /// </summary>
         /// <param name="userName">用户名</param>
         /// <returns>用户登录记录列表</returns>
-        public List<UserLoginLogEntity> GetUserLoginLogList(string userName)
-        {
-            //使用ORM框架的Dapper实现
-            var param = new
-            {
-                userName = userName
-            };
-            return new SQLServerDapperHelper().QueryListByProc<object, UserLoginLogEntity>("uspWip_GetUserLoginLogList", param);
-        }
+        List<UserLoginLogEntity> GetUserLoginLogList(string userName);
+
     }
 }

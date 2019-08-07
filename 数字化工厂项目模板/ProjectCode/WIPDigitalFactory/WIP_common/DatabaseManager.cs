@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WIP_DAL;
+using WIP_SQLServerDAL;
 
 
 namespace WIP_common

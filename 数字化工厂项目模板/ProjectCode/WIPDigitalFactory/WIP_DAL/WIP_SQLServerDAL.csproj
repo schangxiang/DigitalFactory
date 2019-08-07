@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C4A8F076-DD3A-42D6-859A-CFB4A1C197C7}</ProjectGuid>
+    <ProjectGuid>{A6A4C9FD-A504-4B5C-B2E4-33AC03002212}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WIP_BLL</RootNamespace>
-    <AssemblyName>WIP_BLL</AssemblyName>
+    <RootNamespace>WIP_SQLServerDAL</RootNamespace>
+    <AssemblyName>WIP_SQLServerDAL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,11 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="KAOP">
-      <HintPath>..\CommDLL\KAOP\KAOP.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    <Reference Include="Dapper, Version=1.20.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.22\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -51,8 +48,8 @@
       <HintPath>..\CommDLL\SysManager.DB.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,66 +58,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AOP\WipLogAopAttribute.cs" />
-    <Compile Include="MailMgr\IMail.cs" />
-    <Compile Include="MailMgr\Mail.cs" />
-    <Compile Include="MailMgr\MailRuleBLL.cs" />
+    <Compile Include="DALCommon.cs" />
+    <Compile Include="MailMgr\MailRuleDAL.cs" />
+    <Compile Include="PR_AuthorizationDAL.cs" />
+    <Compile Include="TaskExecMgr\BusinessExceptionMgrDAL.cs" />
+    <Compile Include="CodeItemsDAL.cs" />
+    <Compile Include="CodeSetsDAL.cs" />
+    <Compile Include="PrintConfigDAL.cs" />
+    <Compile Include="RequestRecordDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PR_AuthorizationBLL.cs" />
-    <Compile Include="SysIntegr\ResponseFactory\Default\PushProcessCardInfoToWCS_ResUpdater.cs" />
-    <Compile Include="SysIntegr\ResponseFactory\Default\PredictiveTask_ResUpdater.cs" />
-    <Compile Include="SysIntegr\ResponseFactory\ResponseUpdater.cs" />
-    <Compile Include="SysIntegr\SysIntegrCommon.cs" />
-    <Compile Include="BusinessExceptionMgrBLL.cs" />
-    <Compile Include="CodeItemsBLL.cs" />
-    <Compile Include="CodeSetsBLL.cs" />
-    <Compile Include="PrintConfigBLL.cs" />
-    <Compile Include="PrintInfoBLL.cs" />
-    <Compile Include="UserLoginLogBLL.cs" />
-    <Compile Include="Utility\BLLHelpler.cs" />
-    <Compile Include="Utility\PFMDHelper.cs" />
-    <Compile Include="Utility\RequestHelper.cs" />
-    <Compile Include="Utility\WipLogHelper.cs" />
-    <Compile Include="ValidateFactory\Factory\Default\ValidateInStoreFactory.cs" />
-    <Compile Include="ValidateFactory\Factory\IValidateFactory.cs" />
-    <Compile Include="ValidateFactory\IValidate.cs" />
-    <Compile Include="ValidateFactory\ValidateDataHelper.cs" />
-    <Compile Include="ValidateFactory\WCSIntegrValidate.cs" />
-    <Compile Include="ValidateFactory\WCSIntegrValidate\WIW_InStore.cs" />
+    <Compile Include="ExceptionInfoDAL.cs" />
+    <Compile Include="PrintInfoDAL.cs" />
+    <Compile Include="UserLoginLogDAL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WIP_common\WIP_common.csproj">
-      <Project>{1103472d-6a5c-4135-b359-0dfc72e71533}</Project>
-      <Name>WIP_common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WIP_DALFactory\WIP_DALFactory.csproj">
-      <Project>{4bf3f303-fb76-42e6-b722-64c9b3679f6d}</Project>
-      <Name>WIP_DALFactory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WIP_DAL\WIP_SQLServerDAL.csproj">
-      <Project>{A6A4C9FD-A504-4B5C-B2E4-33AC03002212}</Project>
-      <Name>WIP_SQLServerDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WIP_IBLL\WIP_IBLL.csproj">
-      <Project>{264dfcf5-688f-4351-84ee-7b2b73a782a9}</Project>
-      <Name>WIP_IBLL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WIP_IDAL\WIP_IDAL.csproj">
       <Project>{939faefd-8fdf-44bf-9f85-52247b493b43}</Project>
       <Name>WIP_IDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\WIP_Models\WIP_Models.csproj">
-      <Project>{45cc6d7c-f2b9-4037-897c-2cc10910cc78}</Project>
+      <Project>{45CC6D7C-F2B9-4037-897C-2CC10910CC78}</Project>
       <Name>WIP_Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WIP_PFMD\WIP_PFMD.csproj">
-      <Project>{dddfba2a-f77a-4584-8d36-60f46be0c3f3}</Project>
-      <Name>WIP_PFMD</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

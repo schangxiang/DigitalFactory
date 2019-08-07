@@ -1,4 +1,5 @@
 ﻿using SysManager.Common.Utilities;
+using SysManager.DB.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Text;
 using WIP_Models;
 
 
-namespace WIP_DAL
+namespace WIP_SQLServerDAL
 {
     public partial class DALCommon
     {
@@ -20,7 +21,7 @@ namespace WIP_DAL
         {
             int rowsAffected = 0;
             SqlParameter[] parameters = { };
-            DbHelperSQL.RunProcedure(procName, parameters, out rowsAffected, 180);//超时时间是执行3分钟
+            SQLServerHelper.RunProcedure(procName, parameters, out rowsAffected, 180);//超时时间是执行3分钟
         }
 
 
@@ -42,7 +43,7 @@ namespace WIP_DAL
             parameters[2].Value = month;
             parameters[3].Value = day;
             parameters[4].Value = dayValue;
-            ProcResultModel ret = DbHelperSQL.RunProcedureOutParamRetValue("uspWip_InitDayReportData", parameters);
+            ProcResultModel ret = SQLServerHelper.RunProcedureOutParamRetValue("uspWip_InitDayReportData", parameters);
             return ret;
         }
 
@@ -55,7 +56,7 @@ namespace WIP_DAL
         public static bool TruncateTable(string tableName)
         {
             string sql = " truncate table " + tableName;
-            DbHelperSQL.ExecuteSql(sql);
+            SQLServerHelper.ExecuteSql(sql);
             return true;
         }
 
@@ -71,11 +72,11 @@ namespace WIP_DAL
             int rows = 0;
             if (transModel != null)
             {
-                rows = DbHelperSQL.ExecuteSql(transModel.conn, transModel.trans, sqlParam.StrSql, sqlParam.Parameters);
+                rows = SQLServerHelper.ExecuteSql(transModel.conn, transModel.trans, sqlParam.StrSql, sqlParam.Parameters);
             }
             else
             {
-                rows = DbHelperSQL.ExecuteSql(sqlParam.StrSql, sqlParam.Parameters);
+                rows = SQLServerHelper.ExecuteSql(sqlParam.StrSql, sqlParam.Parameters);
             }
             return rows > 0 ? true : false;
         }
@@ -218,7 +219,7 @@ namespace WIP_DAL
                 dicstr.Add(item.StrSql, item.Parameters);
                 ListDic.Add(dicstr);
             }
-            DbHelperSQL.ExecuteSqlTranList(ListDic);//事务执行
+            SQLServerHelper.ExecuteSqlTranList(ListDic);//事务执行
         }
 
 
@@ -236,7 +237,7 @@ namespace WIP_DAL
                 };
                 parameters[0].Value = Convert.ToInt32(serialNoType).ToString();
 
-                ProcResultModel ret = DbHelperSQL.RunProcedureOutParamRetValue("uspWip_GetSerialNoProduce", parameters);
+                ProcResultModel ret = SQLServerHelper.RunProcedureOutParamRetValue("uspWip_GetSerialNoProduce", parameters);
                 if (ret.execResult > 0)
                 {
                     return ret.execResult.ToString();
@@ -271,7 +272,7 @@ namespace WIP_DAL
             parameters[1].Value = heatingOutCode.ToString();
             parameters[2].Value = quantity;
 
-            DataSet ds = DbHelperSQL.RunProcedure("uspWip_GetMaterialCodeForIssueTask", parameters, "pagetable");
+            DataSet ds = SQLServerHelper.RunProcedure("uspWip_GetMaterialCodeForIssueTask", parameters, "pagetable");
             int count = ds.Tables[0].Rows.Count;
             if (count > 0)
             {
@@ -304,7 +305,7 @@ namespace WIP_DAL
             try
             {
                 string sql = " SELECT LoginName as Name FROM UserAccountView ";
-                DataSet ds = DbHelperSQL.Query(sql);
+                DataSet ds = SQLServerHelper.Query(sql);
                 return DataTableToListForGetPersonnelGroupViewt(ds.Tables[0]);
             }
             catch
@@ -343,7 +344,7 @@ namespace WIP_DAL
             try
             {
                 string sql = " SELECT mailAddress,mailDisplayName,mailHost,mailPort,mailPwd FROM udtWip_MailBaseData ";
-                DataSet ds = DbHelperSQL.Query(sql);
+                DataSet ds = SQLServerHelper.Query(sql);
                 return DataTableToListForGetMailBaseData(ds.Tables[0]);
             }
             catch

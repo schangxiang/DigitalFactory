@@ -113,9 +113,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WIP_DAL\WIP_DAL.csproj">
+    <ProjectReference Include="..\WIP_DAL\WIP_SQLServerDAL.csproj">
       <Project>{a6a4c9fd-a504-4b5c-b2e4-33ac03002212}</Project>
-      <Name>WIP_DAL</Name>
+      <Name>WIP_SQLServerDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\WIP_Models\WIP_Models.csproj">
       <Project>{45cc6d7c-f2b9-4037-897c-2cc10910cc78}</Project>

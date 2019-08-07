@@ -113,10 +113,6 @@
       <Project>{1103472d-6a5c-4135-b359-0dfc72e71533}</Project>
       <Name>WIP_common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WIP_DAL\WIP_DAL.csproj">
-      <Project>{a6a4c9fd-a504-4b5c-b2e4-33ac03002212}</Project>
-      <Name>WIP_DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WIP_IBLL\WIP_IBLL.csproj">
       <Project>{264dfcf5-688f-4351-84ee-7b2b73a782a9}</Project>
       <Name>WIP_IBLL</Name>

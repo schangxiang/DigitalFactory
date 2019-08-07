@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using SysManager.Common.Utilities;
+using SysManager.DB.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using WIP_common;
-using WIP_DAL;
+using WIP_SQLServerDAL;
 using WIP_Models;
 
 namespace WIP_BLL
@@ -51,7 +52,7 @@ namespace WIP_BLL
                 string insertSql = "";
 
                 #endregion
-                using (SqlConnection conn = new SqlConnection(DbHelperSQL.connectionString))
+                using (SqlConnection conn = new SqlConnection(SQLServerHelper.connectionString))
                 {
                     conn.Open();
                     using (SqlTransaction trans = conn.BeginTransaction())
@@ -63,13 +64,13 @@ namespace WIP_BLL
                         };
                         try
                         {
-                            DbHelperSQL.ExecuteSql(truncateSql, transModel);
+                            SQLServerHelper.ExecuteSql(truncateSql, transModel);
 
                             foreach (var item in param.mailPersonParamList)
                             {
                                 insertSql = @" INSERT INTO udtWip_MailPerson(categoryId,mailAddress,mailName,creator,createTime,lastModifier,lastModifyTime)
   SELECT  '" + param.categoryId + "','" + item.mailAddress + "','" + item.mailName + "','" + lastModifier + "',getdate(),'" + lastModifier + "',GETDATE()  ";
-                                DbHelperSQL.ExecuteSql(insertSql, transModel);
+                                SQLServerHelper.ExecuteSql(insertSql, transModel);
                             }
 
 

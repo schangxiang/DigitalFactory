@@ -3,8 +3,9 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using WIP_Models;
+using SysManager.DB.Utilities;
 
-namespace WIP_DAL
+namespace WIP_SQLServerDAL
 {
     /// <summary> 
     /// 请求记录表数据访问类 
@@ -48,7 +49,7 @@ namespace WIP_DAL
                 parameters[6].Value = model.happenHost;
                 parameters[7].Value = model.direction;
                 int rowsAffected;
-                DbHelperSQL.RunProcedure("uspWip_AddRequestRecord", parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure("uspWip_AddRequestRecord", parameters, out rowsAffected);
             }
             catch
             {
@@ -99,7 +100,7 @@ namespace WIP_DAL
                 parameters[9].Value = model.key2;
 
                 int rowsAffected;
-                DbHelperSQL.RunProcedure("uspWip_AddRequestRecordWithKey", parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure("uspWip_AddRequestRecordWithKey", parameters, out rowsAffected);
             }
             catch
             {

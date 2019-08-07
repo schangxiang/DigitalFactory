@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using WIP_common;
-using WIP_DAL;
+using WIP_SQLServerDAL;
 using WIP_Models;
 
 namespace WIP_BLL

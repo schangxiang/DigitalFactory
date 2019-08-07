@@ -3,8 +3,9 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using WIP_Models;
+using SysManager.DB.Utilities;
 
-namespace WIP_DAL
+namespace WIP_SQLServerDAL
 {
     /// <summary> 
     /// 邮件类别数据访问类 
@@ -36,7 +37,7 @@ namespace WIP_DAL
         {
             SqlParameter[] parameters = { 
             };
-            return DbHelperSQL.RunProcedure("uspWip_GetMailRuleList", parameters, "table");
+            return SQLServerHelper.RunProcedure("uspWip_GetMailRuleList", parameters, "table");
         }
 
         #endregion
@@ -54,7 +55,7 @@ namespace WIP_DAL
                         new SqlParameter("@categoryId", SqlDbType.NVarChar,500)  
             };
             parameters[0].Value = categoryId;
-            return DbHelperSQL.RunProcedure("uspWip_GetMailPersonList", parameters, "table");
+            return SQLServerHelper.RunProcedure("uspWip_GetMailPersonList", parameters, "table");
         }
 
         #endregion

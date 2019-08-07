@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A6A4C9FD-A504-4B5C-B2E4-33AC03002212}</ProjectGuid>
+    <ProjectGuid>{939FAEFD-8FDF-44BF-9F85-52247B493B43}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WIP_DAL</RootNamespace>
-    <AssemblyName>WIP_DAL</AssemblyName>
+    <RootNamespace>WIP_IDAL</RootNamespace>
+    <AssemblyName>WIP_IDAL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,54 +30,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dapper, Version=1.20.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.1.22\lib\net45\Dapper.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="SysManager.Common.Utilities">
-      <HintPath>..\CommDLL\SysManager.Common.Utilities.dll</HintPath>
+    <Reference Include="SysManager.Common.Models">
+      <HintPath>..\CommDLL\SysManager.Common.Models.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DALCommon.cs" />
-    <Compile Include="DBUtility\CommandInfo.cs" />
-    <Compile Include="DBUtility\DapperHelper.cs" />
-    <Compile Include="DBUtility\DbHelperSQL_READONLY.cs" />
-    <Compile Include="DBUtility\DbHelperSQL.cs" />
-    <Compile Include="MailMgr\MailRuleDAL.cs" />
-    <Compile Include="PR_AuthorizationDAL.cs" />
-    <Compile Include="TaskExecMgr\BusinessExceptionMgrDAL.cs" />
-    <Compile Include="CodeItemsDAL.cs" />
-    <Compile Include="CodeSetsDAL.cs" />
-    <Compile Include="PrintConfigDAL.cs" />
-    <Compile Include="RequestRecordDAL.cs" />
+    <Compile Include="IPrintInfoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ExceptionInfoDAL.cs" />
-    <Compile Include="PrintInfoDAL.cs" />
-    <Compile Include="UserLoginLogDAL.cs" />
+    <Compile Include="IUserLoginLogDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WIP_Models\WIP_Models.csproj">
-      <Project>{45CC6D7C-F2B9-4037-897C-2CC10910CC78}</Project>
+      <Project>{45cc6d7c-f2b9-4037-897c-2cc10910cc78}</Project>
       <Name>WIP_Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

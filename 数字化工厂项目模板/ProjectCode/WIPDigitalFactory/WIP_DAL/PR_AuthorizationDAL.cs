@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SysManager.DB.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -7,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WIP_Models;
 
-namespace WIP_DAL
+namespace WIP_SQLServerDAL
 {
    public   class PR_AuthorizationDAL
     {
@@ -24,7 +25,7 @@ namespace WIP_DAL
                new SqlParameter("@s95id", SqlDbType.NVarChar,500)
            };
            parameters[0].Value = s95id;
-           DataSet ds = DbHelperSQL.RunProcedure("UspWip_GetAuthorization", parameters, "pagetable");
+           DataSet ds = SQLServerHelper.RunProcedure("UspWip_GetAuthorization", parameters, "pagetable");
            AuthorizationUserModel model = new AuthorizationUserModel();
 
            if (ds.Tables[0].Rows.Count > 0)

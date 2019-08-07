@@ -3,8 +3,9 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using WIP_Models;
+using SysManager.DB.Utilities;
 
-namespace WIP_DAL
+namespace WIP_SQLServerDAL
 {
     /// <summary> 
     /// 打印配置数据访问类 
@@ -53,11 +54,11 @@ namespace WIP_DAL
             int rowsAffected;
             if (transModel != null)
             {
-                DbHelperSQL.RunProcedure(transModel.conn, transModel.trans, "uspWip_AddPrintConfig", parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure(transModel.conn, transModel.trans, "uspWip_AddPrintConfig", parameters, out rowsAffected);
             }
             else
             {
-                DbHelperSQL.RunProcedure("uspWip_AddPrintConfig", parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure("uspWip_AddPrintConfig", parameters, out rowsAffected);
             }
             return (int)parameters[parameters.Length - 1].Value;
         }
@@ -98,11 +99,11 @@ namespace WIP_DAL
             int rowsAffected = 0;
             if (transModel != null)
             {
-                DbHelperSQL.RunProcedure(transModel.conn, transModel.trans, "uspWip_UpdatePrintConfig", parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure(transModel.conn, transModel.trans, "uspWip_UpdatePrintConfig", parameters, out rowsAffected);
             }
             else
             {
-                DbHelperSQL.RunProcedure("uspWip_UpdatePrintConfig", parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure("uspWip_UpdatePrintConfig", parameters, out rowsAffected);
             }
             if (rowsAffected > 0)
             {
@@ -147,11 +148,11 @@ namespace WIP_DAL
             int rows = 0;
             if (transModel != null)
             {
-                rows = DbHelperSQL.ExecuteSql(transModel.conn, transModel.trans, strSql.ToString(), parameters);
+                rows = SQLServerHelper.ExecuteSql(transModel.conn, transModel.trans, strSql.ToString(), parameters);
             }
             else
             {
-                rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+                rows = SQLServerHelper.ExecuteSql(strSql.ToString(), parameters);
             }
             return rows > 0 ? true : false;
         }
@@ -186,7 +187,7 @@ namespace WIP_DAL
             parameters[4].Value = model.pageIndex;
             parameters[5].Value = model.pageSize;
             parameters[6].Value = model.delFlag;
-            return DbHelperSQL.RunProcedure("uspWip_GetPrintConfigPageList", parameters, "pagetable");
+            return SQLServerHelper.RunProcedure("uspWip_GetPrintConfigPageList", parameters, "pagetable");
         }
 
         #endregion
@@ -205,7 +206,7 @@ namespace WIP_DAL
             };
             parameters[0].Value = printType;
 
-            DataSet ds = DbHelperSQL.RunProcedure("uspWip_GetSinglePrintConfig", parameters, "pagetable");
+            DataSet ds = SQLServerHelper.RunProcedure("uspWip_GetSinglePrintConfig", parameters, "pagetable");
 
             PrintConfigEntity model = new PrintConfigEntity();
 
@@ -276,7 +277,7 @@ namespace WIP_DAL
                     new SqlParameter("@printType", SqlDbType.NVarChar,50)           };
             parameters[0].Value = printType;
 
-            return DbHelperSQL.Exists(strSql.ToString(), parameters);
+            return SQLServerHelper.Exists(strSql.ToString(), parameters);
         }
 
         #endregion

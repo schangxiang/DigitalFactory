@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using WIP_common;
 using WIP_Models;
-using WIP_DAL;
+using WIP_SQLServerDAL;
 using SysManager.Common.Utilities;
 
 namespace WIP_BLL

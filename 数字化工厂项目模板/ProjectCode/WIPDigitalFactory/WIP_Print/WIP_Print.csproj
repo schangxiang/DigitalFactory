@@ -55,8 +55,14 @@
     <Reference Include="NPOI.OpenXmlFormats, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
       <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
+    <Reference Include="SysManager.Common.Models">
+      <HintPath>..\CommDLL\SysManager.Common.Models.dll</HintPath>
+    </Reference>
     <Reference Include="SysManager.Common.Utilities">
       <HintPath>..\CommDLL\SysManager.Common.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="SysManager.DB.Utilities">
+      <HintPath>..\CommDLL\SysManager.DB.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -106,9 +112,13 @@
       <Project>{1103472d-6a5c-4135-b359-0dfc72e71533}</Project>
       <Name>WIP_common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WIP_DAL\WIP_DAL.csproj">
+    <ProjectReference Include="..\WIP_DAL\WIP_SQLServerDAL.csproj">
       <Project>{A6A4C9FD-A504-4B5C-B2E4-33AC03002212}</Project>
-      <Name>WIP_DAL</Name>
+      <Name>WIP_SQLServerDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WIP_IDAL\WIP_IDAL.csproj">
+      <Project>{939faefd-8fdf-44bf-9f85-52247b493b43}</Project>
+      <Name>WIP_IDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\WIP_Models\WIP_Models.csproj">
       <Project>{45CC6D7C-F2B9-4037-897C-2CC10910CC78}</Project>

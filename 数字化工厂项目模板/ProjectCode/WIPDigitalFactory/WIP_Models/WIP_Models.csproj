@@ -65,7 +65,6 @@
     <Compile Include="CommonModel\Excel\ExcelPictureModel.cs" />
     <Compile Include="CommonModel\Excel\ExcelSheetModel.cs" />
     <Compile Include="CommonModel\Excel\PrintStruct.cs" />
-    <Compile Include="CommonModel\ProcResultModel.cs" />
     <Compile Include="CommonModel\PropertyParam.cs" />
     <Compile Include="CommonModel\PropertyUpdateParam.cs" />
     <Compile Include="CommonModel\RedisModel.cs" />
@@ -75,7 +74,6 @@
     <Compile Include="CommonModel\ReturnBody.cs" />
     <Compile Include="CommonModel\SqlParam.cs" />
     <Compile Include="CommonModel\TokenInfo.cs" />
-    <Compile Include="CommonModel\TransactionModel.cs" />
     <Compile Include="CommonModel\UnixTimeStamp.cs" />
     <Compile Include="CommonModel\ValidateModel.cs" />
     <Compile Include="CommonModel\ValidateResModel.cs" />

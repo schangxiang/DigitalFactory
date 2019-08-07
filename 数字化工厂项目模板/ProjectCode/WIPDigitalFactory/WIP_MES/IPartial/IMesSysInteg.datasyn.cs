@@ -10,7 +10,7 @@ namespace WIP_MES
     {
         #region 基础数据同步
 
-        [KAopMethod]
+        [KAopMethod] //记录请求日志
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "datasyn", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         ReturnBody<BaseDataSynResultModel> datasyn(List<BaseDataSynParamModel> basedataList);

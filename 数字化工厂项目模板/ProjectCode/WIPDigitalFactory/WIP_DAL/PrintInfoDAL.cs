@@ -5,26 +5,14 @@ using System.Collections.Generic;
 using System.Data;
 using WIP_Models;
 using Newtonsoft.Json;
+using SysManager.DB.Utilities;
+using WIP_IDAL;
 
 
-namespace WIP_DAL
+namespace WIP_SQLServerDAL
 {
-    public partial class PrintInfoDAL
+    public partial class PrintInfoDAL : IPrintInfoDAL
     {
-        #region 单例模式（饿汉模式）
-
-        private static PrintInfoDAL _instance = null;
-        private PrintInfoDAL() { }
-        static PrintInfoDAL()
-        {
-            _instance = new PrintInfoDAL();
-        }
-        public static PrintInfoDAL GetInstance()
-        {
-            return _instance;
-        }
-
-        #endregion
 
         /// <summary>
         /// 增加一条数据
@@ -60,11 +48,11 @@ namespace WIP_DAL
             int rowsAffected;
             if (transModel != null)
             {
-                DbHelperSQL.RunProcedure(transModel.conn, transModel.trans, "uspWip_AddPrintInfo", parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure(transModel.conn, transModel.trans, "uspWip_AddPrintInfo", parameters, out rowsAffected);
             }
             else
             {
-                DbHelperSQL.RunProcedure("uspWip_AddPrintInfo", parameters, out rowsAffected);
+                SQLServerHelper.RunProcedure("uspWip_AddPrintInfo", parameters, out rowsAffected);
             }
             return (int)parameters[parameters.Length - 1].Value;
         }
@@ -83,7 +71,7 @@ namespace WIP_DAL
                     new SqlParameter("@printTypeStr", SqlDbType.NVarChar,100)
                 };
                 parameters[0].Value = printTypeStr;
-                DataSet ds = DbHelperSQL.RunProcedure("uspWip_GetNeedPrintList", parameters, "mydata");
+                DataSet ds = SQLServerHelper.RunProcedure("uspWip_GetNeedPrintList", parameters, "mydata");
                 return ds;
             }
             catch (Exception)
@@ -91,26 +79,6 @@ namespace WIP_DAL
                 throw;
             }
         }
-
-        /// <summary>
-        /// 获取显示打印的数据列表(Client)
-        /// </summary>
-        /// <param name="printTypeStr">打印类型集合</param>
-        /// <param name="processCardNumber">流转卡号</param>
-        /// <returns></returns>
-        public DataSet GetViewPrintList(string printTypeStr, string processCardNumber)
-        {
-            SqlParameter[] parameters = {
-                new SqlParameter("@printTypeStr", SqlDbType.NVarChar,50),
-                new SqlParameter("@processCardNumber", SqlDbType.NVarChar,50)
-            };
-            parameters[0].Value = printTypeStr;
-            parameters[1].Value = processCardNumber;
-
-            DataSet ds = DbHelperSQL.RunProcedure("uspWip_GetViewPrintList", parameters, "mydata");
-            return ds;
-        }
-
 
         /// <summary>
         /// 重置打印状态
@@ -129,7 +97,7 @@ namespace WIP_DAL
                 parameters[0].Value = processCardNumber;
                 parameters[1].Value = id;
 
-                ProcResultModel ret = DbHelperSQL.RunProcedureOutParamRetValue("uspWip_ResetPrint", parameters);
+                ProcResultModel ret = SQLServerHelper.RunProcedureOutParamRetValue("uspWip_ResetPrint", parameters);
                 return ret;
             }
             catch (Exception)
@@ -147,7 +115,7 @@ namespace WIP_DAL
         public int UpdatePrintResult(SqlParameter[] parameters_UpdatePrintResult, TransactionModel transModel)
         {
             int rowsAffected = 0;
-            return DbHelperSQL.RunProcedure(transModel.conn, transModel.trans, "uspWip_UpdatePrintResult", parameters_UpdatePrintResult, out rowsAffected);
+            return SQLServerHelper.RunProcedure(transModel.conn, transModel.trans, "uspWip_UpdatePrintResult", parameters_UpdatePrintResult, out rowsAffected);
         }
 
     }

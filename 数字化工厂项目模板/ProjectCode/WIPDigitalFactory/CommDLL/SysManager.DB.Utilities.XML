@@ -1,0 +1,528 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SysManager.DB.Utilities</name>
+    </assembly>
+    <members>
+        <member name="T:SysManager.DB.Utilities.OracleHelper">
+            <summary>
+            A helper class used to execute queries against an Oracle database
+            </summary>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute a database query which does not include a select
+            </summary>
+            <param name="connString">Connection string to database</param>
+            <param name="cmdType">Command type either stored procedure or SQL</param>
+            <param name="cmdText">Acutall SQL Command</param>
+            <param name="commandParameters">Parameters to bind to the command</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleHelper.ExecuteNonQuery(System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute an OracleCommand (that returns no resultset) against an existing database transaction 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "PublishOrders", new OracleParameter(":prodid", 24));
+            </remarks>
+            <param name="trans">an existing database transaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleHelper.ExecuteNonQuery(System.Data.OracleClient.OracleConnection,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute an OracleCommand (that returns no resultset) against an existing database connection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new OracleParameter(":prodid", 24));
+            </remarks>
+            <param name="conn">an existing database connection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleHelper.ExecuteReader(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleHelper.ExecuteScalar(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute an OracleCommand that returns the first column of the first record against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new OracleParameter(":prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for a SqlConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns>An object that should be converted to the expected type using Convert.To{Type}</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleHelper.ExecuteScalar(System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute	a OracleCommand (that returns a 1x1 resultset)	against	the	specified SqlTransaction
+            using the provided parameters.
+            </summary>
+            <param name="transaction">A	valid SqlTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name	or PL/SQL command</param>
+            <param name="commandParameters">An array of	OracleParamters used to execute the command</param>
+            <returns>An	object containing the value	in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleHelper.ExecuteScalar(System.Data.OracleClient.OracleConnection,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute an OracleCommand that returns the first column of the first record against an existing database connection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Object obj = ExecuteScalar(conn, CommandType.StoredProcedure, "PublishOrders", new OracleParameter(":prodid", 24));
+            </remarks>
+            <param name="conn">an existing database connection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns>An object that should be converted to the expected type using Convert.To{Type}</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleHelper.CacheParameters(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Add a set of parameters to the cached
+            </summary>
+            <param name="cacheKey">Key value to look up the parameters</param>
+            <param name="commandParameters">Actual parameters to cached</param>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleHelper.GetCachedParameters(System.String)">
+            <summary>
+            Fetch parameters from the cache
+            </summary>
+            <param name="cacheKey">Key to look up the parameters</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleHelper.PrepareCommand(System.Data.OracleClient.OracleCommand,System.Data.OracleClient.OracleConnection,System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Internal function to prepare a command for execution by the database
+            </summary>
+            <param name="cmd">Existing command object</param>
+            <param name="conn">Database connection object</param>
+            <param name="trans">Optional transaction object</param>
+            <param name="cmdType">Command type, e.g. stored procedure</param>
+            <param name="cmdText">Command test</param>
+            <param name="commandParameters">Parameters for the command</param>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleHelper.OraBit(System.Boolean)">
+            <summary>
+            Converter to use boolean data type with Oracle
+            </summary>
+            <param name="value">Value to convert</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleHelper.OraBool(System.String)">
+            <summary>
+            Converter to use boolean data type with Oracle
+            </summary>
+            <param name="value">Value to convert</param>
+            <returns></returns>
+        </member>
+        <member name="T:SysManager.DB.Utilities.DapperDataBase">
+            <summary>
+            Dapper数据访问抽象基础类
+            </summary>
+        </member>
+        <member name="M:SysManager.DB.Utilities.DapperDataBase.CreateDbConnection">
+            <summary>
+            连接数据库
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.DapperDataBase.QueryList``1(System.String)">
+            <summary>
+            执行查询列表
+            </summary>
+        </member>
+        <member name="M:SysManager.DB.Utilities.DapperDataBase.QueryList``1(System.String,``0)">
+            <summary>
+            执行查询列表
+            注意：这里泛型只能是一个，入参和出参都是同一个，如果不是同一个，会查询数据为NULL
+            </summary>
+            <typeparam name="T">参数</typeparam>
+            <param name="sqlStr">执行SQL字符串</param>
+            <param name="param">参数</param>
+            <returns>查询列表</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.DapperDataBase.QuerySingle``1(System.String,``0)">
+            <summary>
+            执行查询单条数据
+            </summary>
+        </member>
+        <member name="M:SysManager.DB.Utilities.DapperDataBase.Exists(System.String,System.Object)">
+            <summary>
+            执行是否存在数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sqlStr">查询（例：SELECT COUNT(1)  FROM XXX ）</param>
+            <param name="param">匿名类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.DapperDataBase.QueryListByProc``1(System.String,``0)">
+            <summary>
+            存储过程查询列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="procName"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.DapperDataBase.QueryListByProc``2(System.String,``0)">
+            <summary>
+            存储过程查询列表
+            </summary>
+            <typeparam name="T">存储过程参数（可以是匿名参数）</typeparam>
+            <typeparam name="T1">返回参数</typeparam>
+            <param name="procName">存储过程名</param>
+            <param name="param">存储过程参数</param>
+            <returns>返回参数列表</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.DapperDataBase.ExecuteSql``1(System.String,``0)">
+            <summary>
+            执行SQL
+            </summary>
+            <typeparam name="T">执行参数</typeparam>
+            <param name="insertSql">要执行的sql语句</param>
+            <param name="param">执行参数</param>
+            <returns>受影响的行数</returns>
+        </member>
+        <member name="T:SysManager.DB.Utilities.OracleDapperHelper">
+            <summary>
+            Orcle数据库Dapper操作
+            </summary>
+        </member>
+        <member name="F:SysManager.DB.Utilities.OracleDapperHelper.connectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:SysManager.DB.Utilities.OracleDapperHelper.CreateDbConnection">
+            <summary>
+            连接数据库
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SysManager.DB.Utilities.SQLServerDapperHelper">
+            <summary>
+            SQLServer数据库Dapper操作
+            </summary>
+        </member>
+        <member name="F:SysManager.DB.Utilities.SQLServerDapperHelper.connectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerDapperHelper.CreateDbConnection">
+            <summary>
+            连接数据库
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:SysManager.DB.Utilities.EffentNextType.None">
+            <summary>
+            对其他语句无任何影响 
+            </summary>
+        </member>
+        <member name="F:SysManager.DB.Utilities.EffentNextType.WhenHaveContine">
+            <summary>
+            当前语句必须为"select count(1) from .."格式，如果存在则继续执行，不存在回滚事务
+            </summary>
+        </member>
+        <member name="F:SysManager.DB.Utilities.EffentNextType.WhenNoHaveContine">
+            <summary>
+            当前语句必须为"select count(1) from .."格式，如果不存在则继续执行，存在回滚事务
+            </summary>
+        </member>
+        <member name="F:SysManager.DB.Utilities.EffentNextType.ExcuteEffectRows">
+            <summary>
+            当前语句影响到的行数必须大于0，否则回滚事务
+            </summary>
+        </member>
+        <member name="F:SysManager.DB.Utilities.EffentNextType.SolicitationEvent">
+            <summary>
+            引发事件-当前语句必须为"select count(1) from .."格式，如果不存在则继续执行，存在回滚事务
+            </summary>
+        </member>
+        <member name="T:SysManager.DB.Utilities.SQLServerHelper">
+            <summary>
+            SQLServer数据访问抽象基础类
+            </summary>
+        </member>
+        <member name="F:SysManager.DB.Utilities.SQLServerHelper.connectionString">
+            <summary>
+            SQLServer数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ColumnExists(System.String,System.String)">
+            <summary>
+            判断是否存在某表的某个字段
+            </summary>
+            <param name="tableName">表名称</param>
+            <param name="columnName">列名称</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.TabExists(System.String)">
+            <summary>
+            表是否存在
+            </summary>
+            <param name="TableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSql(System.String)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSql(System.String,SysManager.DB.Utilities.TransactionModel)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSql(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String)">
+            <summary>
+            执行SQL语句，返回影响的记录数(带事务)
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSqlTran(System.Collections.Generic.List{System.String})">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>		
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSql(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSqlGet(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSqlInsertImg(System.String,System.Byte[])">
+            <summary>
+            向数据库里插入图像格式的字段(和上面情况类似的另一种实例)
+            </summary>
+            <param name="strSQL">SQL语句</param>
+            <param name="fs">图像字节,数据库的字段类型为image的情况</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.GetSingle(System.String)">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteReader(System.String)">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.Query(System.String)">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSql(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSql(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行SQL语句，返回影响的记录数(放在事务里)
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSqlTran(System.Collections.Hashtable)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSqlTranList(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的键值对数组  key是sql语句  value是SqlParameter[]</param>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSqlTran(System.Collections.Generic.List{SysManager.DB.Utilities.CommandInfo})">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSqlTranWithIndentity(System.Collections.Generic.List{SysManager.DB.Utilities.CommandInfo})">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteSqlTranWithIndentity(System.Collections.Hashtable)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.GetSingle(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecuteReader(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.Query(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.RunProcedure(System.String,System.Data.IDataParameter[],System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="tableName">DataSet结果中的表名</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.RunProcedure(System.String,System.Data.IDataParameter[],System.String,System.Int32)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">参数</param>
+            <param name="tableName">返回表名</param>
+            <param name="commandTimeout">等待命令执行的时间（以秒为单位）。 默认值为 30 秒。</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.RunProcedure(System.String,System.Data.IDataParameter[],System.Int32@,System.Int32)">
+            <summary>
+            执行存储过程	
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="rowsAffected">影响的行数</param>
+            <param name="commandTimeout">等待命令执行的时间（以秒为单位）。 默认值为 30 秒。</param>
+            <returns>存储过程返回值</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.RunProcedureByOutPut(System.String,System.Data.IDataParameter[])">
+            <summary>
+            执行带返回值的存储过程	
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>存储过程输出参数集合</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.RunProcedureOutParamRetValue(System.String,System.Data.IDataParameter[],System.Int32)">
+            <summary>
+            执行带返回值的存储过程(返回输出参数集合和返回值)
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="commandTimeout">等待命令执行的时间（以秒为单位）。 默认值为 30 秒。</param>
+            <returns>返回输出参数集合和返回值</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.RunProcedureOutParamRetValue(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.IDataParameter[],System.Int32)">
+            <summary>
+            执行带返回值的存储过程(返回输出参数集合和返回值)
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="commandTimeout">等待命令执行的时间（以秒为单位）。 默认值为 30 秒。</param>
+            <returns>返回输出参数集合和返回值</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.RunProcedure(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.IDataParameter[],System.Int32@)">
+            <summary>
+            执行存储过程，返回影响的行数(传入SqlConnection对象,因为要执行事务)
+            </summary>
+            <param name="connection">数据连接对象</param>
+             <param name="trans">事务名</param>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="rowsAffected">影响的行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.SqlBulkCopyInsert(System.String,System.Data.DataTable,SysManager.DB.Utilities.TransactionModel)">
+            <summary>  
+            注意：DataTable中的列需要与数据库表中的列完全一致。
+            已自测可用。
+            </summary>  
+            <param name="strTableName">数据库中对应的表名</param>  
+            <param name="dtData">数据集</param>  
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.ExecTSQL(System.String[])">
+            <summary>
+            批量执行sql（事务）
+            </summary>
+            <param name="ALSql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.BuildIntCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            创建 SqlCommand 对象实例(用来返回一个整数值)	
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand 对象实例</returns>
+        </member>
+        <member name="M:SysManager.DB.Utilities.SQLServerHelper.BuildQueryCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            构建 SqlCommand 对象(用来返回一个结果集，而不是一个整数值)
+            </summary>
+            <param name="connection">数据库连接</param>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand</returns>
+        </member>
+    </members>
+</doc>

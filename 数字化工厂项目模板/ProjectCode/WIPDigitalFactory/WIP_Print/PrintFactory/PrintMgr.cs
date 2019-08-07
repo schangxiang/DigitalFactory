@@ -13,11 +13,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WIP_BLL;
-using WIP_DAL;
+using WIP_SQLServerDAL;
 using WIP_Models;
 using WIP_common;
 using System.Reflection;
 using SysManager.Common.Utilities;
+using SysManager.DB.Utilities;
 
 namespace WIP_Print
 {
@@ -74,7 +75,7 @@ namespace WIP_Print
 
                 #region 事务处理
 
-                using (SqlConnection conn = new SqlConnection(DbHelperSQL.connectionString))
+                using (SqlConnection conn = new SqlConnection(SQLServerHelper.connectionString))
                 {
                     conn.Open();
                     using (SqlTransaction trans = conn.BeginTransaction())
@@ -86,7 +87,7 @@ namespace WIP_Print
                         };
                         try
                         {
-                            var execResult = PrintInfoDAL.GetInstance().UpdatePrintResult(parameters_UpdatePrintResult, transModel);
+                            var execResult = new PrintInfoDAL().UpdatePrintResult(parameters_UpdatePrintResult, transModel);
                             if (execResult != 1)
                             {//返回1代表执行成功,返回-1代表失败
                                 throw new Exception("处理打印结果失败,parameters:" + JsonConvert.SerializeObject(parameters_UpdatePrintResult)
