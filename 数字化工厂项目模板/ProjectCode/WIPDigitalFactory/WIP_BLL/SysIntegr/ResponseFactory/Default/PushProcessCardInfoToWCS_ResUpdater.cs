@@ -22,7 +22,7 @@ namespace WIP_BLL
         public override void DoResponse<T>(string host, string url, T param, int execCount)
         {
             ReturnBody<PushProcessCardInfoToWCSModel> resultByPushProcessCardInfoToWCSView = null;
-            resultByPushProcessCardInfoToWCSView = RequestHelper.CommonHttpRequestForPost<T, PushProcessCardInfoToWCSModel>(host,
+            resultByPushProcessCardInfoToWCSView = WipRequestHelper.CommonHttpRequestForPost<T, PushProcessCardInfoToWCSModel>(host,
               url, param);
             if (resultByPushProcessCardInfoToWCSView != null && resultByPushProcessCardInfoToWCSView.resCode == ResCode.SUCCESS
                 && resultByPushProcessCardInfoToWCSView.resData != null

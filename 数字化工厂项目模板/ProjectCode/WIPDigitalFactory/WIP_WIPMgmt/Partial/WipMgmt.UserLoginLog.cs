@@ -40,7 +40,15 @@ namespace WIP_WIPMgmt
                "GetUserLoginLogList", userName,
                "", "");
             try
-            {
+            {//校验
+                IValidateFactory factory = new UserLoginLogValiFactory();
+                IValidate validate = factory.CreateValidate();
+                ret = validate.Validate<string, List<UserLoginLogEntity>>(userName, ref exception);
+                if (ret != null)
+                {
+                    return ret;
+                }
+
                 ret = new ReturnBody<List<UserLoginLogEntity>>();
                 ret.resCode = ResCode.SUCCESS;
                 ret.resData = IOCContainer.Container.GetExport<IUserLoginLogBLL>("UserLoginLog").Value.GetUserLoginLogList(userName);

@@ -26,7 +26,7 @@ namespace WIP_BLL
         public virtual void DoResponse<T>(string host, string url, T param, int execCount)
         {
             ReturnBody<string> resultModel = null;
-            resultModel = RequestHelper.CommonHttpRequestForPost<T, string>(host,
+            resultModel = WipRequestHelper.CommonHttpRequestForPost<T, string>(host,
               url, param);
             if (resultModel != null && resultModel.resCode == ResCode.SUCCESS)
             {//成功

@@ -22,7 +22,7 @@ namespace WIP_BLL
         public override void DoResponse<T>(string host, string url, T param, int execCount)
         {
             ReturnBody<string> resultModelForPredictiveTask = null;
-            resultModelForPredictiveTask = RequestHelper.CommonHttpRequestForGet<T, string>(host,
+            resultModelForPredictiveTask = WipRequestHelper.CommonHttpRequestForGet<T, string>(host,
               url, param, 180);//超时时间设定为3分钟
             if (resultModelForPredictiveTask != null && resultModelForPredictiveTask.resCode == ResCode.SUCCESS)
             {//成功

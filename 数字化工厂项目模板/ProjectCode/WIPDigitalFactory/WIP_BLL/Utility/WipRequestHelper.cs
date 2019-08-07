@@ -12,7 +12,7 @@ using WIP_Models;
 
 namespace WIP_BLL
 {
-    public class RequestHelper
+    public class WipRequestHelper
     {
         /// <summary>
         /// 公共处理post请求

@@ -78,13 +78,14 @@
     <Compile Include="UserLoginLogBLL.cs" />
     <Compile Include="Utility\BLLHelpler.cs" />
     <Compile Include="Utility\PFMDHelper.cs" />
-    <Compile Include="Utility\RequestHelper.cs" />
+    <Compile Include="Utility\WipRequestHelper.cs" />
     <Compile Include="Utility\WipLogHelper.cs" />
+    <Compile Include="ValidateFactory\Factory\Default\UserLoginLogValiFactory.cs" />
     <Compile Include="ValidateFactory\Factory\Default\ValidateInStoreFactory.cs" />
     <Compile Include="ValidateFactory\Factory\IValidateFactory.cs" />
     <Compile Include="ValidateFactory\IValidate.cs" />
     <Compile Include="ValidateFactory\ValidateDataHelper.cs" />
-    <Compile Include="ValidateFactory\WCSIntegrValidate.cs" />
+    <Compile Include="ValidateFactory\WCSIntegrValidate\WIW_UserLoginLog.cs" />
     <Compile Include="ValidateFactory\WCSIntegrValidate\WIW_InStore.cs" />
   </ItemGroup>
   <ItemGroup>
